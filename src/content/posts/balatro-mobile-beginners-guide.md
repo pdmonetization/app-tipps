@@ -3,7 +3,7 @@ title: "Balatro Mobile Beginner's Guide: Building a Strong First Run"
 slug: balatro-mobile-beginners-guide
 description: A practical Balatro mobile guide covering early Joker choices, money management, hand upgrades and safer decisions for a first successful run.
 publishDate: 2026-08-12
-updatedDate: ''
+updatedDate: 2026-08-12
 author: App-Tipps Editorial
 category: Game Guide
 categories:
