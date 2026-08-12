@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, PUBLISHER } from '../consts';
+const desc = 'Who runs App-Tipps.com, how we work, how we are funded, and how to reach the editorial team.';
+---
+<Base title="About Us" description={desc} schema={{
+  '@type': 'AboutPage', '@id': `${SITE.url}/about/#about`,
+  mainEntity: { '@id': `${SITE.url}/#organization` },
+}}>
+  <div class="wrap">
+    <div class="prose" style="padding:34px 0 10px">
+      <h1>About App-Tipps.com</h1>
+      <p class="standfirst" style="font-size:19px;color:var(--ink-soft)">
+        App-Tipps.com is an independent publication about mobile apps and games. We have been
+        publishing since 2020 and have produced more than 300 articles for readers on iOS and Android.
+      </p>
+
+      <h2>What we publish</h2>
+      <p>
+        We cover four things: reviews of apps and games, guides that help you get further in a game or
+        get more out of an app, comparisons between competing products, and news about the mobile
+        industry. Everything is written for people choosing what to install and what to spend time on.
+      </p>
+      <p>
+        We do not publish sponsored articles disguised as editorial, we do not accept payment for a
+        review score, and we do not republish other publications' work. Our full standards, including
+        how our review scores are calculated and how we handle corrections, are set out in our
+        <a href="/editorial-policy/">Editorial Policy</a>.
+      </p>
+
+      <h2>Who we are</h2>
+      <p>
+        App-Tipps.com is published by {PUBLISHER.legalName}, a company registered in England and Wales.
+        Editorial responsibility for everything on this site rests with the publisher.
+      </p>
+      <p>
+        Our writers publish under consistent pen names rather than their legal names. They are real
+        people on our editorial team, and a byline is used consistently by the same writer. The pen
+        names are an editorial convention, not a way of avoiding accountability: the publisher named
+        here is answerable for every article on this site. If you need to verify the authorship of a
+        specific article for a professional reason, write to us and we will deal with it directly.
+      </p>
+
+      <h2>How we are funded</h2>
+      <p>
+        This site is free to read and is funded by advertising and by affiliate links. When an article
+        contains affiliate links, a notice appears at the top of that article. If you buy or sign up
+        through one, we may earn a commission at no additional cost to you.
+      </p>
+      <p>
+        Commercial relationships never determine our verdicts. An advertiser cannot buy a better score,
+        and we will criticise a product we earn commission on if it deserves criticism.
+      </p>
+
+      <h2>Corrections</h2>
+      <p>
+        If we get something wrong, we want to fix it. Email <a href={`mailto:${PUBLISHER.editorialEmail}`}>{PUBLISHER.editorialEmail}</a> with
+        the article URL and what is inaccurate. Substantive corrections are noted on the article itself.
+      </p>
+
+      <h2>Company details</h2>
+      <dl>
+        <dt>Publisher</dt><dd>{PUBLISHER.legalName}</dd>
+        <dt>Registered in</dt><dd>England and Wales</dd>
+        <dt>Company number</dt><dd>{PUBLISHER.companyNumber}</dd>
+        <dt>VAT number</dt><dd>{PUBLISHER.vatNumber}</dd>
+        <dt>Registered office</dt>
+        <dd>{PUBLISHER.address.street}, {PUBLISHER.address.city} {PUBLISHER.address.postcode}, {PUBLISHER.address.country}</dd>
+        <dt>Editorial contact</dt><dd><a href={`mailto:${PUBLISHER.editorialEmail}`}>{PUBLISHER.editorialEmail}</a></dd>
+      </dl>
+    </div>
+  </div>
+</Base>

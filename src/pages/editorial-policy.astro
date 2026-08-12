@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import { PUBLISHER } from '../consts';
+---
+<Base title="Editorial Policy"
+      description="How App-Tipps.com reports, reviews and scores, how we handle corrections and conflicts of interest, and how advertising is kept separate from editorial.">
+  <div class="wrap">
+    <div class="prose" style="padding:34px 0 10px">
+      <h1>Editorial Policy</h1>
+      <p class="updated">Last updated 12 August 2026.</p>
+
+      <p>
+        App-Tipps.com covers mainstream mobile games and applications. This page sets out how we report,
+        how we review, how we correct mistakes, and how our commercial arrangements work. Questions go to
+        {' '}<a href={`mailto:${PUBLISHER.editorialEmail}`}>{PUBLISHER.editorialEmail}</a>.
+      </p>
+
+      <h2>What we publish</h2>
+      <ol>
+        <li>Game and app reviews</li>
+        <li>Game guides and app tips</li>
+        <li>Mobile industry news</li>
+        <li>Comparisons between competing apps and games</li>
+      </ol>
+      <p>
+        Every article is written by a member of our editorial team. We do not republish, rewrite or spin
+        other publications' work, and we do not publish machine-generated articles that no human has
+        verified. Where a tool assists with research or drafting, a named editor is responsible for
+        checking every factual claim before publication and for the finished piece.
+      </p>
+
+      <h2>Reporting standards</h2>
+      <ul>
+        <li>We seek verifiable sources and credit the original reporter when a story is not ours.</li>
+        <li>Rumours and leaks are labelled as rumours and leaks.</li>
+        <li>We do not write headlines that the article does not support.</li>
+        <li>We answer questions about our accuracy rather than ignoring them.</li>
+        <li>We honour reasonable requests for source anonymity.</li>
+      </ul>
+
+      <h2>How we review and score</h2>
+      <p>
+        A review reflects the reviewer's judgement after hands-on time with the app or game. The editorial
+        team as a whole is responsible for what appears on the site. Games are assessed on gameplay,
+        monetisation, graphics and audio, among other factors. Scores run to a maximum of 5.0:
+      </p>
+      <ul>
+        <li><strong>4.3 and above</strong> &mdash; very good, worth your time</li>
+        <li><strong>3.5 to 4.29</strong> &mdash; good</li>
+        <li><strong>2.0 to 3.49</strong> &mdash; average</li>
+        <li><strong>below 2.0</strong> &mdash; poor</li>
+      </ul>
+      <p>
+        Mobile games change constantly. When a significant update lands, we may re-review a title and
+        change its score. The publication and update dates on every article tell you how current it is.
+      </p>
+
+      <h2>Corrections</h2>
+      <p>
+        We correct errors rather than quietly deleting them. Send the article URL and the problem to
+        {' '}<a href={`mailto:${PUBLISHER.editorialEmail}`}>{PUBLISHER.editorialEmail}</a>. Substantive
+        corrections are noted on the article, and the update date changes so you can see it happened.
+      </p>
+
+      <h2>Bylines and pen names</h2>
+      <p>
+        Our writers publish under consistent pen names rather than their legal names. Each pen name belongs
+        to one real member of our editorial team. Editorial responsibility for everything on this site
+        rests with {PUBLISHER.legalName}. Read more on our <a href="/about/">About page</a>.
+      </p>
+
+      <h2>Advertising, affiliates and independence</h2>
+      <p>
+        We keep a strict separation between advertising and editorial. Advertising is labelled as
+        advertising. Articles containing affiliate links carry a disclosure at the top.
+      </p>
+      <p>
+        We earn money three ways: display advertising, affiliate commission, and occasional sponsored
+        content that is clearly marked as sponsored. None of these buy a verdict. If a product we earn
+        commission on is bad, we say so. If a product we have no relationship with is excellent, we say
+        that too.
+      </p>
+      <p>
+        We do not accept payment to remove or amend a negative review, and we do not give advertisers
+        advance sight of editorial coverage.
+      </p>
+
+      <h2>What we will not publish</h2>
+      <p>
+        We do not cover gambling, real-money wagering, or schemes presented as easy ways to make money.
+        We do not link to modified APKs, cheat tools, or anything that breaks a platform's terms of
+        service. We do not publish content aimed at children under 13.
+      </p>
+    </div>
+  </div>
+</Base>

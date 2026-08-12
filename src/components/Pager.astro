@@ -1,0 +1,21 @@
+---
+const { page } = Astro.props;
+const total = page.lastPage;
+const cur = page.currentPage;
+const nums = [...new Set([1, 2, cur - 1, cur, cur + 1, total - 1, total])]
+  .filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+---
+{total > 1 && (
+  <nav class="pager" aria-label="Pagination">
+    {page.url.prev && <a href={page.url.prev} rel="prev">&larr; Previous</a>}
+    {nums.map((n, i) => (
+      <>
+        {i > 0 && n - nums[i - 1] > 1 && <span style="border:0">&hellip;</span>}
+        {n === cur
+          ? <span aria-current="page">{n}</span>
+          : <a href={n === 1 ? page.url.first ?? '/' : `${(page.url.first ?? '/').replace(/\/$/, '')}/${n}/`}>{n}</a>}
+      </>
+    ))}
+    {page.url.next && <a href={page.url.next} rel="next">Next &rarr;</a>}
+  </nav>
+)}

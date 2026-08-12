@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+import { PUBLISHER } from '../consts';
+const updated = '2026-08-12';
+---
+<Base title="Privacy Policy"
+      description="How App-Tipps.com collects, uses and protects personal data, your rights under UK GDPR and EU GDPR, and how to exercise them.">
+  <div class="wrap">
+    <div class="prose" style="padding:34px 0 10px">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated 12 August 2026. This policy replaces all earlier versions.</p>
+
+      <h2>Who is responsible for your data</h2>
+      <p>
+        App-Tipps.com is operated by {PUBLISHER.legalName} ("we", "us"), a company registered in England
+        and Wales under number {PUBLISHER.companyNumber}, with its registered office at {PUBLISHER.address.street},
+        {' '}{PUBLISHER.address.city} {PUBLISHER.address.postcode}, {PUBLISHER.address.country}. We are the data
+        controller for personal data collected through this website.
+      </p>
+      <p>
+        For any privacy question or request, contact <a href={`mailto:${PUBLISHER.privacyEmail}`}>{PUBLISHER.privacyEmail}</a>.
+      </p>
+
+      <h2>What we collect, and why</h2>
+      <h3>Information you give us</h3>
+      <p>
+        If you email us, we receive your email address and whatever you put in the message. We use it
+        only to handle your enquiry. Legal basis: legitimate interests (responding to correspondence).
+        We keep enquiry email for 24 months.
+      </p>
+      <p>
+        If you subscribe to our newsletter, we store the name and email address you provide and the
+        topics you selected. Legal basis: your consent. You can withdraw it at any time using the
+        unsubscribe link in any newsletter, or by emailing us. We delete unsubscribed records within 30 days.
+      </p>
+      <h3>Information collected automatically</h3>
+      <p>
+        Our hosting and security provider, Cloudflare, processes your IP address and basic request data
+        to deliver pages and to protect the site from attack. This is necessary to run the site securely.
+        Legal basis: legitimate interests (security and service delivery). These logs are short-lived
+        and we do not use them to identify individuals.
+      </p>
+      <p>
+        We do not require accounts, we do not host comments, and we do not ask for payment details.
+      </p>
+
+      <h2>Advertising and analytics</h2>
+      <p>
+        This site is funded by advertising. Advertising and measurement technologies that are not
+        strictly necessary only run if you consent to them. Where consent is required, we ask for it
+        through a consent management platform that is certified by Google and integrated with the IAB
+        Europe Transparency and Consent Framework, as Google requires for publishers serving ads to
+        users in the European Economic Area, the United Kingdom and Switzerland.
+      </p>
+      <p>
+        Depending on your choices, the following may process data about your visit:
+      </p>
+      <ul>
+        <li>
+          <strong>Google</strong> (as an advertising provider) may set or read identifiers to serve ads,
+          limit how often you see the same ad, and measure performance. If you consent to personalised
+          advertising, Google and its advertising partners may build a profile of your interests. See
+          {' '}<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses data on sites that use its services</a>.
+        </li>
+        <li>
+          <strong>Analytics</strong>, if enabled, tells us which pages are read and how people arrive.
+          IP addresses are anonymised and we do not use analytics data to identify individuals.
+        </li>
+        <li>
+          <strong>Affiliate partners</strong> may set a cookie when you click an affiliate link, so the
+          merchant can attribute a sale to us. This happens on the merchant's site, under the merchant's
+          own privacy policy.
+        </li>
+      </ul>
+      <p>
+        You can change or withdraw your choices at any time from the consent settings link in the site
+        footer. Full detail of each cookie category is in our <a href="/cookie-policy/">Cookie Policy</a>.
+      </p>
+
+      <h2>Who we share data with</h2>
+      <p>
+        We do not sell personal data. We share it only with processors and partners that help us run the
+        site: our hosting and CDN provider, our email and newsletter provider, our consent management
+        provider, and our advertising and analytics providers where you have consented. We may also
+        disclose data where the law requires it, or to establish or defend legal claims.
+      </p>
+
+      <h2>International transfers</h2>
+      <p>
+        Some of these providers are based outside the UK and EEA, including in the United States. Where
+        data is transferred, it is protected by an adequacy decision, by Standard Contractual Clauses,
+        or by an equivalent safeguard required under UK GDPR and EU GDPR.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>If you are in the UK, EEA or Switzerland, you have the right to:</p>
+      <ul>
+        <li>access the personal data we hold about you;</li>
+        <li>have inaccurate data corrected;</li>
+        <li>have your data deleted;</li>
+        <li>restrict or object to how we process it, including objecting to direct marketing at any time;</li>
+        <li>receive your data in a portable format;</li>
+        <li>withdraw consent at any time, without affecting processing that already happened.</li>
+      </ul>
+      <p>
+        Email <a href={`mailto:${PUBLISHER.privacyEmail}`}>{PUBLISHER.privacyEmail}</a> with "Data request"
+        in the subject line. We respond within one month. If you are unhappy with our response, you can
+        complain to the UK Information Commissioner's Office at
+        {' '}<a href="https://ico.org.uk/make-a-complaint/" rel="noopener">ico.org.uk</a>, or to your
+        national supervisory authority in the EEA.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        This site is written for a general adult audience and we do not knowingly collect personal data
+        from children under 16. If you believe a child has provided us with personal data, contact us and
+        we will delete it.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        We update this policy when our practices change. The date at the top always shows the current
+        version. Material changes will be announced on this page.
+      </p>
+    </div>
+  </div>
+</Base>

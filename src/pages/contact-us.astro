@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, PUBLISHER } from '../consts';
+---
+<Base title="Contact Us"
+      description="How to reach the App-Tipps.com editorial team about corrections, tips, press enquiries, privacy requests or advertising."
+      schema={{ '@type': 'ContactPage', '@id': `${SITE.url}/contact-us/#contact`,
+                mainEntity: { '@id': `${SITE.url}/#organization` } }}>
+  <div class="wrap">
+    <div class="prose" style="padding:34px 0 10px">
+      <h1>Contact us</h1>
+      <p>
+        We read everything sent to us and reply to anything that needs a reply. One address covers all
+        of it: <a href={`mailto:${PUBLISHER.editorialEmail}`}>{PUBLISHER.editorialEmail}</a>
+      </p>
+
+      <h2>What to include</h2>
+      <h3>Corrections</h3>
+      <p>Send the article URL and what is wrong. We aim to respond within three working days.</p>
+      <h3>News tips and review requests</h3>
+      <p>
+        Tell us what the app or game is, which platforms it runs on, and when it launches. We cannot
+        promise coverage, and we do not guarantee a positive review in exchange for access.
+      </p>
+      <h3>Privacy and data requests</h3>
+      <p>
+        To ask what data we hold about you, or to have it deleted, use the same address and put
+        "Data request" in the subject line. See our <a href="/cookies-privacy-policy/">Privacy Policy</a> for
+        your rights and our response times.
+      </p>
+      <h3>Advertising</h3>
+      <p>Use the same address with "Advertising" in the subject line.</p>
+
+      <h2>Postal address</h2>
+      <p>
+        {PUBLISHER.legalName}<br />
+        {PUBLISHER.address.street}<br />
+        {PUBLISHER.address.city} {PUBLISHER.address.postcode}<br />
+        {PUBLISHER.address.country}
+      </p>
+      <p class="updated">
+        Company number {PUBLISHER.companyNumber} &middot; VAT {PUBLISHER.vatNumber}
+      </p>
+    </div>
+  </div>
+</Base>

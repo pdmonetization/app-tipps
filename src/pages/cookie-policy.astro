@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import { PUBLISHER } from '../consts';
+---
+<Base title="Cookie Policy"
+      description="What cookies and similar technologies App-Tipps.com uses, what each category does, and how to change your choices at any time.">
+  <div class="wrap">
+    <div class="prose" style="padding:34px 0 10px">
+      <h1>Cookie Policy</h1>
+      <p class="updated">Last updated 12 August 2026.</p>
+
+      <p>
+        Cookies are small files stored on your device by a website. This page explains what we use them
+        for. For how we handle personal data generally, see our
+        {' '}<a href="/cookies-privacy-policy/">Privacy Policy</a>.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        Everything except strictly necessary cookies is off until you agree to it. You can change your
+        mind at any time using the consent settings link in the footer of every page. Refusing optional
+        cookies does not prevent you reading anything on this site.
+      </p>
+
+      <h2>Categories we use</h2>
+      <h3>Strictly necessary</h3>
+      <p>
+        Required for the site to work and to keep it secure. This includes Cloudflare's security cookie,
+        which distinguishes real visitors from automated attacks, and a cookie that remembers your
+        consent choices so we do not ask you on every page. These do not require consent and cannot be
+        switched off.
+      </p>
+      <h3>Analytics</h3>
+      <p>
+        Tells us which articles are read and how people find them, so we can decide what to write next.
+        Set only with your consent. IP addresses are anonymised.
+      </p>
+      <h3>Advertising</h3>
+      <p>
+        Used by Google and its advertising partners to serve ads, cap how often you see the same ad, and
+        measure whether an ad worked. If you consent to personalised advertising, these may also be used
+        to infer your interests. Set only with your consent, and only in the categories you allow.
+      </p>
+      <h3>Affiliate tracking</h3>
+      <p>
+        Some articles link to shops or app stores through affiliate programmes. Clicking such a link may
+        set a cookie belonging to that merchant so a purchase can be credited to us. That cookie is
+        governed by the merchant's own policy, not ours. We label every article that contains affiliate
+        links.
+      </p>
+
+      <h2>Managing cookies in your browser</h2>
+      <p>
+        You can also block or delete cookies in your browser settings. Chrome, Safari, Firefox and Edge
+        all provide controls under privacy settings. Blocking all cookies may break parts of this and
+        other websites.
+      </p>
+
+      <h2>Questions</h2>
+      <p>
+        Email <a href={`mailto:${PUBLISHER.privacyEmail}`}>{PUBLISHER.privacyEmail}</a>.
+      </p>
+    </div>
+  </div>
+</Base>

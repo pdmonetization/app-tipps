@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import { PUBLISHER, SITE } from '../consts';
+---
+<Base title="Terms & Conditions"
+      description="The terms on which App-Tipps.com is made available, including intellectual property, acceptable use, affiliate disclosure and limitation of liability.">
+  <div class="wrap">
+    <div class="prose" style="padding:34px 0 10px">
+      <h1>Terms &amp; Conditions</h1>
+      <p class="updated">Last updated 12 August 2026.</p>
+
+      <h2>1. Who we are</h2>
+      <p>
+        App-Tipps.com is operated by {PUBLISHER.legalName}, registered in England and Wales under number
+        {' '}{PUBLISHER.companyNumber}, registered office {PUBLISHER.address.street}, {PUBLISHER.address.city}
+        {' '}{PUBLISHER.address.postcode}, {PUBLISHER.address.country}. By using this site you accept these terms.
+        If you do not accept them, please do not use the site.
+      </p>
+
+      <h2>2. Using the site</h2>
+      <p>
+        You may read, print and share our articles for your own personal, non-commercial use. You must not
+        scrape the site, republish our articles in whole or in substantial part, use our content to train
+        machine learning models without written permission, attempt to interfere with the site's operation,
+        or use it for anything unlawful.
+      </p>
+
+      <h2>3. Intellectual property</h2>
+      <p>
+        All original text, photography, layout and branding on this site belongs to {PUBLISHER.legalName} or
+        is used under licence. Game and app names, logos, screenshots and artwork belong to their respective
+        owners and are used for the purpose of reporting and review. If you own material that appears here
+        and want it removed, email us and we will act promptly.
+      </p>
+
+      <h2>4. Editorial content is opinion, not advice</h2>
+      <p>
+        Our reviews, scores and guides are our editorial judgement at the time of writing. Apps and games
+        change constantly, and an article may be out of date. Nothing on this site is financial, legal,
+        medical or professional advice. Decisions about what to download, buy or spend money on are yours.
+      </p>
+
+      <h2>5. Advertising and affiliate links</h2>
+      <p>
+        This site carries advertising and affiliate links. Where an article contains affiliate links, that
+        is disclosed on the article. We may earn a commission on purchases made through those links, at no
+        extra cost to you. Advertising does not influence our editorial judgement; see our
+        {' '}<a href="/editorial-policy/">Editorial Policy</a>.
+      </p>
+
+      <h2>6. Third-party links</h2>
+      <p>
+        We link to app stores, developer sites and other publications. We do not control those sites and are
+        not responsible for their content, their products or their privacy practices.
+      </p>
+
+      <h2>7. Availability and liability</h2>
+      <p>
+        We try to keep the site accurate and available but we do not guarantee either. To the fullest extent
+        permitted by law, we exclude liability for any loss arising from your use of, or inability to use,
+        this site or anything you obtained through it. Nothing in these terms excludes liability for death
+        or personal injury caused by negligence, for fraud, or for anything else that cannot lawfully be
+        excluded.
+      </p>
+
+      <h2>8. Changes</h2>
+      <p>
+        We may update these terms. The version published at {SITE.url}/terms-and-conditions/ is the one that
+        applies, and the date above shows when it last changed.
+      </p>
+
+      <h2>9. Governing law</h2>
+      <p>
+        These terms are governed by the law of England and Wales, and the courts of England and Wales have
+        exclusive jurisdiction, except that consumers resident elsewhere keep the benefit of any mandatory
+        protections of their local law.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p><a href={`mailto:${PUBLISHER.editorialEmail}`}>{PUBLISHER.editorialEmail}</a></p>
+    </div>
+  </div>
+</Base>

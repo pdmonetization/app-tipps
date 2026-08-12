@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: OWNER/REPO          # <-- change to your GitHub account/repository
+  branch: main
+  site_domain: app-tipps.com
+
+publish_mode: editorial_workflow
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+site_url: https://app-tipps.com
+display_url: https://app-tipps.com
+
+collections:
+  - name: posts
+    label: Articles
+    label_singular: Article
+    folder: src/content/posts
+    create: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    sortable_fields: [publishDate, title]
+    preview_path: "{{fields.slug}}"
+    fields:
+      - { name: title, label: Headline, widget: string, hint: "Around 60 characters reads best in Google." }
+      - { name: slug, label: URL slug, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'], hint: "Becomes app-tipps.com/your-slug/. Never change this on a published article." }
+      - { name: description, label: Meta description / standfirst, widget: text, pattern: ['^.{50,165}$', 'Between 50 and 165 characters'] }
+      - { name: publishDate, label: Published, widget: datetime, format: "YYYY-MM-DDTHH:mm:ss[Z]" }
+      - { name: updatedDate, label: Last updated, widget: datetime, required: false, format: "YYYY-MM-DDTHH:mm:ss[Z]" }
+      - name: author
+        label: Byline
+        widget: select
+        options: ["Sylvie Fox", "Olivia Williams", "Amelia Thomas", "Daniel Clark", "Andrew Wright", "Sophia Garcia", "Michael Wilson", "Alexander Davis", "James Smith", "Mia Martinez", "App-Tipps Editorial"]
+      - name: category
+        label: Primary category
+        widget: select
+        options: ["Game Review", "App Review", "Game Guide", "App Tips", "Comparison", "News", "AT's Best Picks"]
+      - { name: categories, label: All categories, widget: list, required: false }
+      - { name: tags, label: Tags, widget: list, required: false, hint: "Always include iOS and/or Android." }
+      - { name: featuredImage, label: Featured image, widget: image, required: false }
+      - { name: featuredImageAlt, label: Featured image alt text, widget: string, required: false, hint: "Describe the image for screen readers." }
+      - { name: rating, label: Review score out of 5, widget: number, required: false, value_type: float, min: 1, max: 5, step: 0.1 }
+      - { name: seoTitle, label: Custom title tag, widget: string, required: false, hint: "Only if it should differ from the headline." }
+      - { name: canonicalUrl, label: Canonical URL override, widget: string, required: false }
+      - { name: noindex, label: Hide from Google, widget: boolean, default: false }
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Article, widget: markdown }

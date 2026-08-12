@@ -1,0 +1,41 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../../layouts/Base.astro';
+import PostCard from '../../../components/PostCard.astro';
+import Pager from '../../../components/Pager.astro';
+import { allPosts } from '../../../lib/posts';
+import { CATEGORY_SLUGS, CATEGORY_INTROS } from '../../../lib/taxonomy';
+import { SITE } from '../../../consts';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await allPosts();
+  const names = [...new Set(posts.flatMap((p) => p.data.categories.length ? p.data.categories : [p.data.category]))];
+  return names.flatMap((name) => {
+    const slug = CATEGORY_SLUGS[name];
+    if (!slug) return [];
+    const sub = posts.filter((p) => (p.data.categories.length ? p.data.categories : [p.data.category]).includes(name));
+    return paginate(sub, { params: { category: slug }, props: { name, slug }, pageSize: SITE.postsPerPage });
+  });
+}) satisfies GetStaticPaths;
+
+const { page, name, slug } = Astro.props;
+const first = page.currentPage === 1;
+const intro = CATEGORY_INTROS[slug] ?? '';
+const title = first ? `${name}s` : `${name} - page ${page.currentPage}`;
+---
+<Base title={title} description={intro || `${name} articles from App-Tipps.com.`}
+      schema={{
+        '@type': 'CollectionPage',
+        '@id': `${SITE.url}/category/${slug}/#collection`,
+        name, description: intro, isPartOf: { '@id': `${SITE.url}/#website` },
+      }}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {name}</nav>
+    <div class="page-head">
+      <h1>{first ? name : `${name} - page ${page.currentPage}`}</h1>
+      {first && intro && <p>{intro}</p>}
+    </div>
+    <div class="grid">{page.data.map((p, i) => <PostCard post={p} eager={i < 3} />)}</div>
+    <Pager {page} />
+  </div>
+</Base>

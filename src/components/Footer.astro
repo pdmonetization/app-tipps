@@ -1,0 +1,39 @@
+---
+import { SITE, PUBLISHER, FOOTER_LINKS, NAV } from '../consts';
+const year = new Date().getFullYear();
+---
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>App-Tipps.com</h2>
+        <p style="margin:0;max-width:34ch">{SITE.description}</p>
+      </div>
+      <div>
+        <h2>Sections</h2>
+        <ul>{NAV.map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+      </div>
+      <div>
+        <h2>About this site</h2>
+        <ul>{FOOTER_LINKS.map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+      </div>
+      <div>
+        <h2>Follow</h2>
+        <ul>
+          <li><a href={PUBLISHER.social.facebook} rel="noopener">Facebook</a></li>
+          <li><a href={PUBLISHER.social.instagram} rel="noopener">Instagram</a></li>
+          <li><a href="/rss.xml">RSS feed</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">
+      &copy; {SITE.founded}&ndash;{year} App-Tipps.com. Published by {PUBLISHER.legalName},
+      a company registered in England and Wales, no. {PUBLISHER.companyNumber},
+      VAT {PUBLISHER.vatNumber}. Registered office: {PUBLISHER.address.street}, {PUBLISHER.address.city} {PUBLISHER.address.postcode}, {PUBLISHER.address.country}.
+      <br />
+      App-Tipps.com is reader-supported and carries advertising and affiliate links.
+      See our <a href="/editorial-policy/">Editorial Policy</a> for how that works.
+      All trademarks and game artwork are the property of their respective owners.
+    </p>
+  </div>
+</footer>

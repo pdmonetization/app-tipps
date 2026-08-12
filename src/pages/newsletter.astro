@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Newsletter"
+      description="Subscribe to the App-Tipps.com newsletter for reviews, guides and mobile industry news."
+      noindex={true}>
+  <div class="wrap">
+    <div class="prose" style="padding:34px 0 10px">
+      <h1>Newsletter</h1>
+      <p>
+        We are rebuilding our newsletter on a new provider. The signup form will return here shortly.
+      </p>
+      <p>
+        In the meantime you can follow new articles through our
+        {' '}<a href="/rss.xml">RSS feed</a>, or browse the
+        {' '}<a href="/">latest articles</a>.
+      </p>
+      <!--
+        TO RESTORE: drop the embed from your email provider (Kit, Buttondown,
+        MailerLite, Mailchimp) below, then remove noindex={true} above and add
+        the provider to the Privacy Policy processor list.
+      -->
+    </div>
+  </div>
+</Base>

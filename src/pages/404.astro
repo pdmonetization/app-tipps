@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { allPosts } from '../lib/posts';
+const recent = (await allPosts()).slice(0, 3);
+---
+<Base title="Page not found" description="That page does not exist on App-Tipps.com." noindex={true}>
+  <div class="wrap">
+    <div class="page-head">
+      <h1>That page does not exist</h1>
+      <p>The link may be old, or the article may have been withdrawn. Here is what we published most recently.</p>
+    </div>
+    <div class="grid">{recent.map((p) => <PostCard post={p} />)}</div>
+  </div>
+</Base>

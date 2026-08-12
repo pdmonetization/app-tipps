@@ -1,0 +1,21 @@
+---
+import { SITE, NAV } from '../consts';
+const path = Astro.url.pathname;
+---
+<header class="site-head">
+  <div class="wrap">
+    <div class="head-top">
+      <a class="brand" href="/" aria-label={`${SITE.name} home`}>
+        <b>App-Tipps<span aria-hidden="true">.com</span></b>
+        <span>{SITE.tagline}</span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Sections">
+      <ul>
+        {NAV.map((n) => (
+          <li><a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

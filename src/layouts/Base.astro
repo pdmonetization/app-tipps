@@ -1,0 +1,111 @@
+---
+import { SITE, PUBLISHER, INTEGRATIONS } from '../consts';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  noindex?: boolean;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  schema?: object | object[];
+}
+const {
+  title, description, canonical, noindex = false,
+  ogImage = '/images/2024/05/AT_SM_default_share_image_logo_1200x630px.png',
+  ogType = 'website', schema,
+} = Astro.props;
+
+const url = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
+const image = new URL(ogImage, SITE.url).href;
+const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+
+const organization = {
+  '@type': 'Organization',
+  '@id': `${SITE.url}/#organization`,
+  name: SITE.name,
+  url: `${SITE.url}/`,
+  legalName: PUBLISHER.legalName,
+  vatID: PUBLISHER.vatNumber,
+  email: PUBLISHER.editorialEmail,
+  logo: { '@type': 'ImageObject', url: `${SITE.url}/images/2022/09/app-tipps-logo-domain.png` },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: PUBLISHER.address.street,
+    addressLocality: PUBLISHER.address.city,
+    postalCode: PUBLISHER.address.postcode,
+    addressCountry: PUBLISHER.address.countryCode,
+  },
+  sameAs: [PUBLISHER.social.facebook, PUBLISHER.social.instagram],
+};
+const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(Array.isArray(schema) ? schema : schema ? [schema] : [])] };
+---
+<!doctype html>
+<html lang={SITE.lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={url} />
+  {noindex
+    ? <meta name="robots" content="noindex, follow" />
+    : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+  {INTEGRATIONS.searchConsoleToken &&
+    <meta name="google-site-verification" content={INTEGRATIONS.searchConsoleToken} />}
+
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:locale" content={SITE.locale} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={image} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+
+  {/* Google Privacy & messaging — a Google-certified CMP under the TCF
+      requirement for the EEA, UK and Switzerland. Loads first so ad and
+      analytics tags below can read the consent signal. */}
+  {INTEGRATIONS.enableConsent && INTEGRATIONS.adsensePublisherId &&
+    <script async src={`https://fundingchoicesmessages.google.com/i/${INTEGRATIONS.adsensePublisherId.replace('ca-pub-','pub-')}?ers=1`}></script>}
+
+  {INTEGRATIONS.enableAds && INTEGRATIONS.adsensePublisherId &&
+    <script async crossorigin="anonymous"
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${INTEGRATIONS.adsensePublisherId}`}></script>}
+
+  {INTEGRATIONS.ga4MeasurementId && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${INTEGRATIONS.ga4MeasurementId}`}></script>
+      <script is:inline define:vars={{ id: INTEGRATIONS.ga4MeasurementId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+          ad_storage: 'denied', ad_user_data: 'denied',
+          ad_personalization: 'denied', analytics_storage: 'denied',
+          wait_for_update: 500
+        });
+        gtag('js', new Date());
+        gtag('config', id, { anonymize_ip: true });
+      </script>
+    </>
+  )}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <Header />
+  <main id="main"><slot /></main>
+  <Footer />
+</body>
+</html>

@@ -1,0 +1,40 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import Pager from '../components/Pager.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { allPosts } from '../lib/posts';
+import { SITE } from '../consts';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await allPosts();
+  return paginate(posts, { pageSize: SITE.postsPerPage });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const first = page.currentPage === 1;
+const title = first
+  ? `${SITE.name} - ${SITE.tagline}`
+  : `Latest articles - page ${page.currentPage}`;
+const description = first
+  ? SITE.description
+  : `Page ${page.currentPage} of app and mobile game reviews, guides and news from App-Tipps.com.`;
+---
+<Base {title} {description} schema={first ? {
+  '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: `${SITE.url}/`,
+  name: SITE.name, description: SITE.description,
+  publisher: { '@id': `${SITE.url}/#organization` },
+} : undefined}>
+  <div class="wrap">
+    <div class="page-head">
+      <h1>{first ? 'Apps and mobile games, reviewed properly' : `Latest articles - page ${page.currentPage}`}</h1>
+      {first && <p>Hands-on reviews, guides and industry news for iOS and Android, published independently since 2020.</p>}
+    </div>
+    <div class="grid">
+      {page.data.map((post, i) => <PostCard post={post} eager={i < 3} />)}
+    </div>
+    <AdSlot label="archive-footer" />
+    <Pager {page} />
+  </div>
+</Base>

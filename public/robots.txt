@@ -1,0 +1,12 @@
+# https://app-tipps.com/robots.txt
+User-agent: *
+Allow: /
+
+# Legacy WordPress paths no longer exist on this site but are blocked
+# to stop crawlers wasting budget on 404s during the migration window.
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /?s=
+Disallow: /search
+
+Sitemap: https://app-tipps.com/sitemap-index.xml

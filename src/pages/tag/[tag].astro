@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { allPosts } from '../../lib/posts';
+import { slugifyTag, TAG_INDEX_THRESHOLD } from '../../lib/taxonomy';
+
+export const getStaticPaths = (async () => {
+  const posts = await allPosts();
+  const map = new Map<string, { name: string; posts: any[] }>();
+  for (const p of posts)
+    for (const t of p.data.tags) {
+      const s = slugifyTag(t);
+      if (!map.has(s)) map.set(s, { name: t, posts: [] });
+      map.get(s)!.posts.push(p);
+    }
+  return [...map.entries()].map(([tag, v]) => ({ params: { tag }, props: v }));
+}) satisfies GetStaticPaths;
+
+const { name, posts } = Astro.props;
+/* Thin archives exist for readers but stay out of Google's index. */
+const noindex = posts.length < TAG_INDEX_THRESHOLD;
+---
+<Base title={`${name} articles`}
+      description={`Every App-Tipps.com article tagged ${name} - ${posts.length} in total.`}
+      {noindex}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Tag</nav>
+    <div class="page-head">
+      <h1>{name}</h1>
+      <p>{posts.length} {posts.length === 1 ? 'article' : 'articles'} tagged {name}.</p>
+    </div>
+    <div class="grid">{posts.map((p) => <PostCard post={p} />)}</div>
+  </div>
+</Base>
