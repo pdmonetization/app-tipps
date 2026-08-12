@@ -15,7 +15,7 @@ tags:
   - Card Games
 featuredImage: /images/uploads/ChatGPT Image Aug 12, 2026, 06_09_19 PM.png
 featuredImageAlt: Balatro-style card game on a smartphone with playing cards and poker chips
-rating: null
+rating: 5
 seoTitle: ''
 canonicalUrl: ''
 noindex: false
