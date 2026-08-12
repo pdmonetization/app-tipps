@@ -4,7 +4,7 @@ slug: balatro-mobile-beginners-guide
 description: A practical Balatro mobile guide covering early Joker choices, money management, hand upgrades and safer decisions for a first successful run.
 publishDate: 2026-08-12
 updatedDate: 2026-08-12
-author: App-Tipps Editorial
+author: Sylvie Fox
 category: Game Guide
 categories:
   - Game Guide
