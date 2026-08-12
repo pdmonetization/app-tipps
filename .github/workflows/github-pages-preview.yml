@@ -1,4 +1,4 @@
-name: GitHub Pages Preview
+name: GitHub Pages Deploy
 
 on:
   push:
@@ -31,9 +31,6 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
-
-      - name: Prepare project Pages preview
-        run: node scripts/prepare-github-pages-preview.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
