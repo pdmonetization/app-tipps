@@ -1,0 +1,56 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { allPosts } from '../../lib/posts';
+import { AUTHORS } from '../../lib/authors';
+import { SITE } from '../../consts';
+
+export const getStaticPaths = (async () => {
+  const posts = await allPosts();
+  return AUTHORS.map((author) => ({
+    params: { author: author.slug },
+    props: {
+      author,
+      posts: posts.filter((post) => post.data.author === author.name),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { author, posts } = Astro.props;
+const title = `${author.name} - Author at ${SITE.name}`;
+const description = `${author.bio} Read articles by ${author.name} on ${SITE.name}.`;
+const url = `${SITE.url}/author/${author.slug}/`;
+const schema = {
+  '@type': 'Person',
+  '@id': `${url}#person`,
+  name: author.name,
+  url,
+  description: author.bio,
+  worksFor: { '@id': `${SITE.url}/#organization` },
+};
+---
+<Base {title} {description} canonical={url} schema={schema}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Authors / {author.name}</nav>
+
+    <header class="page-head" style="max-width:780px">
+      <p class="eyebrow">Author</p>
+      <h1>{author.name}</h1>
+      <p>{author.bio}</p>
+      <p style="margin-top:18px;font-size:14px">
+        App-Tipps has covered mobile apps and games since 2020. Articles are produced according to our
+        <a href="/editorial-policy/">Editorial Policy</a>, and commercial relationships do not determine our editorial conclusions.
+      </p>
+    </header>
+
+    <section aria-labelledby="articles-by-author">
+      <h2 id="articles-by-author" style="margin:36px 0 18px;font-size:24px">Articles by {author.name}</h2>
+      {posts.length > 0 ? (
+        <div class="grid">{posts.map((post) => <PostCard post={post} />)}</div>
+      ) : (
+        <p>No currently published articles are listed under this byline.</p>
+      )}
+    </section>
+  </div>
+</Base>
