@@ -1,10 +1,1 @@
-# ads.txt for app-tipps.com
-#
-# Empty until AdSense is approved. Then add exactly one line, replacing
-# pub-0000000000000000 with your own AdSense publisher ID:
-#
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
-#
-# Add one line per additional authorised seller (Ad Manager, any SSP).
-# A wrong ID here is worse than an empty file: it authorises someone else
-# to sell your inventory.
+# temporary place holder
