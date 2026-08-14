@@ -53,4 +53,4 @@ THE FUTURE OF MOBILE CONNECTIVITY IS NOW ∞
 ---
 
 **Planning a trip? READ:  
-[‘BEST OF THE BEST’ Hotel Deals Straight to Your Phone](/the-best-of-the-best-hotel-deals-straight-to-your-phone/)**
+[Airbnb vs. Booking.com: Which One Is Better?](/airbnb-vs-booking-which-one-is-better/)**

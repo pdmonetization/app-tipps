@@ -118,4 +118,4 @@ Toon Blast resembles Candy Crush, but with a twist – instead of matching candi
 ---
 
 **For more great games, check out:  
-[TOP Amazon Appstore Games UNDER $5](/top-amazon-appstore-games-under-5/?swcfpc=1 "Best Games on the Amazon Appstore")**
+[Best Mobile Controllers for Gaming on the Go](/best-mobile-controllers-for-gaming-on-the-go/)**

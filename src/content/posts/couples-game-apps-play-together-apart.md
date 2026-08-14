@@ -47,7 +47,7 @@ Whether you want to learn more about your love interest, or find surprising info
 
   
 
-## [Monopoly GO!](/monopoly-go-goes-crazy/)
+## [Monopoly GO!](/monopoly-go-rolling-the-dice-on-fun/)
 
 ![MonopolyGO game app, suitable for couples](/images/2025/02/Couples_games_app_MonopolyGO.png)
 
