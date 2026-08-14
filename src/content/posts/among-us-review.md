@@ -10,6 +10,7 @@ tags: ["Action & Adventure Games", "Android", "iOS"]
 description: "Why did Among Us become so popular all around the world? Find out in this article!"
 featuredImage: "/images/2020/11/among-us-game-review-jpg.webp"
 featuredImageAlt: "Among Us: The Party Game That Took The World by Storm"
+rating: 4.2
 draft: false
 ---
 
