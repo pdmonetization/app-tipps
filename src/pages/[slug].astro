@@ -38,6 +38,9 @@ const reviewedName = d.title
   .trim();
 const reviewedType = d.category === 'Game Review' ? 'Game' : 'SoftwareApplication';
 const hasReviewScore = isReview && typeof rating === 'number';
+const authorSchema = d.author === 'App-Tipps Editorial'
+  ? { '@type': 'Organization', name: d.author, url: authorPage, parentOrganization: { '@id': `${SITE.url}/#organization` } }
+  : { '@type': 'Person', name: d.author, url: authorPage };
 
 const article: any = {
   '@type': hasReviewScore ? 'Review' : 'Article',
@@ -48,7 +51,7 @@ const article: any = {
   dateModified: modified,
   inLanguage: SITE.lang,
   mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-  author: { '@type': 'Person', name: d.author, url: authorPage },
+  author: authorSchema,
   publisher: { '@id': `${SITE.url}/#organization` },
   ...(d.featuredImage ? { image: new URL(d.featuredImage, SITE.url).href } : {}),
   ...(hasReviewScore ? {
