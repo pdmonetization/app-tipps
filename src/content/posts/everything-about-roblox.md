@@ -73,7 +73,7 @@ Ultimately, it can be hard to put our finger on what it is that Roblox players w
 
 Roblox has interactivity at its core, so whether you're enjoying other people's creations or creating experiences yourself, the interactions you come into contact with will vary tremendously. For example, you can make videos and share them on YouTube, while others can view them and comment. You can also create game stories to get others to dive into them.
 
-Roblox is an immense universe of experience; as such, it is worth the place it occupies. However, to better understand it as a gamer, you'll need to get a better idea of what you can do in Roblox by testing it yourself. Suppose you are worried about how it might affect your kid. In that case, you can see [our parents' guide to the game](/a-parents-guide-to-roblox-part-1/ "Parent's Guide to Roblox") for building basic understanding and expectations.
+Roblox is an immense universe of experience; as such, it is worth the place it occupies. However, to better understand it as a gamer, you'll need to get a better idea of what you can do in Roblox by testing it yourself. Suppose you are worried about how it might affect your kid. In that case, you can see [our parents' guide to the game](/parents-guide-to-roblox/ "Parent's Guide to Roblox") for building basic understanding and expectations.
 
 **Download Roblox for:**
 

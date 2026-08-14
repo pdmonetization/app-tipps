@@ -81,4 +81,4 @@ Both games adopt a free-to-play model, but their approaches to monetization and 
 ---
 
 You may also want to read:  
-[How to IMPROVE YOUR GAMEPLAY with Copilot Wave 2](/how-to-improve-your-gameplay-with-copilot-wave-2/)
+[Best Mobile Controllers for Gaming on the Go](/best-mobile-controllers-for-gaming-on-the-go/)

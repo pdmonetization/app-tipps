@@ -52,4 +52,4 @@ You should begin by carefully considering what Espers you have and would want to
 | Donar | Sally | Ye Suhua | Asenath | Ren Si | Point War |
 
 **These team compositions have been vetted for more than 100 hours of gameplay time** and are one of the best you can go for in any Dislyte mode right now. If you want a certain victory, then feel free to download and use them as a cheat sheet for every battle you intend to take.
-*We will keep updating this list each month by further investing more time into finding other successful team combinations, so make sure to bookmark the page or [subscribe to our newsletter](/newsletter/).*
+*We will keep updating this list as we find other successful team combinations, so make sure to bookmark the page.*

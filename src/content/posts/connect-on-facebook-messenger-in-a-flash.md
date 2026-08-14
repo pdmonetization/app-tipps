@@ -47,4 +47,4 @@ draft: false
 
 ---
 
-**You might also want to read our app comparison:[Messenger vs. Messenger Lite](/messenger-vs-messenger-lite/)**
+**You might also want to read: [How to Hide Your Online Status on WhatsApp](/hide-online-status-on-whatsapp/)**

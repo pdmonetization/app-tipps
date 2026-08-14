@@ -31,9 +31,6 @@ Before launching the long-anticipated ChatGPT-5, OpenAI upgraded their latest om
 6. *OPTIONAL*: Use the '**Undo**' and '**Redo**' buttons (at the bottom), if needed.
 7. Once you're satisfied, choose to '**Save**' or '**Share**' the final picture!
 
-![ChatGPT 4o app](/images/2025/04/ChatGPT_app_image_editing_screenshot_V3.webp)
-  
-
 ## AI photo editing prompt examples:
 
 - 💧 "Unblur and sharpen photo"

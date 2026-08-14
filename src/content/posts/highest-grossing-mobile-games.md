@@ -28,12 +28,12 @@ This is a list of the top-grossing mobile games. The mobile games on this list h
 | Game | Revenue | Initial release | Publisher(s) | Genre(s) |
 | --- | --- | --- | --- | --- |
 | *Honor of Kings / [Arena of Valor](/arena-of-valor-review/)* | $14,667,500,000 | November 26, 2015 | [Tencent Games](https://en.wikipedia.org/wiki/Tencent_Games) | MOBA |
-| *[Monster Strike](/monster-strike/)* | $9,912,000,000 | August 8, 2013 | [Mixi](https://en.wikipedia.org/wiki/Mixi) | Puzzle / RPG / Strategy |
+| *Monster Strike* | $9,912,000,000 | August 8, 2013 | [Mixi](https://en.wikipedia.org/wiki/Mixi) | Puzzle / RPG / Strategy |
 | *Puzzle & Dragons* | $8,578,340,000 | February 20, 2012 | [GungHo Online Entertainment](https://en.wikipedia.org/wiki/GungHo_Online_Entertainment) | RPG / Puzzle |
-| *[PUBG Mobile](/pubg-mobile/)* | $8,424,300,000 | March 19, 2018 | Tencent Games / [Krafton](https://en.wikipedia.org/wiki/Krafton) / [VNG Games](https://en.wikipedia.org/wiki/VNG_Corporation) | Battle royale |
+| *[PUBG Mobile](/pubg-mobile-beginner-tips/)* | $8,424,300,000 | March 19, 2018 | Tencent Games / [Krafton](https://en.wikipedia.org/wiki/Krafton) / [VNG Games](https://en.wikipedia.org/wiki/VNG_Corporation) | Battle royale |
 | *Clash of Clans* | $8,000,000,000 | August 2, 2012 | [Supercell](https://en.wikipedia.org/wiki/Supercell_(video_game_company)) (Tencent) | Strategy |
 | *Pokémon Go* | $7,760,000,000 | July 6, 2016 | [Niantic](https://en.wikipedia.org/wiki/Niantic_(company)) / [The Pokémon Company](https://en.wikipedia.org/wiki/The_Pok%C3%A9mon_Company) | Augmented reality |
-| *[Candy Crush Saga](/levels-in-candy-crush/)* | $7,456,000,000 | November 14, 2012 | [King](https://en.wikipedia.org/wiki/King_(company)) ([Activision Blizzard](https://en.wikipedia.org/wiki/Activision_Blizzard)) | Puzzle |
+| *[Candy Crush Saga](/candy-crush-saga-levels-explained/)* | $7,456,000,000 | November 14, 2012 | [King](https://en.wikipedia.org/wiki/King_(company)) ([Activision Blizzard](https://en.wikipedia.org/wiki/Activision_Blizzard)) | Puzzle |
 | *Fate/Grand Order* | $5,533,800,000 | July 30, 2015 | [Aniplex](https://en.wikipedia.org/wiki/Aniplex) ([Sony Music Entertainment Japan](https://en.wikipedia.org/wiki/Sony_Music_Entertainment_Japan)) | RPG |
 | *Fantasy Westward Journey* | $4,700,000,000 | March 26, 2015 | [NetEase](https://en.wikipedia.org/wiki/NetEase) | MMORPG |
 | *Garena Free Fire* | $4,330,000,000 | December 4, 2017 | [Garena](https://en.wikipedia.org/wiki/Garena) | Battle royale |
@@ -42,16 +42,16 @@ This is a list of the top-grossing mobile games. The mobile games on this list h
 | *Lineage M* | $3,578,000,000 | June 21, 2017 | [NCsoft](https://en.wikipedia.org/wiki/NCsoft) | MMORPG |
 | *[Coin Master](/coin-master-game-review/)* | $3,008,000,000 | March 19, 2018 | Moon Active | Casual / Casino |
 | *Dragon Ball Z: Dokkan Battle* | $3,000,000,000 | January 30, 2015 | [Bandai Namco Entertainment](https://en.wikipedia.org/wiki/Bandai_Namco_Entertainment) | RPG / Puzzle |
-| *[Clash Royale](/clash-royale/)* | $3,000,000,000 | March 2, 2016 | [Supercell](https://en.wikipedia.org/wiki/Supercell_(video_game_company)) (Tencent) | Real-time strategy |
-| *[Gardenscapes](/gardenscapes/)* | $3,000,000,000 | July 5, 2016 | [Playrix](https://en.wikipedia.org/wiki/Playrix) | Puzzle / Decoration |
-| *[Game of War: Fire Age](/game-war-fire-age/)* | $2,800,000,000 | July 25, 2013 | [Machine Zone](https://en.wikipedia.org/wiki/Machine_Zone) | Strategy |
+| *[Clash Royale](/clash-royale-tips-list/)* | $3,000,000,000 | March 2, 2016 | [Supercell](https://en.wikipedia.org/wiki/Supercell_(video_game_company)) (Tencent) | Real-time strategy |
+| *[Gardenscapes](/gardenscapes-tips-and-cheats/)* | $3,000,000,000 | July 5, 2016 | [Playrix](https://en.wikipedia.org/wiki/Playrix) | Puzzle / Decoration |
+| *[Game of War: Fire Age](/game-of-war-real-tips/)* | $2,800,000,000 | July 25, 2013 | [Machine Zone](https://en.wikipedia.org/wiki/Machine_Zone) | Strategy |
 | *Lords Mobile* | $2,576,700,000 | February 26, 2016 | [IGG](https://en.wikipedia.org/wiki/IGG_Inc.) | Strategy / MMO |
 | *Homescapes* | $2,294,000,000 | September 15, 2017 | [Playrix](https://en.wikipedia.org/wiki/Playrix) | Puzzle / Decoration |
 | *Lineage 2: Revolution* | $2,106,770,000 | December 14, 2016 | [Netmarble Games](https://en.wikipedia.org/wiki/Netmarble_Games) / [NCsoft](https://en.wikipedia.org/wiki/NCsoft) | MMORPG |
-| *[Candy Crush Soda Saga](/candy-crush-soda-saga/)* | $2,000,000,000 | October 20, 2014 | [King](https://en.wikipedia.org/wiki/King_(company)) ([Activision Blizzard](https://en.wikipedia.org/wiki/Activision_Blizzard)) | Puzzle |
+| *[Candy Crush Soda Saga](/candy-crush-soda-saga-cheats/)* | $2,000,000,000 | October 20, 2014 | [King](https://en.wikipedia.org/wiki/King_(company)) ([Activision Blizzard](https://en.wikipedia.org/wiki/Activision_Blizzard)) | Puzzle |
 | *Three Kingdoms Tactics* | $1,936,200,000 | September 19, 2019 | [Alibaba Group](https://en.wikipedia.org/wiki/Alibaba_Group) / [Koei Tecmo](https://en.wikipedia.org/wiki/Koei_Tecmo) | Strategy (4X) |
 | *Pro Yakyū Spirits A / Pro Baseball Spirits A* | $1,873,500,000 | October 21, 2015 | [Konami](https://en.wikipedia.org/wiki/Konami) | Sports (baseball) |
-| *[Marvel Contest of Champions](/marvel-contest-champions/)* | $1,784,000,000 | December 10, 2014 | [Kabam](https://en.wikipedia.org/wiki/Kabam) ([Netmarble](https://en.wikipedia.org/wiki/Netmarble)) | Fighting |
+| *[Marvel Contest of Champions](/marvel-contest-champions-beginner-tips/)* | $1,784,000,000 | December 10, 2014 | [Kabam](https://en.wikipedia.org/wiki/Kabam) ([Netmarble](https://en.wikipedia.org/wiki/Netmarble)) | Fighting |
 | *Toon Blast* | $1,600,000,000 | March 3, 2017 | Peak Games | Puzzle |
 | *Disney Tsum Tsum* | $1,500,000,000 | January 29, 2014 | [LINE](https://en.wikipedia.org/wiki/Line_Corporation) | Puzzle |
 | *Call of Duty: Mobile* | $1,500,000,000 | October 1, 2019 | [Activision](https://en.wikipedia.org/wiki/Activision) / Tencent / [Garena](https://en.wikipedia.org/wiki/Garena) | Shooter / Battle royale |
@@ -60,26 +60,26 @@ This is a list of the top-grossing mobile games. The mobile games on this list h
 | *Lineage 2 M* | $1,413,000,000 | November 27, 2019 | [NCsoft](https://en.wikipedia.org/wiki/NCsoft) | MMORPG |
 | *Hay Day* | $1,400,000,000 | June 21, 2012 | [Supercell](https://en.wikipedia.org/wiki/Supercell_(video_game_company)) (Tencent) | Simulation |
 | *Brawl Stars* | $1,400,000,000 | December 12, 2018 | [Supercell](https://en.wikipedia.org/wiki/Supercell_(video_game_company)) (Tencent) | MOBA |
-| *[Summoners War: Sky Arena](/summoners-war-sky-arena/)* | $1,350,000,000 | June 12, 2014 | [Com2Us](https://en.wikipedia.org/wiki/Com2Us) | TBS / MMO |
-| *[Fortnite](/fortnite/)* | $1,200,000,000 | April 2, 2018 | [Epic Games](https://en.wikipedia.org/wiki/Epic_Games) | Battle royale |
+| *[Summoners War: Sky Arena](/summoners-war-tricks-guide/)* | $1,350,000,000 | June 12, 2014 | [Com2Us](https://en.wikipedia.org/wiki/Com2Us) | TBS / MMO |
+| *[Fortnite](/fortnite-beginner-tips/)* | $1,200,000,000 | April 2, 2018 | [Epic Games](https://en.wikipedia.org/wiki/Epic_Games) | Battle royale |
 | *Onmyoji* | $1,129,000,000 | June 20, 2016 | [NetEase](https://en.wikipedia.org/wiki/NetEase) | RPG |
-| *[Star Wars: Galaxy of Heroes](/star-wars-galaxy-heroes/)* | $1,071,000,000 | November 24, 2015 | [Electronic Arts](https://en.wikipedia.org/wiki/Electronic_Arts) | RPG |
+| *[Star Wars: Galaxy of Heroes](/star-wars-galaxy-heroes-review/)* | $1,071,000,000 | November 24, 2015 | [Electronic Arts](https://en.wikipedia.org/wiki/Electronic_Arts) | RPG |
 | *Boom Beach* | $1,000,000,000 | November 11, 2013 | [Supercell](https://en.wikipedia.org/wiki/Supercell_(video_game_company)) ([Tencent](https://en.wikipedia.org/wiki/Tencent)) | Strategy |
 | *Mobile Strike* | $1,000,000,000 | July 11, 2015 | [Machine Zone](https://en.wikipedia.org/wiki/Machine_Zone) | Strategy |
-| *[Mobile Legends: Bang Bang](/mobile-legends-bang-bang/)* | $1,000,000,000 | July 11, 2016 | [Moonton](https://en.wikipedia.org/wiki/Moonton) ([ByteDance](https://en.wikipedia.org/wiki/ByteDance)) | MOBA |
+| *[Mobile Legends: Bang Bang](/mobile-legends-bang-bang-vs-adventure/)* | $1,000,000,000 | July 11, 2016 | [Moonton](https://en.wikipedia.org/wiki/Moonton) ([ByteDance](https://en.wikipedia.org/wiki/ByteDance)) | MOBA |
 | *Uma Musume Pretty Derby* | $990,000,000 | February 24, 2021 | [Cygames](https://en.wikipedia.org/wiki/Cygames) | Simulation / Social |
 | *QQ Speed Mobile / Speed Drifters* | $945,000,000 | June 15, 2017 | [Tencent Games](https://en.wikipedia.org/wiki/Tencent_Games) / [Garena](https://en.wikipedia.org/wiki/Garena) | Racing (Kart / MMOR) |
 | *Fire Emblem Heroes* | $929,600,000 | February 2, 2017 | [Nintendo](https://en.wikipedia.org/wiki/Nintendo) | Tactical RPG |
 | *Dragon Quest Walk* | $927,720,000 | September 12, 2019 | [Square Enix](https://en.wikipedia.org/wiki/Square_Enix) | Augmented reality |
 | *[Rise of Kingdoms](/rise-of-kingdoms-is-it-worth-it/)* | $926,000,000 | September 20, 2018 | Lilith Games | Strategy |
-| *[Fishdom](/fishdom/)* | $923,600,000 | December 10, 2015 | [Playrix](https://en.wikipedia.org/wiki/Playrix) | Puzzle |
-| *[Township](/township/)* | $922,100,000 | February 24, 2012 | [Playrix](https://en.wikipedia.org/wiki/Playrix) | Simulation (CMS) |
+| *[Fishdom](/fishdom-tricks-guide/)* | $923,600,000 | December 10, 2015 | [Playrix](https://en.wikipedia.org/wiki/Playrix) | Puzzle |
+| *[Township](/township-strategy-and-tips/)* | $922,100,000 | February 24, 2012 | [Playrix](https://en.wikipedia.org/wiki/Playrix) | Simulation (CMS) |
 | *A Chinese Ghost Story* | $860,000,000 | May 19, 2016 | [NetEase](https://en.wikipedia.org/wiki/NetEase) | MMORPG |
 | *[Marvel Strike Force](/marvel-strike-force-review/)* | $846,000,000 | March 28, 2018 | [FoxNext](https://en.wikipedia.org/wiki/FoxNext) / [Scopely](https://en.wikipedia.org/wiki/Scopely) | RPG |
 | *Toy Blast* | $820,000,000 | January 6, 2015 | Peak Games | Puzzle |
 | *Granblue Fantasy* | $754,200,000 | March 10, 2014 | [Cygames](https://en.wikipedia.org/wiki/Cygames) | RPG |
 | *Honkai Impact 3rd* | $731,000,000 | October 14, 2016 | [miHoYo](https://en.wikipedia.org/wiki/MiHoYo) | ARPG / Hack & slash |
-| *[King of Avalon](/king-of-avalon/)* | $721,000,000 | July 14, 2016 | [FunPlus](https://en.wikipedia.org/wiki/FunPlus) | Strategy |
+| *[King of Avalon](/king-of-avalon-tips/)* | $721,000,000 | July 14, 2016 | [FunPlus](https://en.wikipedia.org/wiki/FunPlus) | Strategy |
 | *Clash of Kings* | $700,000,000 | June 14, 2014 | Elex Tech | Strategy / MMO |
 | *The Seven Deadly Sins: Grand Cross* | $680,000,000 | June 4, 2019 | [Netmarble](https://en.wikipedia.org/wiki/Netmarble) | RPG |
 | *Hearthstone* | $660,000,000 | April 16, 2014 | [Blizzard](https://en.wikipedia.org/wiki/Blizzard_Entertainment) ([Activision Blizzard](https://en.wikipedia.org/wiki/Activision_Blizzard)) | DCCG |
@@ -90,7 +90,7 @@ This is a list of the top-grossing mobile games. The mobile games on this list h
 | *CrossFire Mobile* | $458,000,000 | December 3, 2015 | [Smilegate](https://en.wikipedia.org/wiki/Smilegate) / Tencent | Tactical FPS |
 | *Blade & Soul Revolution* | $457,000,000 | December 6, 2018 | [Netmarble](https://en.wikipedia.org/wiki/Netmarble) | MMORPG |
 | *Bingo Blitz* | $443,000,000 | August 12, 2012 | [Playtika](https://en.wikipedia.org/wiki/Playtika) | Online Bingo |
-| *[8 Ball Pool](/8-ball-pool/)* | $400,000,000 | October 15, 2010 | [Miniclip](https://en.wikipedia.org/wiki/Miniclip) | Sports (pool) |
+| *[8 Ball Pool](/tips-to-win-8-ball-pool/)* | $400,000,000 | October 15, 2010 | [Miniclip](https://en.wikipedia.org/wiki/Miniclip) | Sports (pool) |
 | *Harry Potter: Hogwarts Mystery* | $342,000,000 | April 25, 2018 | [Jam City](https://en.wikipedia.org/wiki/Jam_City_(company)) ([Netmarble](https://en.wikipedia.org/wiki/Netmarble)) | RPG |
 | *Angry Birds 2* | $332,500,000 | July 30, 2015 | [Rovio Entertainment](https://en.wikipedia.org/wiki/Rovio_Entertainment) | Physics / Puzzle |
 | *FIFA Mobile / FIFA Soccer* | $308,700,000 | October 11, 2016 | [EA Sports](https://en.wikipedia.org/wiki/EA_Sports) ([Electronic Arts](https://en.wikipedia.org/wiki/Electronic_Arts)) | Sports (association football) |
@@ -118,7 +118,7 @@ This is a list of the top-grossing mobile games. The mobile games on this list h
 | *League of Legends: Wild Rift* | $150,000,000 | October 27, 2020 | [Riot Games](https://en.wikipedia.org/wiki/Riot_Games) (Tencent) | MOBA |
 | *Slotomania* | $149,000,000 | November 7, 2011 | [Playtika](https://en.wikipedia.org/wiki/Playtika) | Simulation (Slot) |
 | *NBA Live Mobile* | $140,000,000 | July 6, 2016 | [EA Sports](https://en.wikipedia.org/wiki/EA_Sports) ([Electronic Arts](https://en.wikipedia.org/wiki/Electronic_Arts)) | Sports (basketball) |
-| *[Dragon Ball Legends](/dragon-ball-legends/)* | $140,000,000 | May 18, 2018 | [Bandai Namco Entertainment](https://en.wikipedia.org/wiki/Bandai_Namco_Entertainment) | Action RPG |
+| *[Dragon Ball Legends](/dragon-ball-legends-fighting-tips/)* | $140,000,000 | May 18, 2018 | [Bandai Namco Entertainment](https://en.wikipedia.org/wiki/Bandai_Namco_Entertainment) | Action RPG |
 | *Harry Potter: Puzzles & Spells* | $135,000,000 | September 22, 2020 | [Portkey Games](https://en.wikipedia.org/wiki/Portkey_Games) / [Zynga](https://en.wikipedia.org/wiki/Zynga) | Puzzle |
 | *White Cat Project* | $134,000,000 | July 14, 2014 | Colopl | Action RPG |
 | *BanG Dream! Girls Band Party!* | $124,050,000 | March 16, 2017 | [Bushiroad](https://en.wikipedia.org/wiki/Bushiroad) | Rhythm / Adventure |

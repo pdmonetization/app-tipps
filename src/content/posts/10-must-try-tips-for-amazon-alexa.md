@@ -71,4 +71,4 @@ In conclusion, these 10 must-try [Amazon Alexa](https://amzn.to/3wevg7C) tips ar
 ---
 
 **Check out next:  
-[TOP Amazon Appstore Games UNDER $5](/top-amazon-appstore-games-under-5/?swcfpc=1 "Best Games on the Amazon Appstore")**
+[Best Mobile Controllers for Gaming on the Go](/best-mobile-controllers-for-gaming-on-the-go/)**
