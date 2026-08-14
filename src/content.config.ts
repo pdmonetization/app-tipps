@@ -24,6 +24,7 @@ const posts = defineCollection({
     featuredImageAlt: optionalString,
     seoTitle: optionalString,
     rating: optionalNumber,
+    correctionNote: optionalString,
     canonicalUrl: optionalString,
     noindex: z.boolean().default(false),
     draft: z.boolean().default(false),
