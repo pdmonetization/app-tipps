@@ -7,6 +7,7 @@ import PostCard from '../components/PostCard.astro';
 import { allPosts, hasAffiliate, related } from '../lib/posts';
 import { CATEGORY_SLUGS, slugifyTag } from '../lib/taxonomy';
 import { authorUrl } from '../lib/authors';
+import { editorialRatingFor } from '../lib/editorial-ratings';
 import { SITE } from '../consts';
 
 export const getStaticPaths = (async () => {
@@ -30,12 +31,13 @@ const published = d.publishDate.toISOString();
 const modified = (d.updatedDate ?? d.publishDate).toISOString();
 const fmt = (x: Date) => x.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 const isReview = d.category === 'Game Review' || d.category === 'App Review';
+const rating = typeof d.rating === 'number' ? d.rating : editorialRatingFor(d.slug);
 const reviewedName = d.title
   .replace(/\s+(?:game\s+|app\s+)?review\b.*$/i, '')
   .split(':')[0]
   .trim();
 const reviewedType = d.category === 'Game Review' ? 'Game' : 'SoftwareApplication';
-const hasReviewScore = isReview && typeof d.rating === 'number';
+const hasReviewScore = isReview && typeof rating === 'number';
 
 const article: any = {
   '@type': hasReviewScore ? 'Review' : 'Article',
@@ -51,7 +53,7 @@ const article: any = {
   ...(d.featuredImage ? { image: new URL(d.featuredImage, SITE.url).href } : {}),
   ...(hasReviewScore ? {
     itemReviewed: { '@type': reviewedType, name: reviewedName || d.title },
-    reviewRating: { '@type': 'Rating', ratingValue: d.rating, bestRating: 5, worstRating: 1 },
+    reviewRating: { '@type': 'Rating', ratingValue: rating, bestRating: 5, worstRating: 1 },
   } : {}),
 };
 const breadcrumb = {
@@ -74,9 +76,9 @@ const breadcrumb = {
       <h1>{d.title}</h1>
       <p class="standfirst">{d.description}</p>
       {hasReviewScore && (
-        <div class="review-score" aria-label={`App-Tipps editorial score: ${d.rating.toFixed(1)} out of 5`}>
+        <div class="review-score" aria-label={`App-Tipps editorial score: ${rating.toFixed(1)} out of 5`}>
           <span>App-Tipps editorial score</span>
-          <strong>{d.rating.toFixed(1)}<small>/5</small></strong>
+          <strong>{rating.toFixed(1)}<small>/5</small></strong>
         </div>
       )}
       <div class="meta">
