@@ -39,6 +39,7 @@ collections:
       - { name: featuredImage, label: Featured image, widget: image, required: false, hint: "Upload an image here if the article has one." }
       - { name: featuredImageAlt, label: Image alt text, widget: string, required: false, hint: "Describe what is visible in the image." }
       - { name: rating, label: Review score out of 5, widget: number, required: false, value_type: float, min: 1, max: 5, step: 0.1 }
+      - { name: correctionNote, label: Correction note, widget: text, required: false, hint: "Use for a substantive factual correction. Explain briefly what changed." }
       - { name: seoTitle, label: Custom Google title, widget: string, required: false }
       - { name: canonicalUrl, label: Canonical URL override, widget: string, required: false }
       - { name: noindex, label: Hide from Google, widget: boolean, default: false }
