@@ -12,14 +12,14 @@ export const CATEGORY_SLUGS: Record<string, string> = {
 };
 
 export const CATEGORY_INTROS: Record<string, string> = {
-  'game-guides': 'Walkthroughs, beginner tips and progression advice for the mobile games our team plays, written after hands-on time with each title.',
-  'game-reviews': 'Hands-on reviews of iOS and Android games, scored on gameplay, monetisation, graphics and sound. We explain what a score means before we give one.',
-  'app-reviews': 'Practical reviews of the apps people actually use day to day, focused on whether they earn a place on your home screen.',
+  'game-guides': 'Walkthroughs, beginner tips and progression advice for mobile games, based on verified game information and hands-on experience where that has taken place.',
+  'game-reviews': 'Reviews of iOS and Android games covering gameplay, monetisation, graphics and sound. First-person testing is only stated when it actually took place.',
+  'app-reviews': 'Practical reviews of mobile apps, focused on features, usability, pricing and whether they are worth installing.',
   'news': 'Reporting on the mobile app and game industry: launches, platform changes, store policy and the business behind them.',
-  'app-comparison': 'Side-by-side comparisons of competing apps and games, so you can pick one without downloading all of them first.',
-  'app-tips': 'Features you probably missed, settings worth changing, and ways to get more out of apps you already have installed.',
-  'best-picks': 'Curated round-ups of the best apps and games for a given moment, season or need, refreshed as the stores change.',
-  'codes': 'Working promo and redeem codes for mobile games, with the caveat that publishers expire them without notice.',
+  'app-comparison': 'Side-by-side comparisons of competing apps and games, so you can understand the important differences before choosing one.',
+  'app-tips': 'Useful features, settings worth changing, and ways to get more out of apps you already use.',
+  'best-picks': 'Curated round-ups of apps and games for a given moment, season or need, refreshed when the underlying information changes.',
+  'codes': 'Promo and redeem codes for mobile games, with the caveat that publishers can expire them without notice.',
 };
 
 export const slugifyTag = (t: string) =>
