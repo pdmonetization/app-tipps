@@ -7,7 +7,7 @@ import PostCard from '../components/PostCard.astro';
 import { allPosts, hasAffiliate, related } from '../lib/posts';
 import { CATEGORY_SLUGS, slugifyTag } from '../lib/taxonomy';
 import { authorUrl } from '../lib/authors';
-import { SITE, PUBLISHER } from '../consts';
+import { SITE } from '../consts';
 
 export const getStaticPaths = (async () => {
   const posts = await allPosts();
@@ -29,9 +29,16 @@ const rel = related(post, pool);
 const published = d.publishDate.toISOString();
 const modified = (d.updatedDate ?? d.publishDate).toISOString();
 const fmt = (x: Date) => x.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const isReview = d.category === 'Game Review' || d.category === 'App Review';
+const reviewedName = d.title
+  .replace(/\s+(?:game\s+|app\s+)?review\b.*$/i, '')
+  .split(':')[0]
+  .trim();
+const reviewedType = d.category === 'Game Review' ? 'Game' : 'SoftwareApplication';
+const hasReviewScore = isReview && typeof d.rating === 'number';
 
 const article: any = {
-  '@type': d.category.includes('Review') ? 'Review' : 'Article',
+  '@type': hasReviewScore ? 'Review' : 'Article',
   '@id': `${url}#article`,
   headline: d.title.slice(0, 110),
   description: d.description,
@@ -42,7 +49,10 @@ const article: any = {
   author: { '@type': 'Person', name: d.author, url: authorPage },
   publisher: { '@id': `${SITE.url}/#organization` },
   ...(d.featuredImage ? { image: new URL(d.featuredImage, SITE.url).href } : {}),
-  ...(d.rating ? { reviewRating: { '@type': 'Rating', ratingValue: d.rating, bestRating: 5, worstRating: 1 } } : {}),
+  ...(hasReviewScore ? {
+    itemReviewed: { '@type': reviewedType, name: reviewedName || d.title },
+    reviewRating: { '@type': 'Rating', ratingValue: d.rating, bestRating: 5, worstRating: 1 },
+  } : {}),
 };
 const breadcrumb = {
   '@type': 'BreadcrumbList',
@@ -63,12 +73,17 @@ const breadcrumb = {
       <a class="eyebrow" href={`/category/${catSlug}/`}>{d.category}</a>
       <h1>{d.title}</h1>
       <p class="standfirst">{d.description}</p>
+      {hasReviewScore && (
+        <div class="review-score" aria-label={`App-Tipps editorial score: ${d.rating.toFixed(1)} out of 5`}>
+          <span>App-Tipps editorial score</span>
+          <strong>{d.rating.toFixed(1)}<small>/5</small></strong>
+        </div>
+      )}
       <div class="meta">
         <span>By <a href={authorPath}>{d.author}</a></span>
         <span>Published <time datetime={published}>{fmt(d.publishDate)}</time></span>
         {d.updatedDate && d.updatedDate > d.publishDate &&
           <span>Updated <time datetime={modified}>{fmt(d.updatedDate)}</time></span>}
-        {d.rating && <span class="rating">{d.rating.toFixed(1)}<small>/ 5</small></span>}
       </div>
       {affiliate && (
         <p class="disclosure">
