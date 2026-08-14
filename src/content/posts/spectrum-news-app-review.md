@@ -1,41 +1,59 @@
 ---
-title: "Spectrum News App: Stories that matter to your community"
+title: "Spectrum News App Review (2026): Local News, Weather and Live Video"
 slug: "spectrum-news-app-review"
 publishDate: 2022-08-11T12:08:31Z
-updatedDate: 2023-02-09T13:03:09Z
+updatedDate: "2026-08-14T00:00:00Z"
 author: "Daniel Clark"
 category: "App Review"
 categories: ["App Review"]
 tags: ["Android", "iOS", "News and Information Apps"]
-description: "The Spectrum News app allows you to get all stories and news that matter to your community in one place. Watch news, listen to podcasts and stay updated."
+description: "A refreshed Spectrum News app review covering local reporting, Weather on the 1s, live video, podcasts, access and regional availability."
 featuredImage: "/images/2020/10/spectrum-app-review-jpg.webp"
 featuredImageAlt: "Spectrum News App: Stories that matter to your community"
-seoTitle: "Spectrum News App: Stories that matter to your community"
+seoTitle: "Spectrum News App Review (2026): Local News, Weather and Live Video"
 draft: false
 ---
 
-Local news is irreplaceable. While we all have access to national news, it hardly covers the local stories that concern your community. Local reports inform you about the representatives of your local community, institutions, and people, with whom you have or might have direct contact or business in the future. You can get the information and stories that concern your local community with the Spectrum News app.
+> **Updated and fact-checked:** 14 August 2026. Features, prices and availability can vary by country, account and platform.
 
-## Get local news on the Spectrum News app
+## Quick verdict
 
-With Spectrum News, you can get all local news on one platform. The app offers curated news stories made by Spectrum journalists and local partner publications. You can always stay up to date and get information from different sources. In addition, you can browse various articles that will help you understand the local issues better. The platform also offers interactive maps and infographics to visualize the issues in an enhanced way. You can also watch videos and exclusive series offered by Spectrum News.
+Spectrum News is useful when you live in one of its covered US markets or already receive Spectrum services. Its advantage is local reporting and weather rather than a comprehensive national or international news product.
 
-With the Spectrum News app, you will be the first to know about your local breaking news and significant events in your community. The app also features the latest local weather and interactive radar maps.
+## What it offers in 2026
 
-Last but not least, you can listen to the original podcasts that directly discuss the stories happening in your area from the app. Spectrum News really is the all-in-one platform for getting your local stories.
+The app combines written and video stories from Spectrum journalists and local partners, short “Stories in :90” headline summaries, podcasts, weather and live programming where access is available. Coverage spans selected cities and states, so the experience depends heavily on location.
 
-![Spectrum news app ipv](/images/2023/02/Spectrum-news-app-ipv.jpg)
+## Main features
 
-## Follow topics you are interested in
+- Local written and video reporting
+- Weather forecasts and alerts
+- Short headline summaries updated during the day
+- Original podcasts
+- Live streams and Spectrum News+ access where eligible
 
-To make your news experience better and more personalized, you can curate the news and see more of what matters to you. You can filter all information by category and browse the news that you are interested in more. For example, you can visit the relevant topic to learn more about your local politics. Similarly, the Spectrum News app can check the education, health, transit, and more categories.
+## Pricing and fees
 
-## Where can I watch Spectrum news?
+The app is free to download, but some live content or full access may require a Spectrum residential login or depend on market availability. Check the current access message in your region.
 
-If you are a Spectrum customer, you can let the app know which area you are interested in. Spectrum will customize your experience with the stories and information about your community. It is a great way to customize your news experience. With this, you will never miss exciting and important news that matter to your community.
+## Limitations and risks
 
-Spectrum News provides local news in the following regions: New York City, Upstate New York, Massachusetts, North Carolina, Florida, Ohio, Kentucky, Wisconsin, Texas, and California. Simply choose your region and get to know all the relevant news!
+Local focus means coverage is not uniform across the US. Push alerts can become noisy, and every news app should be checked against primary documents for high-stakes claims. Review location and notification permissions.
 
-[Spectrum News on Google Play](https://play.google.com/store/apps/details?id=com.twcable.twcnews&hl=en&gl=US)
+## Who is it best for?
 
-[Spectrum News on the App Store](https://apps.apple.com/us/app/spectrum-news-local-stories/id740948885)
+Best for Spectrum customers and residents of covered local-news markets. Use it alongside—not instead of—a broader national and international source.
+
+## Our practical recommendation
+
+Check the live checkout, permissions and cancellation terms on your own device. Use the free tier, trial or shortest plan first where possible, and keep transaction records for paid services.
+
+## Official sources checked
+
+- [Spectrum News app](https://spectrumlocalnews.com/app)
+- [Spectrum News markets](https://spectrumlocalnews.com/splash)
+
+## Related App-Tipps guides
+
+- [TikTok app review](/tiktok-app-review/)
+- [Reddit app guide](/reddit-app-review-and-tipps/)
