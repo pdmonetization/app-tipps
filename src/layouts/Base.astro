@@ -15,7 +15,7 @@ interface Props {
 }
 const {
   title, description, canonical, noindex = false,
-  ogImage = '/images/2024/05/AT_SM_default_share_image_logo_1200x630px.png',
+  ogImage = '/apple-touch-icon.png',
   ogType = 'website', schema,
 } = Astro.props;
 
@@ -31,7 +31,7 @@ const organization = {
   legalName: PUBLISHER.legalName,
   vatID: PUBLISHER.vatNumber,
   email: PUBLISHER.editorialEmail,
-  logo: { '@type': 'ImageObject', url: `${SITE.url}/images/2022/09/app-tipps-logo-domain.png` },
+  logo: { '@type': 'ImageObject', url: `${SITE.url}/apple-touch-icon.png` },
   address: {
     '@type': 'PostalAddress',
     streetAddress: PUBLISHER.address.street,
