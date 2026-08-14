@@ -90,6 +90,9 @@ const breadcrumb = {
         {d.updatedDate && d.updatedDate > d.publishDate &&
           <span>Updated <time datetime={modified}>{fmt(d.updatedDate)}</time></span>}
       </div>
+      {d.correctionNote && (
+        <p class="correction-note"><strong>Correction:</strong> {d.correctionNote}</p>
+      )}
       {affiliate && (
         <p class="disclosure">
           This article contains affiliate links. If you buy or sign up through one, App-Tipps.com may
