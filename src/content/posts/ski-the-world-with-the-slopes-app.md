@@ -1,49 +1,59 @@
 ---
-title: "Ski the World with the SLOPES APP"
+title: "Slopes App Review (2026): Ski Tracking, Maps and Premium Plans"
 slug: "ski-the-world-with-the-slopes-app"
 publishDate: 2024-11-29T10:42:27Z
-updatedDate: 2025-05-07T08:45:42Z
+updatedDate: "2026-08-14T00:00:00Z"
 author: "Sylvie Fox"
 category: "App Review"
 categories: ["App Review"]
 tags: ["skiing apps", "winter sports app"]
-description: "Take your mountain experience to the next level with this comprehensive app for winter sports lovers! Check out all the cool features of ' Slopes: Ski and…"
+description: "A current Slopes review covering ski and snowboard tracking, resort maps, performance data, Premium plans and battery limitations."
 featuredImage: "/images/2024/11/Slopes_app_1200x630px.png"
 featuredImageAlt: "Ski the World with the SLOPES APP"
 draft: false
+seoTitle: "Slopes App Review (2026): Ski Tracking, Maps and Premium Plans"
 ---
 
-Take your mountain experience to the next level with this comprehensive app for winter sports lovers!
+> **Updated and fact-checked:** 14 August 2026. Features, prices and availability can vary by country, account and platform.
 
-Check out all the cool features of '[Slopes: Ski and Snowboard](https://getslopes.com/)':
+## Quick verdict
 
-## FREE Slopes App Features
+Slopes remains one of the strongest dedicated ski and snowboard trackers. The free version is enough to record a day on the mountain, while Premium is mainly for people who want richer maps, analysis, replays and season history.
 
-- Mountain trail maps
-- Ski resorts information (400+ winter resorts worldwide)
-- Weather conditions and warnings
-- Locating friends in the mountain
-- Auto-sharing on the [Strava](https://www.strava.com/) sports platform
-- Available for Android phones and tablets, iPhone, iPad, as well as iWatch and GARMIN watches!
+## What it offers in 2026
 
-## Slopes Premium Features
+Slopes uses a phone or compatible watch to record runs, vertical distance, speed, time and location. Resort information and winter maps make it more useful than a generic fitness tracker. Premium adds deeper performance insights and interactive visualisations; the exact feature mix varies by device.
 
-- Premium features, available **for both Android and Apple** - ENHANCED Digital Trail Maps, Speed Heatmaps, and Run-by-Run Statistics.
-- Premium features, available **only on iPhone, iPad and iWatch** - Interactive 3D & AR Replays, Compare Runs Head-to-Head, and Level-of-Effort Insights.
-- [Gift voucher option](https://my.getslopes.com/give) for a Slopes Premium Annual Membership ($29.99)
-- Premium Family Membership discount for up to 6 people ($49.99 per year)
-- Contribution to an environmental charity - Slopes donate 2% of their revenue to 'Protect Our Winters'. If you too care about the environment, '[Help as you go with these GREEN APPS](/help-as-you-go-with-these-green-apps/)'!
+## Main features
 
----
+- Automatic ski and snowboard run recording
+- Resort maps and trip history
+- Performance statistics and friend features
+- Watch support on compatible platforms
+- Premium analysis and family sharing options
 
-The Slopes app offers really handy features to snow enthusiasts, headed to the mountains. Some, potentially lifesaving! And, if you're a skiing or snowboarding amateur, you'd be perfectly happy with using only the free version. But if you want to up your winter game and compete with your fellow-athletes on the slopes, you'll absolutely adore the premium features!
+## Pricing and fees
 
-![Slopes app features](/images/2024/11/Slopes_app_1200x432px.png)
+The basic app is free. The official Premium page lists individual and family options; at our check the Family plan was $59.99 per year for the purchaser plus five family members. Prices vary by country and storefront, so confirm the individual plan in-app.
 
----
+## Limitations and risks
 
-**Download the Slopes app for:**
+GPS tracking consumes battery and no phone app should replace piste signs, weather warnings or avalanche guidance. Speed and location readings are estimates. Download maps where offered, carry power, and never look at the screen while moving.
 
-[Android](https://play.google.com/store/apps/details?id=com.consumedbycode.slopes)
+## Who is it best for?
 
-[iOS](https://apps.apple.com/us/app/slopes-ski-snowboard/id643351983)
+Best for regular resort skiers who enjoy reviewing their day. Occasional users should test the free recording before paying.
+
+## Our practical recommendation
+
+Check the live checkout, permissions and cancellation terms on your own device. Use the free tier, trial or shortest plan first where possible, and keep transaction records for paid services.
+
+## Official sources checked
+
+- [Slopes Premium](https://getslopes.com/premium)
+- [Slopes website](https://getslopes.com/)
+
+## Related App-Tipps guides
+
+- [MyFitnessPal review](/master-your-fitness-goals-with-my-fitnesspal-app/)
+- [Traveloka review](/traveloka-app-review/)

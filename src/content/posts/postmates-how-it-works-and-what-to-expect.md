@@ -1,56 +1,59 @@
 ---
-title: "Postmates: How it works and what to expect?"
+title: "Is Postmates Still an App in 2026? What Changed After Uber Eats"
 slug: "postmates-how-it-works-and-what-to-expect"
 publishDate: 2022-07-23T06:36:47Z
-updatedDate: 2022-09-12T12:24:39Z
+updatedDate: "2026-08-14T00:00:00Z"
 author: "Daniel Clark"
 category: "App Review"
 categories: ["App Review"]
 tags: ["Android", "iOS", "Lifestyle Apps"]
-description: "Postmates is a delivery service that makes it easy for customers to have access to various types of groceries with the convenience of staying at home."
+description: "Postmates was absorbed into Uber Eats. This 2026 update explains ordering, driver migration, fees and what the Postmates brand means today."
 featuredImage: "/images/2019/05/postmates-app-review-jpg.webp"
 featuredImageAlt: "Postmates: How it works and what to expect?"
 draft: false
+seoTitle: "Is Postmates Still an App in 2026? What Changed After Uber Eats"
 ---
 
-The world we live in is shrinking rapidly, and now, it is easier to get what we want with the click of a button. You can now book a car ride from the comfort of your home, have your groceries delivered at home, and have a hot meal delivered to your doorstep. Postmates make things a lot easier as they have courier present in every city to bring customers all that they need within no time.
+> **Updated and fact-checked:** 14 August 2026. Features, prices and availability can vary by country, account and platform.
 
-## **What is Postmates?**
+## Quick verdict
 
-Postmates is a goods and food delivery service that makes it easy for customers to have access to food, personal items, and groceries with the convenience of staying at home. Postmates promised to deliver the item to the customers within an hour. It started up in San Francisco in 2011 and developed into a $400 million business over the years.
+The original standalone-app review is obsolete. Uber says Postmates customers and delivery requests switched to Uber’s app in June 2021. The Postmates website can still present local ordering, but the underlying consumer experience is part of Uber Eats.
 
-Postmates have this system of hiring independent riders known as couriers, who use their own vehicles to deliver items to their respective locations.
+## What it offers in 2026
 
-[![Postmates food delivery](/images/2019/05/postmates-food-delivery.jpg)](https://adsplus.g2afse.com/click?pid=138&offer_id=1695792)
+Users searching for Postmates may be directed into Uber’s ordering system, where they can browse restaurants and stores, choose delivery or pickup, track an order and contact support. Former Postmates couriers also migrated to Uber’s driver platform.
 
-## **How does Postmates work?**
+## Main features
 
-You must download the application on your smartphone, create your personal account and start browsing for the item you need. Postmates typically charge a small fee of $3.99, which is visible next to each store you visit, along with the approximate time it will take for the courier to deliver the item to you. You can track your order and see where your driver is and how long it will take for him to reach you.
+- Restaurant, grocery and retail listings through Uber’s platform
+- Delivery and pickup where locally available
+- Upfront checkout total before confirmation
+- Order tracking and in-app support
+- Uber One benefits on eligible orders where offered
 
-Ever heard of a 365 days a year 24/7 week delivery chain? Postmates do it for you!
+## Pricing and fees
 
-### **Delivery and Customer Care**
+Menu markups, delivery fees, service fees, small-order charges, taxes and tips can apply. Membership removes only eligible charges under its terms. Compare the final total with direct ordering.
 
-Ever heard of a 365 days a year, 24/7-week delivery chain? Postmates do it for you!
+## Limitations and risks
 
-If you are at lunch at your office or if you want to order pizza for unexpected guests, Postmates has your back. They can deliver anywhere, anytime - at your workplace, friend’s house, dorm, park, or simply to your home. They provide wherever you are and whenever you want.
+Availability varies by address and merchant. Never share account codes with callers and keep refunds inside official support. Restaurant preparation, courier assignment and weather can all affect estimates.
 
-Not only this, their delivery base takes into consideration the time and distance involved and ensures that your delivery is assigned to the nearest courier to make it reach you faster.
+## Who is it best for?
 
-They also have an excellent customer care team available for you to contact 24/7 in case of any trouble you are facing. You can reach them at their website: [help.postmates.com](https://help.postmates.com/).
+Best read as a guide for legacy Postmates users: install or open Uber Eats and judge the current checkout there. Do not search for an unofficial “Postmates Fleet” app.
 
-### **How can you pay?**
+## Our practical recommendation
 
-With Postmates, you are not restricted to one option of paying for your delivery. You can pay through Apple Pay, Credit Card, and Debit Cards. Credit Cards supported by Postmates are Visa, American Express, Discover, and MasterCard. There is no need for cash transactions because all payment methods are digital when it comes to Postmates.
+Check the live checkout, permissions and cancellation terms on your own device. Use the free tier, trial or shortest plan first where possible, and keep transaction records for paid services.
 
-[![Postmates get anything delivered](/images/2019/05/postmates-get-anything-delivered.jpg)](https://adsplus.g2afse.com/click?pid=138&offer_id=1695792)
+## Official sources checked
 
-## **Why Postmates?**
+- [Uber Postmates FAQ](https://help.uber.com/driving-and-delivering/article/postmates-faqs?nodeId=53ccc269-9f37-44d6-9d8f-a3d983bfbc7f)
+- [Postmates website](https://postmates.com/)
 
-They work in partnership with 350,000 restaurants and retailers and 300000 Postmates couriers on the ground to get you what you want. In addition, you can track your order on your app; it is active in 2900 plus cities around the country; and lastly, if you are a member, you may get free delivery on orders above $15.
+## Related App-Tipps guides
 
-What more can one ask for without having to move an inch?
-
-[Postmates on Google Play](https://play.google.com/store/apps/details?id=com.postmates.android&hl=en&gl=US)
-
-[Postmates on the App Store](https://apps.apple.com/us/app/postmates-food-delivery/id512393983)
+- [Rappi review](/rappi-app-for-groceries/)
+- [Food delivery apps comparison](/best-food-delivery-apps-uber-eats-yelp-doordash-comparison/)

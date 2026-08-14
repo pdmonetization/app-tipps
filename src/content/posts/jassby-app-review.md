@@ -1,49 +1,60 @@
 ---
-title: "Jassby: Money management app for the family"
+title: "Jassby Review (2026): Family Debit Card, Controls and Fees"
 slug: "jassby-app-review"
 publishDate: 2022-08-24T13:42:55Z
-updatedDate: 2022-09-12T12:56:50Z
+updatedDate: "2026-08-14T00:00:00Z"
 author: "Daniel Clark"
 category: "App Review"
 categories: ["App Review"]
 tags: ["Android", "iOS", "Productivity Apps"]
-description: "The Jassby app is a perfect tool to teach kids about money management. You can set allowances, reward kids for completing chores and more!"
+description: "A current Jassby review covering its family debit card, parental controls, digital wallets, monthly fee and replacement-card cost."
 featuredImage: "/images/2020/08/jassby-app-review-jpg.webp"
 featuredImageAlt: "Jassby: Money management app for the family"
-seoTitle: "The Jassby app: Manage your kids allowance and rewards"
+seoTitle: "Jassby Review (2026): Family Debit Card, Controls and Fees"
 draft: false
 ---
 
-As a parent, you manage your kids' money. Still, it is time to teach children about money management and financial responsibility. The Jassby app is the perfect tool to do that. It is a convenient, free, secure, and easy-to-use app for families to manage monthly allowances, chores, and budgets and reward children for accomplishments. In the Jassby app review, we will reveal how you can use the app to teach kids about money management while completely controlling their spending.
+> **Updated and fact-checked:** 14 August 2026. App features, prices and availability can change by country and platform.
 
-## What can you achieve with the Jassby app?
+## Quick verdict
 
-Jassby is an app for the whole family. It is an excellent tool for creating a budget for your children and assigning a daily, weekly, or monthly allowance. Parents can assign chores and set a reward for completing them. Children can earn extra money for doing chores, save it or spend it in the shops right in the app. In addition, parents have access to financial statements. They can see where what did their children buy, when and for how much.
+Jassby can be a practical supervised spending account for US families, but the old description of it as completely free is no longer accurate. As of our August 2026 check, Jassby lists a $5.95 monthly family fee, with the first month waived for newer accounts.
 
-Most importantly, the app is well secured. It uses encryption technology and biometric authentication so unauthorized users cannot access your account. In addition, your family payment information is confidential, and the app never shares it with credit bureaus or retailers. In detail, let's review what you and your family can do with the app.
+## What the app does in 2026
 
-### Set an allowance and reward kids
+Jassby combines a family wallet, individual balances and Mastercard debit cards. A parent funds the account and controls how much each family member can spend. Children and teens can use a digital card, an optional physical card and supported mobile wallets. The product is designed for learning through real purchases rather than only tracking imaginary allowances or points.
 
-Every kid wants to be independent, earn money and spend it how they want. The Jassby app allows you to help your children earn and manage their own money while you still have complete control over it. You can set daily, weekly or monthly allowance for your kids and lead them to independence and financial responsibility.
+## Main features
 
-Kids can earn money by helping you with household chores. You can set a reward for completing tasks and assign them to your children. For example, you can set a 5 USD reward for helping you in making dinner or washing dishes after it. Children can also request chores to earn a little extra! You can even set rewards for achieving goals or getting good grades at school. As a result, your children will learn about the value of money and will have incentives to study better at school and help you at home. In addition, they can team up to earn, save, and spend money together if they have several children.
+- Parent-controlled funding and individual family-member balances
+- Digital and physical Mastercard debit cards
+- Online and in-store purchases where Mastercard is accepted
+- Support for compatible mobile wallets
+- Financial-literacy prompts and a view of family activity
 
-### Budget and save money
+## Pricing and fees
 
-With the Jassby app, your children will be more motivated to learn about money management and savings. You can create budgets and allocate money for your kids to spend on food, school, clothing, or general use. In addition, the app allows you to transfer funds from one budget to another and encourage kids to save money.
+Jassby support currently lists a $5.95 monthly fee per family. The initial physical card for each family member is listed as free, while a replacement physical card costs $4.95 plus applicable tax. Fees and eligibility can change, so review the live fee disclosure before opening an account.
 
-### Have the best shopping experience for your family
+## Limitations and risks
 
-Your children can spend money securely on the app. Jassby has a wide selection of curated shops. It has a variety of categories, such as books, phone accessories, gaming, food, cosmetics, apparel, and others. They are regularly updated to offer the best shopping experience for your family. Jassby carefully selects the stores available on the app. Parents can also approve which shops should be accessible for their kids. In addition, it has hard-coded hundreds of keywords to ensure that kids are not buying age-restricted or illegal merchandise.
+Jassby is a supervised spending product, not a full bank account or a substitute for direct financial education. Parents should explain merchant holds, tips, subscriptions and delayed transactions. Availability, identity checks, funding methods and card terms are US-focused.
 
-### Track how your children spend money
+## Who should use it?
 
-As a parent, you might worry about where and how your children spend money. With the Jassby app, you do not have to worry about your kids' spending. The app gives you full information about your family's account activity. You can always check the financial statements and see what your children purchased, when, and how much they spent. Jassby allows you to see the shopping history of your kids, as well as seasonal categories. You can see what your children are interested in and even use this information to buy the right gifts for them!
+Best for families that will actively use the controls and teaching tools enough to justify the monthly charge. Compare the total annual cost with other youth debit cards and with a youth account at your existing bank or credit union.
 
-## Jassby in a nutshell
+## App-Tipps recommendation
 
-The Jassby app is a perfect tool to manage your kid's finances, teach your children the value of money and help them learn money management. The app has high security, is convenient, and is free to use! Download it from the app store today and lead your kids toward financial independence.
+Check the live price, permissions and account terms on your own device before subscribing or moving money. Start with the free tier or shortest commitment where one is available, and keep screenshots or receipts for paid transactions.
 
-[Jassby on Google Play](https://play.google.com/store/apps/details?id=com.jassby.mobile.app&hl=en&gl=US)
+## Official sources checked
 
-[Jassby on the App Store](https://apps.apple.com/us/app/jassby-debit-card-for-teens/id1375330360)
+- [Jassby family debit card](https://jassby.com/debit-card-for-families/)
+- [Jassby account fees](https://support.jassby.com/hc/en-us/articles/360051499891-Are-there-fees-associated-with-my-Jassby-account)
+- [Physical card fees](https://support.jassby.com/hc/en-us/articles/5737519782292-What-is-the-fee-for-ordering-physical-debit-cards)
+
+## Related App-Tipps guides
+
+- [Venmo tips and fees](/venmo-10-pro-tips-effortless-payment-management-and-more/)
+- [PhonePe review](/phonepe-app-review/)
