@@ -21,21 +21,30 @@ const { author, posts } = Astro.props;
 const title = `${author.name} - Author at ${SITE.name}`;
 const description = `${author.bio} Read articles by ${author.name} on ${SITE.name}.`;
 const url = `${SITE.url}/author/${author.slug}/`;
-const schema = {
-  '@type': 'Person',
-  '@id': `${url}#person`,
-  name: author.name,
-  url,
-  description: author.bio,
-  worksFor: { '@id': `${SITE.url}/#organization` },
-};
+const schema = author.name === 'App-Tipps Editorial'
+  ? {
+      '@type': 'Organization',
+      '@id': `${url}#editorial-team`,
+      name: author.name,
+      url,
+      description: author.bio,
+      parentOrganization: { '@id': `${SITE.url}/#organization` },
+    }
+  : {
+      '@type': 'Person',
+      '@id': `${url}#person`,
+      name: author.name,
+      url,
+      description: author.bio,
+      worksFor: { '@id': `${SITE.url}/#organization` },
+    };
 ---
 <Base {title} {description} canonical={url} schema={schema}>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/authors/">Authors</a> / {author.name}</nav>
 
     <header class="page-head" style="max-width:780px">
-      <p class="eyebrow">Author</p>
+      <p class="eyebrow">{author.name === 'App-Tipps Editorial' ? 'Editorial team' : 'Author'}</p>
       <h1>{author.name}</h1>
       <p>{author.bio}</p>
       <p style="margin-top:18px;font-size:14px">
