@@ -81,7 +81,9 @@ const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(A
   {INTEGRATIONS.enableConsent && INTEGRATIONS.adsensePublisherId &&
     <script async src={`https://fundingchoicesmessages.google.com/i/${INTEGRATIONS.adsensePublisherId.replace('ca-pub-','pub-')}?ers=1`}></script>}
 
-  {INTEGRATIONS.enableAds && INTEGRATIONS.adsensePublisherId &&
+  {/* Load the account-level AdSense script for site verification. Ad slots remain
+      disabled until enableAds is explicitly switched on after approval. */}
+  {INTEGRATIONS.adsensePublisherId &&
     <script async crossorigin="anonymous"
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${INTEGRATIONS.adsensePublisherId}`}></script>}
 
