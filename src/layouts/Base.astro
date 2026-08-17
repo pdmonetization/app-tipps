@@ -57,6 +57,9 @@ const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(A
   {INTEGRATIONS.searchConsoleToken &&
     <meta name="google-site-verification" content={INTEGRATIONS.searchConsoleToken} />}
 
+  {INTEGRATIONS.adsensePublisherId &&
+    <meta name="google-adsense-account" content={INTEGRATIONS.adsensePublisherId} />}
+
   <meta property="og:site_name" content={SITE.name} />
   <meta property="og:locale" content={SITE.locale} />
   <meta property="og:type" content={ogType} />
