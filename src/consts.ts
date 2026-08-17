@@ -37,7 +37,7 @@ export const PUBLISHER = {
 
 /* Fill these in when the accounts exist. Empty string = tag not rendered. */
 export const INTEGRATIONS = {
-  adsensePublisherId: '',   // 'ca-pub-XXXXXXXXXXXXXXXX'
+  adsensePublisherId: 'ca-pub-4456135303100816',
   adManagerNetworkCode: '', // '123456789'
   ga4MeasurementId: '',     // 'G-XXXXXXXXXX'
   searchConsoleToken: '',   // google-site-verification content value
