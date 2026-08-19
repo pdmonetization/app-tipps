@@ -95,16 +95,58 @@ const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(A
   {INTEGRATIONS.ga4MeasurementId && (
     <>
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${INTEGRATIONS.ga4MeasurementId}`}></script>
-      <script is:inline define:vars={{ id: INTEGRATIONS.ga4MeasurementId }}>
+      <script is:inline define:vars={{ id: INTEGRATIONS.ga4MeasurementId, consentEnabled: INTEGRATIONS.enableConsent }}>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+
+        const consentRegions = [
+          'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+          'IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO',
+          'SK','SI','ES','SE','GB','CH'
+        ];
+
+        // Preserve Analytics measurement where the European consent message
+        // does not apply, while denying storage until consent in covered regions.
         gtag('consent', 'default', {
-          ad_storage: 'denied', ad_user_data: 'denied',
-          ad_personalization: 'denied', analytics_storage: 'denied',
-          wait_for_update: 500
+          analytics_storage: 'granted',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
         });
+        gtag('consent', 'default', {
+          region: consentRegions,
+          analytics_storage: 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          wait_for_update: 2000
+        });
+
         gtag('js', new Date());
         gtag('config', id, { anonymize_ip: true });
+
+        // Funding Choices exposes the visitor's saved TCF decision through
+        // __tcfapi. Translate Purpose 1 into Analytics storage consent.
+        if (consentEnabled) {
+          let tcfAttempts = 0;
+          const connectConsent = () => {
+            if (typeof window.__tcfapi !== 'function') {
+              if (++tcfAttempts < 50) setTimeout(connectConsent, 100);
+              return;
+            }
+            window.__tcfapi('addEventListener', 2, (tcData, success) => {
+              if (!success || !tcData || !tcData.purpose) return;
+              if (tcData.eventStatus !== 'tcloaded' &&
+                  tcData.eventStatus !== 'useractioncomplete') return;
+
+              const analyticsGranted = tcData.purpose.consents?.[1] === true;
+              gtag('consent', 'update', {
+                analytics_storage: analyticsGranted ? 'granted' : 'denied'
+              });
+            });
+          };
+          connectConsent();
+        }
       </script>
     </>
   )}
