@@ -45,7 +45,7 @@ export const INTEGRATIONS = {
      under the TCF requirement for EEA/UK/CH. Loading it needs only the
      AdSense publisher ID above — set enableConsent to true once AdSense
      is approved and the message is published in the AdSense UI. */
-  enableConsent: false,
+  enableConsent: true,
   /* Ad slots render as nothing until this is true. */
   enableAds: false,
 };
