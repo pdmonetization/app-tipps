@@ -39,7 +39,7 @@ export const PUBLISHER = {
 export const INTEGRATIONS = {
   adsensePublisherId: 'ca-pub-4456135303100816',
   adManagerNetworkCode: '', // '123456789'
-  ga4MeasurementId: '',     // 'G-XXXXXXXXXX'
+  ga4MeasurementId: 'G-ZY7TVP75K4',
   searchConsoleToken: '',   // google-site-verification content value
   /* Google Privacy & messaging (Funding Choices) is a Google-certified CMP
      under the TCF requirement for EEA/UK/CH. Loading it needs only the
