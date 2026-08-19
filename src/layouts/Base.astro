@@ -79,8 +79,10 @@ const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(A
   <script type="application/ld+json" set:html={JSON.stringify(graph)} />
 
   {/* Google Privacy & messaging — a Google-certified CMP under the TCF
-      requirement for the EEA, UK and Switzerland. Loads first so ad and
-      analytics tags below can read the consent signal. */}
+      requirement for the EEA, UK and Switzerland. Enable TCF support before
+      either the CMP or Google tag loads so consent choices reach gtag.js. */}
+  {INTEGRATIONS.enableConsent &&
+    <script is:inline>window['gtag_enable_tcf_support'] = true;</script>}
   {INTEGRATIONS.enableConsent && INTEGRATIONS.adsensePublisherId &&
     <script async src={`https://fundingchoicesmessages.google.com/i/${INTEGRATIONS.adsensePublisherId.replace('ca-pub-','pub-')}?ers=1`}></script>}
 
