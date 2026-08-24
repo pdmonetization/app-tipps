@@ -38,7 +38,7 @@ export const PUBLISHER = {
 /* Fill these in when the accounts exist. Empty string = tag not rendered. */
 export const INTEGRATIONS = {
   adsensePublisherId: 'ca-pub-4456135303100816',
-  adManagerNetworkCode: '', // '123456789'
+  adManagerNetworkCode: '23368375120',
   ga4MeasurementId: 'G-ZY7TVP75K4',
   searchConsoleToken: '',   // google-site-verification content value
   /* Google Privacy & messaging (Funding Choices) is a Google-certified CMP
@@ -46,7 +46,8 @@ export const INTEGRATIONS = {
      AdSense publisher ID above — set enableConsent to true once AdSense
      is approved and the message is published in the AdSense UI. */
   enableConsent: true,
-  /* Ad slots render as nothing until this is true. */
+  /* AdSense slots render as nothing until this is true. The dedicated GAM
+     article slot is enabled independently by its article layout prop. */
   enableAds: false,
 };
 
