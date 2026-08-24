@@ -81,6 +81,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .pager span[aria-current] { background: var(--ink); color: #fff; border-color: var(--ink); }
 .ad-slot { margin: 32px auto; text-align: center; min-height: 1px; }
 .ad-slot::before { content: "Advertisement"; display: block; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #9aa4b5; margin-bottom: 6px; }
+.gam-ad-slot { margin: 34px auto; text-align: center; width: 100%; }
+.ad-label { color: #7a8493; font-size: 10px; letter-spacing: .1em; line-height: 1.4; margin-bottom: 7px; text-transform: uppercase; }
+.gam-ad-frame { align-items: center; display: flex; justify-content: center; min-height: 250px; overflow: visible; width: 100%; }
+.gam-ad-slot[hidden] { display: none; }
 .site-foot { background: var(--ink); color: #9aa4b5; margin-top: 60px; padding: 40px 0 30px; font-size: 14.5px; }
 .site-foot a { color: #cdd5e2; }
 .foot-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
