@@ -1,0 +1,29 @@
+---
+const slotId = 'div-gpt-ad-1787577808027-0';
+---
+<aside class="gam-ad-slot" data-gam-placement="article-inline-1" aria-label="Advertisement">
+  <div class="ad-label">Advertisement</div>
+  <div class="gam-ad-frame">
+    <!-- /23368375120/app_tipps_article_inline_1 -->
+    <div id={slotId} style="min-width: 300px; min-height: 250px;"></div>
+  </div>
+</aside>
+
+<script is:inline define:vars={{ slotId }}>
+  const adElement = document.getElementById(slotId);
+  const adContainer = adElement?.closest('[data-gam-placement="article-inline-1"]');
+  const articleBody = document.querySelector('.article-body');
+  const paragraphs = articleBody
+    ? Array.from(articleBody.children).filter((element) => element.tagName === 'P')
+    : [];
+
+  if (adContainer && articleBody) {
+    if (paragraphs.length >= 3) paragraphs[2].after(adContainer);
+    else articleBody.append(adContainer);
+  }
+
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.display(slotId);
+  });
+</script>

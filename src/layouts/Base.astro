@@ -12,11 +12,12 @@ interface Props {
   ogImage?: string;
   ogType?: 'website' | 'article';
   schema?: object | object[];
+  enableArticleInlineAd?: boolean;
 }
 const {
   title, description, canonical, noindex = false,
   ogImage = '/apple-touch-icon.png',
-  ogType = 'website', schema,
+  ogType = 'website', schema, enableArticleInlineAd = false,
 } = Astro.props;
 
 const url = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
@@ -85,6 +86,33 @@ const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(A
     <script is:inline>window['gtag_enable_tcf_support'] = true;</script>}
   {INTEGRATIONS.enableConsent && INTEGRATIONS.adsensePublisherId &&
     <script async src={`https://fundingchoicesmessages.google.com/i/${INTEGRATIONS.adsensePublisherId.replace('ca-pub-','pub-')}?ers=1`}></script>}
+
+  {enableArticleInlineAd && INTEGRATIONS.adManagerNetworkCode && (
+    <>
+      <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+      <script is:inline>
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+          const slot = googletag.defineSlot(
+            '/23368375120/app_tipps_article_inline_1',
+            [300, 250],
+            'div-gpt-ad-1787577808027-0'
+          );
+
+          if (slot) slot.addService(googletag.pubads());
+
+          googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+            if (event.slot.getSlotElementId() !== 'div-gpt-ad-1787577808027-0') return;
+            const container = document.querySelector('[data-gam-placement="article-inline-1"]');
+            if (container && event.isEmpty) container.setAttribute('hidden', '');
+          });
+
+          googletag.pubads().enableSingleRequest();
+          googletag.enableServices();
+        });
+      </script>
+    </>
+  )}
 
   {/* Load the account-level AdSense script for site verification. Ad slots remain
       disabled until enableAds is explicitly switched on after approval. */}
