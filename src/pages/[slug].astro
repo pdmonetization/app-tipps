@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import AdSlot from '../components/AdSlot.astro';
+import GamArticleInline from '../components/GamArticleInline.astro';
 import PostCard from '../components/PostCard.astro';
 import { allPosts, hasAffiliate, related } from '../lib/posts';
 import { CATEGORY_SLUGS, slugifyTag } from '../lib/taxonomy';
@@ -69,7 +69,8 @@ const breadcrumb = {
 };
 ---
 <Base title={d.seoTitle || d.title} description={d.description} canonical={d.canonicalUrl ?? url}
-      noindex={d.noindex} ogType="article" ogImage={d.featuredImage} schema={[article, breadcrumb]}>
+      noindex={d.noindex} ogType="article" ogImage={d.featuredImage} schema={[article, breadcrumb]}
+      enableArticleInlineAd>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">Home</a> / <a href={`/category/${catSlug}/`}>{d.category}</a>
@@ -105,12 +106,12 @@ const breadcrumb = {
              fetchpriority="high" decoding="async" style="border-radius:var(--radius);margin-bottom:26px" />
       )}
       <div class="article-body"><Content /></div>
+      <GamArticleInline />
       {d.tags.length > 0 && (
         <ul class="tags" aria-label="Tags">
           {d.tags.map((t) => <li><a href={`/tag/${slugifyTag(t)}/`}>{t}</a></li>)}
         </ul>
       )}
-      <AdSlot label="article-footer" />
     </article>
 
     {rel.length > 0 && (
