@@ -3,8 +3,12 @@ import sitemap from '@astrojs/sitemap';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import rehypePublicMedia from './src/plugins/rehype-public-media.mjs';
+import legacyRoutes from './src/data/legacy-routes.json' with { type: 'json' };
+import retiredPostSlugs from './src/data/retired-posts.json' with { type: 'json' };
 
 const SITE_URL = 'https://app-tipps.com';
+const RETIRED_PATHS = new Set(retiredPostSlugs.map((slug) => `/${slug}/`));
+const REDIRECT_PATHS = new Set(Object.keys(legacyRoutes.redirects));
 
 const unquote = (value) => value.trim().replace(/^(["'])(.*)\1$/, '$2');
 
@@ -66,7 +70,11 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const path = new URL(page).pathname;
-        return !NOINDEX.has(path) && !path.startsWith('/tag/') && !isPagination(path);
+        return !NOINDEX.has(path) &&
+          !RETIRED_PATHS.has(path) &&
+          !REDIRECT_PATHS.has(path) &&
+          !path.startsWith('/tag/') &&
+          !isPagination(path);
       },
       serialize(item) {
         if (item.url === 'https://app-tipps.com/') item.priority = 1.0;

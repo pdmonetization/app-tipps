@@ -1,33 +1,29 @@
 import { getCollection } from 'astro:content';
+import legacyRoutes from '../data/legacy-routes.json';
+import retiredPostSlugs from '../data/retired-posts.json';
 
 /*
  * Articles intentionally withdrawn from publication.
  *
  * Keeping the source Markdown for now makes the removal reversible, but these
- * slugs are excluded from every generated article/archive page. On GitHub
- * Pages the old URLs therefore resolve as genuine 404s rather than remaining
- * indexable 200 pages.
+ * slugs are excluded from every generated article/archive page and sitemap.
+ * The Cloudflare edge router returns the production 410 Gone response.
  */
-const RETIRED_SLUGS = new Set([
-  'black-friday-week-how-to-get-the-lowest-prices-on-temu',
-  'coin-master-faq-and-free-spins-links',
-  'house-of-fun-cheats-and-tricks',
-  'inboxdollars-app-review',
-  'is-blackout-bingo-legit-or-fake',
-  'is-swagbucks-legit-and-worth-it-review',
-  'mistplay-legit-or-not',
-  'qureka-app',
-  'shop-like-a-billionaire-in-the-temu-app-with-exclusive-30-off-free-gift',
-  'tips-to-win-zynga-poker',
-  'top-10-twitch-streaming-tips-to-make-money',
-  'ultimate-freecash-app-review',
-  'ultimate-gamehag-review',
-]);
+const RETIRED_SLUGS = new Set(retiredPostSlugs);
+const REDIRECTED_SLUGS = new Set(
+  Object.keys(legacyRoutes.redirects)
+    .map((path) => path.split('/').filter(Boolean))
+    .filter((parts) => parts.length === 1)
+    .map(([slug]) => slug),
+);
 
 export async function allPosts() {
   const posts = await getCollection(
     'posts',
-    ({ data }) => !data.draft && !RETIRED_SLUGS.has(data.slug),
+    ({ data }) =>
+      !data.draft &&
+      !RETIRED_SLUGS.has(data.slug) &&
+      !REDIRECTED_SLUGS.has(data.slug),
   );
   return posts.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 }

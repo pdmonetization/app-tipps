@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import legacyRoutes from '../src/data/legacy-routes.json' with { type: 'json' };
 
 const dist = join(process.cwd(), 'dist');
 const sitemapPath = join(dist, 'sitemap-0.xml');
@@ -97,6 +98,7 @@ let wrappedArticleTables = 0;
 const articleMediaErrors = [];
 
 for (const slug of postSources.keys()) {
+  if (legacyRoutes.redirects[`/${slug}/`]) continue;
   const page = join(dist, slug, 'index.html');
   if (!existsSync(page)) continue;
 
