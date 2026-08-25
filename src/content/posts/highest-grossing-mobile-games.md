@@ -8,10 +8,10 @@ category: "News"
 categories: ["News"]
 tags: ["Android", "iOS", "Mobile Games", "Game Revenue"]
 relatedSlugs:
+  - "is-pokemon-go-worth-playing"
+  - "pokemon-go-returning-player-guide-2026"
   - "arena-of-valor-review"
   - "candy-crush-saga-levels-explained"
-  - "pubg-mobile-beginner-tips"
-  - "everything-about-roblox"
 description: "Honor of Kings remains the top lifetime mobile game earner. See the latest 2026 monthly leaders, verified revenue milestones and our historical 103-game table."
 featuredImage: "/images/2022/06/103-highest-grossing-mobile-games-jpg.webp"
 featuredImageAlt: "Highest-grossing mobile games ranked by worldwide revenue"
@@ -207,6 +207,7 @@ No. The Sensor Tower figures cited in the current sections estimate in-app purch
 ## Related App-Tipps guides
 
 - [Is Pokémon GO worth playing?](/is-pokemon-go-worth-playing/)
+- [Pokémon GO returning-player guide for 2026](/pokemon-go-returning-player-guide-2026/)
 - [PUBG Mobile beginner tips](/pubg-mobile-beginner-tips/)
 - [Candy Crush Saga levels explained](/candy-crush-saga-levels-explained/)
 - [Arena of Valor review](/arena-of-valor-review/)
