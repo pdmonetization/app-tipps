@@ -51,6 +51,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .article-body h2 { font-size: 26px; margin: 40px 0 12px; letter-spacing: -.015em; }
 .article-body h3 { font-size: 20px; margin: 30px 0 10px; }
 .article-body img { border-radius: var(--radius); margin: 26px 0; }
+.article-body .table-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .article-body ul, .article-body ol { padding-left: 22px; }
 .article-body li { margin: 6px 0; }
 .article-body table { width: 100%; border-collapse: collapse; font-size: 15px; }

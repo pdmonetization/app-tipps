@@ -11,6 +11,17 @@ export const CATEGORY_SLUGS: Record<string, string> = {
   'Redeem Codes': 'codes',
 };
 
+export const CATEGORY_TITLES: Record<string, string> = {
+  'Game Guide': 'Game Guides',
+  'Game Review': 'Game Reviews',
+  'App Review': 'App Reviews',
+  'News': 'News',
+  'Comparison': 'App Comparisons',
+  'App Tips': 'App Tips',
+  "AT's Best Picks": "AT's Best Picks",
+  'Redeem Codes': 'Redeem Codes',
+};
+
 export const CATEGORY_INTROS: Record<string, string> = {
   'game-guides': 'Walkthroughs, beginner tips and progression advice for mobile games, based on verified game information and hands-on experience where that has taken place.',
   'game-reviews': 'Reviews of iOS and Android games covering gameplay, monetisation, graphics and sound. First-person testing is only stated when it actually took place.',

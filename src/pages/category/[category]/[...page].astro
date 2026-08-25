@@ -4,7 +4,7 @@ import Base from '../../../layouts/Base.astro';
 import PostCard from '../../../components/PostCard.astro';
 import Pager from '../../../components/Pager.astro';
 import { allPosts } from '../../../lib/posts';
-import { CATEGORY_SLUGS, CATEGORY_INTROS } from '../../../lib/taxonomy';
+import { CATEGORY_SLUGS, CATEGORY_INTROS, CATEGORY_TITLES } from '../../../lib/taxonomy';
 import { SITE } from '../../../consts';
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -21,14 +21,31 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page, name, slug } = Astro.props;
 const first = page.currentPage === 1;
 const intro = CATEGORY_INTROS[slug] ?? '';
-const title = first ? `${name}s` : `${name} - page ${page.currentPage}`;
+const categoryTitle = CATEGORY_TITLES[name] ?? name;
+const indexable = first && slug !== 'codes';
+const title = first ? categoryTitle : `${categoryTitle} - page ${page.currentPage}`;
+const categoryUrl = `${SITE.url}/category/${slug}/`;
+const schema = indexable ? [
+  {
+    '@type': 'CollectionPage',
+    '@id': `${categoryUrl}#collection`,
+    name: categoryTitle,
+    description: intro,
+    url: categoryUrl,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${categoryUrl}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: categoryTitle },
+    ],
+  },
+] : undefined;
 ---
 <Base title={title} description={intro || `${name} articles from App-Tipps.com.`}
-      noindex={!first} schema={first ? {
-        '@type': 'CollectionPage',
-        '@id': `${SITE.url}/category/${slug}/#collection`,
-        name, description: intro, isPartOf: { '@id': `${SITE.url}/#website` },
-      } : undefined}>
+      noindex={!indexable} {schema}>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {name}</nav>
     <div class="page-head">

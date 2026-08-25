@@ -16,7 +16,7 @@ function rewriteText(text, ext) {
   // links/assets while leaving protocol-relative and already-prefixed URLs alone.
   text = text
     .replace(/(href|src|action)=(['"])\/(?!\/|app-tipps\/)/g, `$1=$2${BASE}/`)
-    .replace(/srcset=(['"])([^'"]*)\1/g, (match, quote, value) => {
+    .replace(/srcset=(['"])([^'"]*)\1/g, (_match, quote, value) => {
       const rewritten = value.replace(/(^|,\s*)\/(?!\/|app-tipps\/)/g, `$1${BASE}/`);
       return `srcset=${quote}${rewritten}${quote}`;
     });

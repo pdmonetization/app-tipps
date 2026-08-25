@@ -19,7 +19,7 @@ relatedSlugs:
   - android-17-best-new-features
   - record-videos-android-while-playing-music
   - how-to-record-video-with-music-iphone
-featuredImage: /images/uploads/quick-share-android-iphone.png
+featuredImage: /images/uploads/quick-share-android-iphone.webp
 featuredImageAlt: Android and iPhone smartphones sharing photos wirelessly with Quick Share and AirDrop
 rating: 5
 seoTitle: ''

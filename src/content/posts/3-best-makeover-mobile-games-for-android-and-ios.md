@@ -33,23 +33,23 @@ Many makeover games offer various rewards and achievements if you want something
 
 ## **What are the Benefits of Playing Makeover Mobile Games?**
 
-#### **1. Perfecting your fashion skills:**
+### **1. Perfecting your fashion skills:**
 
 Makeover mobile games are a great way to hone your fashion sense. From playing with makeup and hairstyles to creating new fashionable outfits - these games allow you to experiment with different looks and styles.
 
-#### **2. Stay entertained for hours:**
+### **2. Stay entertained for hours:**
 
 With all the features offered by makeover mobile games, you can stay entertained for hours. From styling challenges and mini-games to virtual wardrobe sets - there's something for everyone!
 
-#### **3. Learn beauty tips:**
+### **3. Learn beauty tips:**
 
 Whether you're a fashion rookie or an experienced stylist, mobile makeover games can help you learn new makeup looks and hairstyles. With the help of tutorials and in-game tips - you can learn the ins and outs of fashion and beauty.
 
-#### **4. Social gaming:**
+### **4. Social gaming:**
 
 Makeover mobile games allow you to interact with other players worldwide, challenge them to styling duels or chat about your favorite looks with friends.
 
-#### **5. Relieve stress:**
+### **5. Relieve stress:**
 
 Who doesn't like a little makeover therapy? With mobile makeover games, you can relax and relieve stress while indulging in some self-care.
 
@@ -67,7 +67,7 @@ Who doesn't like a little makeover therapy? With mobile makeover games, you can 
 
 [iOS](https://apps.apple.com/us/app/avakin-life-3d-avatar-creator/id740737088)
 
-#### **Features:**
+### **Features:**
 
 • Personalised avatars
 
@@ -77,7 +77,7 @@ Who doesn't like a little makeover therapy? With mobile makeover games, you can 
 
 Pros and cons of Avakin Life:
 
-#### **How to play:**
+### **How to play:**
 
 1. Create your avatar and customize its looks to your liking.
 
@@ -85,7 +85,7 @@ Pros and cons of Avakin Life:
 
 3. Have fun while learning beauty tips!
 
-#### **Guide:**
+### **Guide:**
 
 • To get the most out of this game, take your time to explore all the different features and options available.
 
@@ -105,7 +105,7 @@ This free covet fashion game is perfect for those with a passion for fashion and
 
 [iOS](https://apps.apple.com/us/app/covet-fashion-outfit-stylist/id620112416)
 
-#### **Features:**
+### **Features:**
 
 - Create dream outfits with hundreds of designer clothes and accessories
 
@@ -113,7 +113,7 @@ This free covet fashion game is perfect for those with a passion for fashion and
 
 - Shop the looks you create within the game to recreate them in real life
 
-#### **How to play?**
+### **How to play?**
 
 1. Create your avatar and customize it to look as fashionable clothes as possible.
 
@@ -121,7 +121,7 @@ This free covet fashion game is perfect for those with a passion for fashion and
 
 3. Accessorize your look with shoes and bags for a completely stylish outfit!
 
-#### **Guide:**
+### **Guide:**
 
 If you're feeling stuck, don't worry. The game has plenty of helpful tips on creating the perfect look, depending on the occasion.
 
@@ -131,7 +131,7 @@ Styling Star' – As the name implies, this game lets you live out your styling 
 
 ![Style savvy edit](/images/2023/03/style-savvy-edit.png)
 
-#### **Features:**
+### **Features:**
 
 - Customizable clothing and accessories
 
@@ -141,7 +141,7 @@ Styling Star' – As the name implies, this game lets you live out your styling 
 
 - Unlock rewards for completing tasks
 
-#### **How to Play?**
+### **How to Play?**
 
 1. Download the game from the App Store or Google Play Store.
 
@@ -151,7 +151,7 @@ Styling Star' – As the name implies, this game lets you live out your styling 
 
 4. Participate in fashion shows to show off your designs and get the opportunity to win special prizes.
 
-#### **Guide:**
+### **Guide:**
 
 1. Focus on color coordination and texture mixing to create stylish outfits for your customers.
 
