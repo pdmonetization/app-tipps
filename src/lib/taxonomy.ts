@@ -24,7 +24,3 @@ export const CATEGORY_INTROS: Record<string, string> = {
 
 export const slugifyTag = (t: string) =>
   t.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
-/* Tags below this post count get a page, but with noindex, so the 77
-   near-empty archives stay out of Google's index. */
-export const TAG_INDEX_THRESHOLD = 3;

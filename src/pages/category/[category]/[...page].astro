@@ -24,11 +24,11 @@ const intro = CATEGORY_INTROS[slug] ?? '';
 const title = first ? `${name}s` : `${name} - page ${page.currentPage}`;
 ---
 <Base title={title} description={intro || `${name} articles from App-Tipps.com.`}
-      schema={{
+      noindex={!first} schema={first ? {
         '@type': 'CollectionPage',
         '@id': `${SITE.url}/category/${slug}/#collection`,
         name, description: intro, isPartOf: { '@id': `${SITE.url}/#website` },
-      }}>
+      } : undefined}>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {name}</nav>
     <div class="page-head">
