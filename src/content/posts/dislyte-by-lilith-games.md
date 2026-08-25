@@ -65,7 +65,7 @@ Dislyte is a colorful gacha RPG that combines elements of several myths with an 
 How to build a competitive Dislyte team?
 
 There are numerous Dislyte team compositions that are both popular and effective.  
-To create your own, you’ll need to know how the roles function and which Espers are best for each one. We’ve covered the [team comp topic in more detail](/best-dislyte-team-comp/) in another post here, so why don’t you check that one out?
+To create your own, you’ll need to know how the roles function and which Espers are best for each one. Our [Dislyte leveling and progression guide](/dislyte-leveling-progression-guide/) explains how to develop those Espers without wasting early resources.
 
 Is Li Ling good in Dislyte?
 

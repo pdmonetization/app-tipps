@@ -1,15 +1,25 @@
 ---
 import { CATEGORY_SLUGS } from '../lib/taxonomy';
 import { authorUrl } from '../lib/authors';
+import { publicResponsiveImage } from '../lib/responsive-images';
 const { post, eager = false } = Astro.props;
 const d = post.data;
 const catSlug = CATEGORY_SLUGS[d.category] ?? 'news';
 const date = d.publishDate.toISOString().slice(0, 10);
+const image = d.featuredImage ? await publicResponsiveImage(d.featuredImage) : undefined;
 ---
 <article class="card">
   <a class="card-media" href={`/${d.slug}/`} tabindex="-1" aria-hidden="true">
-    {d.featuredImage && <img src={d.featuredImage} alt="" width="640" height="360"
-      loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+    {d.featuredImage && image && (
+      <picture>
+        {image.webpSrcset && (
+          <source type="image/webp" srcset={image.webpSrcset}
+            sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 980px) 50vw, 360px" />
+        )}
+        <img src={d.featuredImage} alt="" width={image.width} height={image.height}
+          loading={eager ? 'eager' : 'lazy'} decoding="async" />
+      </picture>
+    )}
   </a>
   <a class="eyebrow" href={`/category/${catSlug}/`} style="margin-top:12px;display:inline-block">{d.category}</a>
   <h2><a href={`/${d.slug}/`}>{d.title}</a></h2>

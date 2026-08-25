@@ -1,8 +1,13 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
+import legacyRoutes from '../src/data/legacy-routes.json' with { type: 'json' };
+import retiredPostSlugs from '../src/data/retired-posts.json' with { type: 'json' };
 
 const SITE = 'https://app-tipps.com';
 const dist = join(process.cwd(), 'dist');
+const retiredPaths = new Set(retiredPostSlugs.map((slug) => `/${slug}/`));
+const gonePaths = new Set(legacyRoutes.gone);
+const redirectPaths = new Map(Object.entries(legacyRoutes.redirects));
 
 if (!existsSync(dist)) {
   throw new Error('Internal-link check failed: dist does not exist. Run the Astro build first.');
@@ -41,6 +46,18 @@ function destinationExists(pathname) {
   return candidates.some((candidate) => existsSync(candidate));
 }
 
+function routeKey(pathname) {
+  if (pathname === '/') return pathname;
+  return `${pathname.replace(/\/{2,}/g, '/').replace(/\/$/, '')}/`;
+}
+
+function invalidRoute(pathname) {
+  const key = routeKey(pathname);
+  if (retiredPaths.has(key) || gonePaths.has(key)) return 'retired (410)';
+  const redirect = redirectPaths.get(key);
+  return redirect ? `redirects to ${redirect}` : undefined;
+}
+
 const broken = new Map();
 const files = walk(dist).filter((file) => file.endsWith('.html'));
 
@@ -59,11 +76,15 @@ for (const file of files) {
     } catch {
       continue;
     }
-    if (url.origin !== SITE || destinationExists(url.pathname)) continue;
+    if (url.origin !== SITE) continue;
 
     const target = url.pathname;
-    if (!broken.has(target)) broken.set(target, new Set());
-    broken.get(target).add(sourcePath);
+    const invalid = invalidRoute(target);
+    if (!invalid && destinationExists(target)) continue;
+
+    const label = invalid ? `${target} [${invalid}]` : target;
+    if (!broken.has(label)) broken.set(label, new Set());
+    broken.get(label).add(sourcePath);
   }
 }
 

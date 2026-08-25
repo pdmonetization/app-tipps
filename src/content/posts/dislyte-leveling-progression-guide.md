@@ -29,7 +29,7 @@ In Dislyte, the most fundamental step to success is to find the optimal make-up 
 
 The game has a large number of espers, but not all of them are reliable or compatible with one another. Even if your team does a quick work of Kronos, it doesn't mean you'll fare as well in Story with the same lineup. For this reason, it's crucial that you have a firm grasp on the team composition you'll be employing and the espers you'll be focusing on.
 
-Currently, a wide variety of Espers is available, making it hard to come up with one unique choice for your team's make-up that will work in multiple situations. Instead, use the [Dislyte tier list and Team Composition guide](/best-dislyte-team-comp/) as a starting point for your analysis. You can put together a powerful team with their support that will propel you forward.
+Currently, a wide variety of Espers is available, making it hard to come up with one unique choice for your team's make-up that will work in multiple situations. Start with our broader [Dislyte game overview](/dislyte-by-lilith-games/) before deciding which roles your team still needs. You can put together a powerful team with their support that will propel you forward.
 
 Once you have a solid squad assembled, you can continue to improve them through Courses and Achievements by increasing their stats, levels, relics, and other perks.
 
