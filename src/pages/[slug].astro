@@ -9,6 +9,7 @@ import { CATEGORY_SLUGS, slugifyTag } from '../lib/taxonomy';
 import { authorUrl } from '../lib/authors';
 import { editorialRatingFor } from '../lib/editorial-ratings';
 import { publicResponsiveImage } from '../lib/responsive-images';
+import { breadcrumbSchema } from '../lib/schema';
 import { SITE } from '../consts';
 
 export const getStaticPaths = (async () => {
@@ -41,8 +42,14 @@ const reviewedName = d.title
 const reviewedType = d.category === 'Game Review' ? 'Game' : 'SoftwareApplication';
 const hasReviewScore = isReview && typeof rating === 'number';
 const authorSchema = d.author === 'App-Tipps Editorial'
-  ? { '@type': 'Organization', name: d.author, url: authorPage, parentOrganization: { '@id': `${SITE.url}/#organization` } }
-  : { '@type': 'Person', name: d.author, url: authorPage };
+  ? {
+      '@type': 'Organization',
+      '@id': `${authorPage}#editorial-team`,
+      name: d.author,
+      url: authorPage,
+      parentOrganization: { '@id': `${SITE.url}/#organization` },
+    }
+  : { '@type': 'Person', '@id': `${authorPage}#person`, name: d.author, url: authorPage };
 
 const article: any = {
   '@type': hasReviewScore ? 'Review' : 'Article',
@@ -53,6 +60,7 @@ const article: any = {
   dateModified: modified,
   inLanguage: SITE.lang,
   mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  isPartOf: { '@id': `${SITE.url}/#website` },
   author: authorSchema,
   publisher: { '@id': `${SITE.url}/#organization` },
   ...(d.featuredImage ? { image: new URL(d.featuredImage, SITE.url).href } : {}),
@@ -61,14 +69,11 @@ const article: any = {
     reviewRating: { '@type': 'Rating', ratingValue: rating, bestRating: 5, worstRating: 1 },
   } : {}),
 };
-const breadcrumb = {
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
-    { '@type': 'ListItem', position: 2, name: d.category, item: `${SITE.url}/category/${catSlug}/` },
-    { '@type': 'ListItem', position: 3, name: d.title },
-  ],
-};
+const breadcrumb = breadcrumbSchema(url, [
+  { name: 'Home', url: `${SITE.url}/` },
+  { name: d.category, url: `${SITE.url}/category/${catSlug}/` },
+  { name: d.title },
+]);
 ---
 <Base title={d.seoTitle || d.title} description={d.description} canonical={d.canonicalUrl ?? url}
       noindex={d.noindex} ogType="article" ogImage={d.featuredImage} schema={[article, breadcrumb]}

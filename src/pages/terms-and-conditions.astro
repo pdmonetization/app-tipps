@@ -1,10 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
 import { PUBLISHER, SITE } from '../consts';
+import { simplePageBreadcrumb } from '../lib/schema';
+const description = 'The terms on which App-Tipps.com is made available, including intellectual property, acceptable use, affiliate disclosure and limitation of liability.';
+const url = `${SITE.url}/terms-and-conditions/`;
 ---
 <Base title="Terms & Conditions"
-      description="The terms on which App-Tipps.com is made available, including intellectual property, acceptable use, affiliate disclosure and limitation of liability.">
+      {description} canonical={url} schema={[
+        {
+          '@type': 'WebPage', '@id': `${url}#webpage`, url,
+          name: 'Terms & Conditions', description,
+          isPartOf: { '@id': `${SITE.url}/#website` },
+        },
+        simplePageBreadcrumb('/terms-and-conditions/', 'Terms & Conditions'),
+      ]}>
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Terms &amp; Conditions</nav>
     <div class="prose" style="padding:34px 0 10px">
       <h1>Terms &amp; Conditions</h1>
       <p class="updated">Last updated 12 August 2026.</p>

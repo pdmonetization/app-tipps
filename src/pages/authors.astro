@@ -2,17 +2,22 @@
 import Base from '../layouts/Base.astro';
 import { AUTHORS } from '../lib/authors';
 import { SITE } from '../consts';
+import { simplePageBreadcrumb } from '../lib/schema';
 
 const title = `Our Authors | ${SITE.name}`;
 const description = `Meet the writers and editorial team behind ${SITE.name}, and browse articles published under each App-Tipps byline.`;
 const url = `${SITE.url}/authors/`;
-const schema = {
-  '@type': 'CollectionPage',
-  '@id': `${url}#authors`,
-  name: 'Our Authors',
-  url,
-  description,
-};
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    '@id': `${url}#authors`,
+    name: 'Our Authors',
+    url,
+    description,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+  },
+  simplePageBreadcrumb('/authors/', 'Authors'),
+];
 ---
 <Base {title} {description} canonical={url} schema={schema}>
   <div class="wrap">

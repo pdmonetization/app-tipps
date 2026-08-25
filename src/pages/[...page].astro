@@ -21,11 +21,7 @@ const description = first
   ? SITE.description
   : `Page ${page.currentPage} of app and mobile game reviews, guides and news from App-Tipps.com.`;
 ---
-<Base {title} {description} noindex={!first} schema={first ? {
-  '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: `${SITE.url}/`,
-  name: SITE.name, description: SITE.description,
-  publisher: { '@id': `${SITE.url}/#organization` },
-} : undefined}>
+<Base {title} {description} noindex={!first}>
   <div class="wrap">
     <div class="page-head">
       <h1>{first ? 'Apps and mobile games, reviewed properly' : `Latest articles - page ${page.currentPage}`}</h1>

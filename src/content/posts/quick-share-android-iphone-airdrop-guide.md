@@ -21,7 +21,6 @@ relatedSlugs:
   - how-to-record-video-with-music-iphone
 featuredImage: /images/uploads/quick-share-android-iphone.webp
 featuredImageAlt: Android and iPhone smartphones sharing photos wirelessly with Quick Share and AirDrop
-rating: 5
 seoTitle: ''
 canonicalUrl: ''
 noindex: false

@@ -16,13 +16,14 @@ interface Props {
 }
 const {
   title, description, canonical, noindex = false,
-  ogImage = '/apple-touch-icon.png',
+  ogImage = '/favicon.png',
   ogType = 'website', schema, enableArticleInlineAd = false,
 } = Astro.props;
 
 const url = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
 const image = new URL(ogImage, SITE.url).href;
 const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+const twitterCard = Astro.props.ogImage ? 'summary_large_image' : 'summary';
 
 const organization = {
   '@type': 'Organization',
@@ -32,7 +33,20 @@ const organization = {
   legalName: PUBLISHER.legalName,
   vatID: PUBLISHER.vatNumber,
   email: PUBLISHER.editorialEmail,
-  logo: { '@type': 'ImageObject', url: `${SITE.url}/apple-touch-icon.png` },
+  description: SITE.description,
+  foundingDate: String(SITE.founded),
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE.url}/favicon.png`,
+    contentUrl: `${SITE.url}/favicon.png`,
+    width: 512,
+    height: 512,
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'Editorial enquiries',
+    email: PUBLISHER.editorialEmail,
+  },
   address: {
     '@type': 'PostalAddress',
     streetAddress: PUBLISHER.address.street,
@@ -42,7 +56,19 @@ const organization = {
   },
   sameAs: [PUBLISHER.social.facebook, PUBLISHER.social.instagram],
 };
-const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(Array.isArray(schema) ? schema : schema ? [schema] : [])] };
+const website = {
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/#website`,
+  url: `${SITE.url}/`,
+  name: SITE.name,
+  description: SITE.description,
+  inLanguage: SITE.lang,
+  publisher: { '@id': `${SITE.url}/#organization` },
+};
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [organization, website, ...(Array.isArray(schema) ? schema : schema ? [schema] : [])],
+};
 ---
 <!doctype html>
 <html lang={SITE.lang}>
@@ -68,7 +94,7 @@ const graph = { '@context': 'https://schema.org', '@graph': [organization, ...(A
   <meta property="og:description" content={description} />
   <meta property="og:url" content={url} />
   <meta property="og:image" content={image} />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content={twitterCard} />
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={image} />

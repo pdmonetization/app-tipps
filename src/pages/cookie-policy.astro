@@ -1,10 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
-import { PUBLISHER } from '../consts';
+import { PUBLISHER, SITE } from '../consts';
+import { simplePageBreadcrumb } from '../lib/schema';
+const description = 'What cookies and similar technologies App-Tipps.com may use, what each category does, and how consent will be handled when optional services are enabled.';
+const url = `${SITE.url}/cookie-policy/`;
 ---
 <Base title="Cookie Policy"
-      description="What cookies and similar technologies App-Tipps.com may use, what each category does, and how consent will be handled when optional services are enabled.">
+      {description} canonical={url} schema={[
+        {
+          '@type': 'WebPage', '@id': `${url}#webpage`, url,
+          name: 'Cookie Policy', description,
+          isPartOf: { '@id': `${SITE.url}/#website` },
+        },
+        simplePageBreadcrumb('/cookie-policy/', 'Cookie Policy'),
+      ]}>
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Cookie Policy</nav>
     <div class="prose" style="padding:34px 0 10px">
       <h1>Cookie Policy</h1>
       <p class="updated">Last updated 24 August 2026.</p>

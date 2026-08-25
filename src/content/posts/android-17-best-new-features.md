@@ -19,7 +19,6 @@ relatedSlugs:
   - google-plays-app-listings-now-disclose-data-usage-intentions
 featuredImage: /images/uploads/android-17-best-new-features.webp
 featuredImageAlt: Android smartphone showing floating apps, privacy controls and other Android 17 features
-rating: 5
 seoTitle: ''
 canonicalUrl: ''
 noindex: false
