@@ -79,7 +79,7 @@ With these apps, you can also make personalized emoticons, stickers, and gifs. U
 
 ## **Pros & Cons of Prisma Photo Editor Into Cartoons**
 
-#### **Pros**
+### **Pros**
 
 **1. AI-Powered Photo Editing** – Prisma's advanced artificial intelligence technology recognizes the objects in your photo and then applies a unique filter to create a cartoon version of the image. This makes it easy for users to customize their cartoon look with different artworkIt'sles, including anime, comics, classic art and more.
 
@@ -93,7 +93,7 @@ With these apps, you can also make personalized emoticons, stickers, and gifs. U
 
 **6. Free to Use** – Prisma is free to use and download, so you don't have to worry about any costly fees or premium subscription.
 
-#### **Cons**
+### **Cons**
 
 **1. Limited Editing Tools** – Although Prisma offers a variety of filters and styles, it does not provide as many editing tools as others. If you want more control over yourdoesn'tn's appearance, you may want to look at other Apps.
 

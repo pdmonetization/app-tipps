@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import rehypePublicMedia from './src/plugins/rehype-public-media.mjs';
 
 const SITE_URL = 'https://app-tipps.com';
 
@@ -50,7 +51,7 @@ const ARTICLE_LASTMOD = articleLastmodByUrl();
 
 /* Pages that carry a noindex must not appear in the sitemap. */
 const NOINDEX = new Set([
-  '/newsletter/', '/404/', '/410/', '/admin/',
+  '/newsletter/', '/404/', '/410/', '/admin/', '/category/codes/',
 ]);
 
 const isPagination = (path) =>
@@ -60,6 +61,7 @@ export default defineConfig({
   site: SITE_URL,
   trailingSlash: 'always',
   build: { format: 'directory' },
+  markdown: { rehypePlugins: [rehypePublicMedia] },
   integrations: [
     sitemap({
       filter: (page) => {
