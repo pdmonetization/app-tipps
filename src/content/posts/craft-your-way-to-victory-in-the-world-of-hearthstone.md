@@ -6,7 +6,7 @@ updatedDate: 2024-12-18T08:20:50Z
 author: "Sophia Garcia"
 category: "Game Review"
 categories: ["Game Review"]
-tags: ["Android", "Card", "iOS", "Multiplayer", "Stylized"]
+tags: ["Android", "Card", "Card Games", "iOS", "Multiplayer", "Stylized"]
 description: "Shuffle your deck, summon your minions, and embark on a journey to become a Hearthstone master."
 featuredImage: "/images/2023/11/Hearthstone-1200x630-1-e1719472786268.png"
 featuredImageAlt: "Craft Your Way to Victory in the World of Hearthstone"
@@ -58,6 +58,8 @@ The age-old question: ***Is Hearthstone pay-to-win or free-to-play?*** The beaut
 ## **Conclusion**
 
 Hearthstone isn't just a card game; it's a world of endless possibilities and strategic challenges. Deck building is an art that requires practice and creativity. As you delve into the Hearthstone universe, remember that there's no one-size-fits-all when it comes to decks. Experiment, strategize, and most importantly, have fun. Hearthstone is more than just a game; it's a journey of discovery and triumph. So, shuffle your deck, summon your minions, and embark on a journey to become a Hearthstone master.
+
+For a solo roguelike deckbuilder built around poker hands, see our [Balatro mobile beginner's guide](/balatro-mobile-beginners-guide/).
 
 **Download Hearthstone for:**
 

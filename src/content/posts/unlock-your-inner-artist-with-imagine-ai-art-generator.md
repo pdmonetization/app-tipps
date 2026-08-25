@@ -6,7 +6,7 @@ updatedDate: 2023-07-17T12:30:12Z
 author: "Alexander Davis"
 category: "App Tips"
 categories: ["App Tips"]
-tags: ["Android", "Art & Design", "iOS"]
+tags: ["Android", "Art & Design", "iOS", "AI Apps"]
 description: "Embrace the possibilities and embark on an artistic journey with Imagine: AI Art Generator."
 featuredImage: "/images/2023/07/AI-art-generator-app-tipps.png"
 featuredImageAlt: "Unlock Your Inner Artist with Imagine: AI Art Generator"

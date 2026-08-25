@@ -6,7 +6,7 @@ updatedDate: 2025-02-18T14:46:34Z
 author: "Mia Martinez"
 category: "AT's Best Picks"
 categories: ["AT's Best Picks"]
-tags: ["Action & Adventure Games", "Android", "iOS", "MMO Games", "Puzzle Games", "RPG", "Simulation Games", "Strategy Games"]
+tags: ["Action & Adventure Games", "Android", "iOS", "MMO Games", "Puzzle Games", "RPG", "Runner Games", "Simulation Games", "Strategy Games"]
 description: "If you're looking for the most captivating iPhone or Android games, check out our list below."
 featuredImage: "/images/2023/11/Mobile-Games-November-1200x630-1-e1719472718145.png"
 featuredImageAlt: "10 Addictive Mobile Games"
@@ -104,6 +104,8 @@ In the widely beloved tower defense game Plants vs. Zombies 2, you must deploy y
 [iOS](https://apps.apple.com/il/app/subway-surfers/id512939461)
 
 Subway Surfers is an infinite running game where you dash or skateboard along a subway track, striving to avoid getting caught. During your run, gather coins and power-ups, skillfully avoid approaching trains, leap over obstacles, and aim to elude capture for as long as possible.
+
+The series now has a sequel; our [Subway Surfers City review](/subway-surfers-city-review/) explains the new City Tour, districts and Classic Endless mode.
 
 ## **Toon Blast**
 

@@ -13,6 +13,10 @@ tags:
   - Google Pixel
   - Android Tips
   - Mobile Security
+relatedSlugs:
+  - quick-share-android-iphone-airdrop-guide
+  - record-videos-android-while-playing-music
+  - google-plays-app-listings-now-disclose-data-usage-intentions
 featuredImage: /images/uploads/android-17-best-new-features.png
 featuredImageAlt: Android smartphone showing floating apps, privacy controls and other Android 17 features
 rating: 5
@@ -25,6 +29,8 @@ draft: false
 Android 17 is rolling out to supported Pixel devices first, with other Android phone makers expected to follow over the coming months. Like most major Android updates, it includes a long list of technical changes, but only a handful of them will matter to most users on a daily basis.
 
 This guide focuses on the Android 17 features that are genuinely useful, not just new on paper.
+
+One useful Google feature is arriving outside the operating-system update itself: our [Quick Share and AirDrop guide](/quick-share-android-iphone-airdrop-guide/) explains how supported Android phones can exchange files with iPhones.
 
 ### 1. Floating app bubbles are no longer limited to chats
 

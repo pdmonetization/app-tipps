@@ -14,6 +14,11 @@ tags:
   - AirDrop
   - iOS
   - File Sharing
+  - Android Tips
+relatedSlugs:
+  - android-17-best-new-features
+  - record-videos-android-while-playing-music
+  - how-to-record-video-with-music-iphone
 featuredImage: /images/uploads/quick-share-android-iphone.png
 featuredImageAlt: Android and iPhone smartphones sharing photos wirelessly with Quick Share and AirDrop
 rating: 5
@@ -167,6 +172,8 @@ The important part is whether the nearby iPhone becomes visible when AirDrop is 
 Not necessarily.
 
 This feature is part of Google’s broader Android and Quick Share rollout rather than something limited exclusively to Android 17.
+
+If your phone is eligible for the operating-system update, our [Android 17 feature guide](/android-17-best-new-features/) covers the privacy, multitasking and security changes worth using.
 
 Google’s Quick Share documentation says the service itself works on Android 6 and later, although individual features and direct AirDrop compatibility depend on the phone model and software version.
 

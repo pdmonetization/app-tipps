@@ -7,6 +7,10 @@ author: "Michael Wilson"
 category: "Game Review"
 categories: ["Game Review"]
 tags: ["JoJo's Bizarre Adventure Golden Spirit", "Android", "iOS", "RPG", "Anime Games", "Gacha Games"]
+relatedSlugs:
+  - "one-punch-man-the-strongest-review"
+  - "raid-shadow-legends-review"
+  - "afk-arena-gameplay"
 description: "Our JoJo's Bizarre Adventure: Golden Spirit review covers combat, story presentation, characters, gacha systems and whether the new mobile RPG is worth playing."
 featuredImage: "/images/2026/08/jojos-bizarre-adventure-golden-spirit-review.webp"
 featuredImageAlt: "Two original fantasy fighters battling beside a smartphone RPG"
@@ -132,4 +136,3 @@ Download it if the idea of building a cross-generation JoJo team sounds appealin
 
 - [Goddess of Victory: NIKKE review](/a-divine-journey-goddess-of-victory-nikke/)
 - [One Piece Treasure Cruise review](/setting-sail-for-adventure-one-piece-treasure-cruise-review/)
-
