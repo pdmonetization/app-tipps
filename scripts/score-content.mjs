@@ -15,7 +15,12 @@ const list = (name) => {
   const block = frontmatter.match(new RegExp(`^${name}:\\s*\\n((?:  - .*\\n?)+)`, 'm'))?.[1] ?? '';
   return [...block.matchAll(/^  -\s+(.+)$/gm)].map((match) => match[1].trim());
 };
-const normalize = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const normalize = (value) => value
+  .normalize('NFKD')
+  .replace(/\p{M}/gu, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, ' ')
+  .trim();
 const keyword = normalize(rawKeyword);
 const containsKeyword = (value) => normalize(value).includes(keyword);
 const title = field('seoTitle') || field('title');
