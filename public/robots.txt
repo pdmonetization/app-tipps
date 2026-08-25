@@ -2,11 +2,7 @@
 User-agent: *
 Allow: /
 
-# Legacy WordPress paths no longer exist on this site but are blocked
-# to stop crawlers wasting budget on 404s during the migration window.
-Disallow: /wp-admin/
-Disallow: /wp-login.php
-Disallow: /?s=
-Disallow: /search
+# App-Tipps is now a static site. Retired WordPress endpoints must remain
+# crawlable so search engines can see their real 404 response and remove them.
 
 Sitemap: https://app-tipps.com/sitemap-index.xml

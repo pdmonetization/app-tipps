@@ -61,7 +61,7 @@ Assassin's Creed: Codename Jade is expected to be released in summer 2023. The g
 
 ---
 
-**You might also like:** *[Assassin’s Creed Rebellion – Engaging, Fun, and Full of Good Ideas](/assassins-creed-rebellion-review/?swcfpc=1)*
+**You might also like:** *[Assassin’s Creed Rebellion – Engaging, Fun, and Full of Good Ideas](/assassins-creed-rebellion-review/)*
 
 ---
 

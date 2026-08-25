@@ -58,6 +58,23 @@ assertNoindexFollow('2/index.html');
 assertNoindexFollow('category/game-guides/2/index.html');
 assertNoindexFollow('tag/android/index.html');
 
+const legacyCacheParameter = '?swcfpc=1';
+const postsDir = join(process.cwd(), 'src/content/posts');
+const postsWithLegacyLinks = readdirSync(postsDir)
+  .filter((name) => name.endsWith('.md'))
+  .filter((name) => readFileSync(join(postsDir, name), 'utf8').includes(legacyCacheParameter));
+
+if (postsWithLegacyLinks.length) {
+  throw new Error(
+    `SEO check failed: legacy ${legacyCacheParameter} links remain in:\n${postsWithLegacyLinks.join('\n')}`,
+  );
+}
+
+const robots = readFileSync(join(dist, 'robots.txt'), 'utf8');
+if (/Disallow:\s*\/wp-(?:admin|login)/i.test(robots)) {
+  throw new Error('SEO check failed: robots.txt prevents crawlers from seeing retired WordPress 404s.');
+}
+
 console.log(
   `SEO build check passed: ${entries.length} sitemap URLs; ` +
   `${entries.filter(({ xml }) => /<lastmod>/.test(xml)).length} article lastmod values.`,
