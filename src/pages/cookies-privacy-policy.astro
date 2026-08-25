@@ -1,10 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
-import { PUBLISHER } from '../consts';
+import { PUBLISHER, SITE } from '../consts';
+import { simplePageBreadcrumb } from '../lib/schema';
+const description = 'How App-Tipps.com collects, uses and protects personal data, your rights under UK GDPR and EU GDPR, and how to exercise them.';
+const url = `${SITE.url}/cookies-privacy-policy/`;
 ---
 <Base title="Privacy Policy"
-      description="How App-Tipps.com collects, uses and protects personal data, your rights under UK GDPR and EU GDPR, and how to exercise them.">
+      {description} canonical={url} schema={[
+        {
+          '@type': 'WebPage', '@id': `${url}#webpage`, url,
+          name: 'Privacy Policy', description,
+          isPartOf: { '@id': `${SITE.url}/#website` },
+        },
+        simplePageBreadcrumb('/cookies-privacy-policy/', 'Privacy Policy'),
+      ]}>
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Privacy Policy</nav>
     <div class="prose" style="padding:34px 0 10px">
       <h1>Privacy Policy</h1>
       <p class="updated">Last updated 24 August 2026. This policy replaces all earlier versions.</p>

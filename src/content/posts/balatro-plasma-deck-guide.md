@@ -19,7 +19,6 @@ relatedSlugs:
   - craft-your-way-to-victory-in-the-world-of-hearthstone
 featuredImage: /images/2026/08/balatro-plasma-deck-guide.webp
 featuredImageAlt: Blue chips and magenta score symbols balanced on a glowing scale for a Balatro Plasma Deck strategy guide
-rating: 5
 seoTitle: "Balatro Plasma Deck Guide: Best Jokers & Strategy"
 canonicalUrl: ''
 noindex: false

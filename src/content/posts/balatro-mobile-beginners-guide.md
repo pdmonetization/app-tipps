@@ -19,7 +19,6 @@ relatedSlugs:
   - craft-your-way-to-victory-in-the-world-of-hearthstone
 featuredImage: /images/2026/08/balatro-mobile-beginners-guide.webp
 featuredImageAlt: Balatro-style card game on a smartphone with playing cards and poker chips
-rating: 5
 seoTitle: ''
 canonicalUrl: ''
 noindex: false

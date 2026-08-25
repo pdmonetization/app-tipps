@@ -19,7 +19,6 @@ relatedSlugs:
   - craft-your-way-to-victory-in-the-world-of-hearthstone
 featuredImage: /images/2026/08/balatro-deck-tier-list.webp
 featuredImageAlt: Five original card decks and chip stacks arranged from low to high for a Balatro deck ranking
-rating: 5
 seoTitle: "Balatro Deck Tier List: All 15 Decks Ranked (2026)"
 canonicalUrl: ''
 noindex: false

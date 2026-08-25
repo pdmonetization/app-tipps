@@ -1,13 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE, PUBLISHER } from '../consts';
+import { simplePageBreadcrumb } from '../lib/schema';
 const desc = 'Who runs App-Tipps.com, how we work, how we are funded, and how to reach the editorial team.';
+const url = `${SITE.url}/about/`;
 ---
-<Base title="About Us" description={desc} schema={{
-  '@type': 'AboutPage', '@id': `${SITE.url}/about/#about`,
-  mainEntity: { '@id': `${SITE.url}/#organization` },
-}}>
+<Base title="About Us" description={desc} canonical={url} schema={[
+  {
+    '@type': 'AboutPage', '@id': `${url}#about`, url,
+    name: 'About App-Tipps.com', description: desc,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+    mainEntity: { '@id': `${SITE.url}/#organization` },
+  },
+  simplePageBreadcrumb('/about/', 'About Us'),
+]}>
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / About Us</nav>
     <div class="prose" style="padding:34px 0 10px">
       <h1>About App-Tipps.com</h1>
       <p class="standfirst" style="font-size:19px;color:var(--ink-soft)">

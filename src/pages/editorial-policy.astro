@@ -1,10 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
-import { PUBLISHER } from '../consts';
+import { PUBLISHER, SITE } from '../consts';
+import { simplePageBreadcrumb } from '../lib/schema';
+const description = 'How App-Tipps.com reports, reviews and scores, how we handle corrections and conflicts of interest, and how advertising is kept separate from editorial.';
+const url = `${SITE.url}/editorial-policy/`;
 ---
 <Base title="Editorial Policy"
-      description="How App-Tipps.com reports, reviews and scores, how we handle corrections and conflicts of interest, and how advertising is kept separate from editorial.">
+      {description} canonical={url} schema={[
+        {
+          '@type': 'WebPage', '@id': `${url}#webpage`, url,
+          name: 'Editorial Policy', description,
+          isPartOf: { '@id': `${SITE.url}/#website` },
+        },
+        simplePageBreadcrumb('/editorial-policy/', 'Editorial Policy'),
+      ]}>
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Editorial Policy</nav>
     <div class="prose" style="padding:34px 0 10px">
       <h1>Editorial Policy</h1>
       <p class="updated">Last updated 14 August 2026.</p>

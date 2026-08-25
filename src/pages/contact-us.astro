@@ -1,12 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE, PUBLISHER } from '../consts';
+import { simplePageBreadcrumb } from '../lib/schema';
+const url = `${SITE.url}/contact-us/`;
 ---
 <Base title="Contact Us"
       description="How to reach the App-Tipps.com editorial team about corrections, tips, press enquiries, privacy requests or advertising."
-      schema={{ '@type': 'ContactPage', '@id': `${SITE.url}/contact-us/#contact`,
-                mainEntity: { '@id': `${SITE.url}/#organization` } }}>
+      canonical={url}
+      schema={[
+        {
+          '@type': 'ContactPage', '@id': `${url}#contact`, url,
+          name: 'Contact App-Tipps.com',
+          isPartOf: { '@id': `${SITE.url}/#website` },
+          mainEntity: { '@id': `${SITE.url}/#organization` },
+        },
+        simplePageBreadcrumb('/contact-us/', 'Contact Us'),
+      ]}>
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Contact Us</nav>
     <div class="prose" style="padding:34px 0 10px">
       <h1>Contact us</h1>
       <p>
