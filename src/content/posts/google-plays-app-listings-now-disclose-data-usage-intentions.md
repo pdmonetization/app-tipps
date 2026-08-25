@@ -6,7 +6,7 @@ updatedDate: 2023-05-17T07:43:50Z
 author: "Olivia Williams"
 category: "News"
 categories: ["News"]
-tags: ["News"]
+tags: ["News", "App Stores", "Mobile Security"]
 description: "As technology continues to evolve, continued efforts towards increased transparency in data usage will be essential for building user trust and confidence."
 featuredImage: "/images/2023/05/banner-google-feature.png"
 featuredImageAlt: "New Feature Alert: Google Play's App Listings Now Disclose Data Usage Intentions"

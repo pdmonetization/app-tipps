@@ -7,6 +7,8 @@ author: "Michael Wilson"
 category: "Game Review"
 categories: ["Game Review"]
 tags: ["Subway Surfers City", "Android", "iOS", "Arcade Games", "Runner Games"]
+relatedSlugs:
+  - "10-addictive-mobile-games-you-should-try-in-november-2023"
 description: "Our Subway Surfers City review explains its new City Tour, endless runs, districts, controls, monetization and whether the 2026 sequel is worth playing."
 featuredImage: "/images/2026/08/subway-surfers-city-review.webp"
 featuredImageAlt: "A mobile-game runner riding a hoverboard beside colorful subway trains"

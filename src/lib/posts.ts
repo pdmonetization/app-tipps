@@ -37,15 +37,41 @@ const AFFILIATE = /(amzn\.to|pxf\.io|temu\.to|tp\.media|tp\.st|awin1|shareasale)
 export const hasAffiliate = (body: string) => AFFILIATE.test(body);
 
 export function related(post: any, pool: any[], n = 3) {
-  const tags = new Set(post.data.tags);
+  const curatedSlugs: string[] = post.data.relatedSlugs ?? [];
+  if (curatedSlugs.length > 0) {
+    const bySlug = new Map(pool.map((candidate) => [candidate.data.slug, candidate]));
+    const missing = curatedSlugs.filter((slug) => !bySlug.has(slug));
+    if (missing.length > 0) {
+      throw new Error(`Missing curated related posts for ${post.data.slug}: ${missing.join(', ')}`);
+    }
+    return curatedSlugs.slice(0, n).map((slug) => bySlug.get(slug));
+  }
+
+  const genericTags = new Set([
+    'android',
+    'ios',
+    'apps',
+    'game',
+    'news',
+    'single player',
+    'multiplayer',
+    'lifestyle apps',
+    'productivity apps',
+  ]);
+  const tags = new Set(post.data.tags.map((tag: string) => tag.toLowerCase()));
   return pool
     .filter((p) => p.id !== post.id)
     .map((p) => ({
       p,
       score:
-        (p.data.category === post.data.category ? 2 : 0) +
-        p.data.tags.filter((t: string) => tags.has(t)).length,
+        (p.data.category === post.data.category ? 1 : 0) +
+        p.data.tags.reduce((score: number, tag: string) => {
+          const normalized = tag.toLowerCase();
+          if (!tags.has(normalized)) return score;
+          return score + (genericTags.has(normalized) ? 0.15 : 4);
+        }, 0),
     }))
+    .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score || b.p.data.publishDate - a.p.data.publishDate)
     .slice(0, n)
     .map((x) => x.p);

@@ -6,7 +6,7 @@ updatedDate: 2025-04-15T09:19:49Z
 author: "Sylvie Fox"
 category: "App Tips"
 categories: ["App Tips", "News"]
-tags: ["ChatGPT", "GPT 4o", "GPT app", "image editing"]
+tags: ["ChatGPT", "GPT 4o", "GPT app", "image editing", "AI Apps"]
 description: "Before launching the long-anticipated ChatGPT-5, OpenAI upgraded their latest omni model with a new image functionality, also available on the app! So,…"
 featuredImage: "/images/2025/04/ChatGPT_app_new_image_editing_funtionality-png.webp"
 featuredImageAlt: "The New Way to EDIT YOUR PHOTOS on the ChatGPT App"
@@ -14,6 +14,8 @@ draft: false
 ---
 
 Before launching the long-anticipated ChatGPT-5, OpenAI upgraded their latest omni model with a new image functionality, also available on the app! So, here is what's better and how to take advantage of it:
+
+If your work starts with documents rather than photos, our [Gemini Notebook review](/gemini-notebook-app-review/) explains how Google's source-based AI app handles citations, summaries and Audio Overviews.
 
 ## What's new in the 4o image upgrade?
 

@@ -7,6 +7,10 @@ author: "Olivia Williams"
 category: "App Review"
 categories: ["App Review"]
 tags: ["Gemini Notebook", "NotebookLM", "Android", "iOS", "AI Apps", "Productivity"]
+relatedSlugs:
+  - "the-new-way-to-edit-your-photos-on-the-chatgpt-app"
+  - "unlock-your-inner-artist-with-imagine-ai-art-generator"
+  - "grammarly-app-review"
 description: "Our Gemini Notebook app review covers sources, citations, Audio Overviews, offline listening, limitations and who should use Google's renamed NotebookLM."
 featuredImage: "/images/2026/08/gemini-notebook-app-review.webp"
 featuredImageAlt: "A smartphone research notebook app beside documents and headphones"
@@ -126,4 +130,3 @@ Use the phone app for capture, questions and listening. Use a larger screen for 
 
 - [Grammarly app review](/grammarly-app-review/)
 - [How Duolingo makes learning a language fun](/how-duolingo-app-makes-learning-a-new-language-fun-and-easy/)
-

@@ -13,6 +13,8 @@ tags:
   - Android
   - iOS
   - Card Games
+relatedSlugs:
+  - craft-your-way-to-victory-in-the-world-of-hearthstone
 featuredImage: /images/uploads/ChatGPT Image Aug 12, 2026, 06_09_19 PM.png
 featuredImageAlt: Balatro-style card game on a smartphone with playing cards and poker chips
 rating: 5

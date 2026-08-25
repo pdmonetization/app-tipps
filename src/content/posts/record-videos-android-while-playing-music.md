@@ -6,7 +6,7 @@ updatedDate: 2023-02-09T14:25:08Z
 author: "Alexander Davis"
 category: "App Tips"
 categories: ["App Tips"]
-tags: ["Android", "Productivity Apps"]
+tags: ["Android", "Android Tips", "Productivity Apps"]
 description: "Is it important for the Android camera app to automatically pause music, or should users have the option to do so?"
 featuredImage: "/images/2022/12/record-videos-with-music-android-jpg.webp"
 featuredImageAlt: "How to Record Videos on an Android While Playing Music?"

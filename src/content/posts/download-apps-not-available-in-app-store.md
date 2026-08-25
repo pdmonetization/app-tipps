@@ -6,7 +6,7 @@ updatedDate: 2023-02-09T14:27:38Z
 author: "Alexander Davis"
 category: "App Tips"
 categories: ["App Tips"]
-tags: ["iOS", "Lifestyle Apps", "Productivity Apps"]
+tags: ["iOS", "Lifestyle Apps", "Productivity Apps", "App Stores"]
 description: "Although you may find over two million incredible apps in the App Store, not all apps that are compatible with the iPhone and iPad are actually there."
 featuredImage: "/images/2022/12/ios-apps-not-in-store-jpg.webp"
 featuredImageAlt: "How to Access Apps Not Available in the App Store?"
