@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import legacyRoutes from '../src/data/legacy-routes.json' with { type: 'json' };
 
@@ -96,6 +96,7 @@ if (categoryTitleErrors.length) {
 let enhancedArticleImages = 0;
 let wrappedArticleTables = 0;
 const articleMediaErrors = [];
+let responsiveArticleHeroes = 0;
 
 for (const slug of postSources.keys()) {
   if (legacyRoutes.redirects[`/${slug}/`]) continue;
@@ -103,6 +104,16 @@ for (const slug of postSources.keys()) {
   if (!existsSync(page)) continue;
 
   const html = readFileSync(page, 'utf8');
+  const hero = html.match(/<picture class="article-hero">([\s\S]*?)<\/picture>/)?.[1];
+  const source = postSources.get(slug);
+  const hasFeaturedImage = /^featuredImage:\s*\S+/m.test(source);
+  if (hasFeaturedImage) {
+    if (!hero || !/<source\b[^>]*type="image\/webp"[^>]*srcset="[^"]+"[^>]*sizes="[^"]+"/.test(hero)) {
+      articleMediaErrors.push(`${slug}: featured image is missing responsive WebP srcset/sizes`);
+    } else {
+      responsiveArticleHeroes += 1;
+    }
+  }
   const articleBody = html.match(/<div class="article-body">([\s\S]*?)<aside class="gam-ad-slot"/)?.[1];
   if (articleBody === undefined) {
     articleMediaErrors.push(`${slug}: article body not found`);
@@ -150,8 +161,22 @@ if (/Disallow:\s*\/wp-(?:admin|login)/i.test(robots)) {
   throw new Error('SEO check failed: robots.txt prevents crawlers from seeing retired WordPress 404s.');
 }
 
+const iconBudgets = new Map([
+  ['favicon.png', 100 * 1024],
+  ['favicon.ico', 50 * 1024],
+  ['apple-touch-icon.png', 50 * 1024],
+]);
+const oversizedIcons = [...iconBudgets]
+  .filter(([name, budget]) => statSync(join(process.cwd(), 'public', name)).size > budget)
+  .map(([name, budget]) => `${name} exceeds ${Math.round(budget / 1024)} KB`);
+
+if (oversizedIcons.length) {
+  throw new Error(`SEO check failed: oversized browser assets:\n${oversizedIcons.join('\n')}`);
+}
+
 console.log(
   `SEO build check passed: ${entries.length} sitemap URLs; ` +
   `${entries.filter(({ xml }) => /<lastmod>/.test(xml)).length} article lastmod values; ` +
+  `${responsiveArticleHeroes} responsive article heroes; ` +
   `${enhancedArticleImages} enhanced inline images; ${wrappedArticleTables} responsive tables.`,
 );

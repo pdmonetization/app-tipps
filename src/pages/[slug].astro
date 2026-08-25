@@ -8,7 +8,7 @@ import { allPosts, hasAffiliate, related } from '../lib/posts';
 import { CATEGORY_SLUGS, slugifyTag } from '../lib/taxonomy';
 import { authorUrl } from '../lib/authors';
 import { editorialRatingFor } from '../lib/editorial-ratings';
-import { publicImageDimensions } from '../lib/image-metadata';
+import { publicResponsiveImage } from '../lib/responsive-images';
 import { SITE } from '../consts';
 
 export const getStaticPaths = (async () => {
@@ -27,7 +27,7 @@ const url = `${SITE.url}/${d.slug}/`;
 const authorPath = authorUrl(d.author);
 const authorPage = new URL(authorPath, SITE.url).href;
 const affiliate = hasAffiliate(post.body ?? '');
-const heroDimensions = d.featuredImage ? await publicImageDimensions(d.featuredImage) : undefined;
+const heroImage = d.featuredImage ? await publicResponsiveImage(d.featuredImage) : undefined;
 const rel = related(post, pool);
 const published = d.publishDate.toISOString();
 const modified = (d.updatedDate ?? d.publishDate).toISOString();
@@ -103,10 +103,16 @@ const breadcrumb = {
           <a href="/editorial-policy/"> Editorial Policy</a>.
         </p>
       )}
-      {d.featuredImage && (
-        <img src={d.featuredImage} alt={d.featuredImageAlt ?? d.title}
-             width={heroDimensions?.width} height={heroDimensions?.height}
-             fetchpriority="high" decoding="async" style="border-radius:var(--radius);margin-bottom:26px" />
+      {d.featuredImage && heroImage && (
+        <picture class="article-hero">
+          {heroImage.webpSrcset && (
+            <source type="image/webp" srcset={heroImage.webpSrcset}
+              sizes="(max-width: 800px) calc(100vw - 32px), 760px" />
+          )}
+          <img src={d.featuredImage} alt={d.featuredImageAlt ?? d.title}
+               width={heroImage.width} height={heroImage.height}
+               fetchpriority="high" decoding="async" />
+        </picture>
       )}
       <div class="article-body"><Content /></div>
       <GamArticleInline />

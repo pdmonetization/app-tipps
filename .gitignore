@@ -2,4 +2,5 @@ node_modules/
 dist/
 .astro/
 .wrangler/
+public/_responsive/
 .DS_Store
