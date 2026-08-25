@@ -87,6 +87,6 @@ Asphalt 9: Legends is an impressive mobile racing game that offers console-quali
 
 ---
 
-***You migh*****t** **want to check out:** [Horizon Chase – World Tour](/tips-and-tricks-horizon-chase-world-tour/?swcfpc=1)
+***You migh*****t** **want to check out:** [Horizon Chase – World Tour](/tips-and-tricks-horizon-chase-world-tour/)
 
 ---

@@ -15,7 +15,7 @@ draft: false
 
 Gaming has never been more accessible, whether on your console, PC, smartphone, or tablet. We all load our devices with games to pass the time during commutes, at the doctor's office, or on the couch. But watch out, some of these mobile games can be seriously addictive! If you're looking for the most captivating iPhone or Android games, check out our list below. ***Just be prepared to lose track of time!***
 
-## **[Brawl Stars](/comparing-two-titans-brawl-stars-vs-brawlhalla/?swcfpc=1)**
+## **[Brawl Stars](/comparing-two-titans-brawl-stars-vs-brawlhalla/)**
 
 ![Image](/images/2023/11/image.png)
 
@@ -35,7 +35,7 @@ Brawl Stars is a mobile-centered battle royale game that excels in 3v3 battles a
 
 In search of an entertaining party game? Draw Something shares similarities with Pictionary. In this game, one player sketches, and the rest must decipher the intended word. You can enjoy Draw Something Classic at no cost, while an ad-free version is available for $2.99 on iOS and Android. If you prefer playing on your iPad, you can opt for Draw Something Pro for $4.99.
 
-## **[AFK Arena](/afk-arena-gameplay/?swcfpc=1)**
+## **[AFK Arena](/afk-arena-gameplay/)**
 
 ![Image 1](/images/2023/11/image-1.png)
 
@@ -85,7 +85,7 @@ In this gaming experience, you'll find a fusion of RPG combat, card collection, 
 
 In this match-3 game, you'll embark on a journey to aid Lily in rejuvenating a garden to its previous splendor, all the while navigating a romantic tale brimming with a diverse array of characters. As you progress, you'll adorn the garden, create flower matches, unveil concealed spaces, and uncover hidden items.
 
-## **[Plants vs. Zombies 2](/plants-vs-zombies-2-beginner-tips/?swcfpc=1)**
+## **[Plants vs. Zombies 2](/plants-vs-zombies-2-beginner-tips/)**
 
 ![Image 3](/images/2023/11/image-3.png)
 

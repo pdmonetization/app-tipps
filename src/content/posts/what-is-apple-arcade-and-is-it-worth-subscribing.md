@@ -63,7 +63,7 @@ Apple Arcade offers a truly expansive selection of games across multiple genres 
 
 ![Image 6](/images/2023/03/image-6.png)
 
-The lineup includes blockbuster titles such as Monument Valley 2, Grindstone and [Oceanhorn](/oceanhorn-tips-and-tricks/?swcfpc=1) 2 from renowned developer Ustwogames, as well as A Fold Apart from Lightning Rod Games.
+The lineup includes blockbuster titles such as Monument Valley 2, Grindstone and [Oceanhorn](/oceanhorn-tips-and-tricks/) 2 from renowned developer Ustwogames, as well as A Fold Apart from Lightning Rod Games.
 
 There are also plenty of other popular games like Overland and Mini Motorways, plus exclusive titles like What The Golf? and Spek.
 

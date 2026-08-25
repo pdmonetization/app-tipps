@@ -37,8 +37,8 @@ Now that your Joy-Cons are successfully connected to your iPhone, it's time to d
 
 - Action Games: "Street Fighter IV Champion Edition," "Bastion," "Implosion - Never Lose Hope"
 - Racing Games: "Mario Kart Tour," "Asphalt 9: Legends," "Beach Buggy Racing 2"
-- Adventure Games: "[Oceanhorn](/oceanhorn-tips-and-tricks/?swcfpc=1)," "Stardew Valley," "The Legend of Zelda: Breath of the Wild"
-- Multiplayer Games: "[Minecraft](/how-to-fly-on-minecraft/?swcfpc=1)," "[Fortnite](/fortnite-beginner-tips/?swcfpc=1)," "[Among Us](/among-us-review/?swcfpc=1)"
+- Adventure Games: "[Oceanhorn](/oceanhorn-tips-and-tricks/)," "Stardew Valley," "The Legend of Zelda: Breath of the Wild"
+- Multiplayer Games: "[Minecraft](/how-to-fly-on-minecraft/)," "[Fortnite](/fortnite-beginner-tips/)," "[Among Us](/among-us-review/)"
 
 ## **Game Recommendations and Reviews:**
 

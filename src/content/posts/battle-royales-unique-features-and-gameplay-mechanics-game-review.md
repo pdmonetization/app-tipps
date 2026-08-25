@@ -13,7 +13,7 @@ featuredImageAlt: "Battle Royale's: Unique Features and Gameplay Mechanics Game 
 draft: false
 ---
 
-Battle Royale games have become increasingly popular in recent years, with titles such as [PlayerUnknown's Battlegrounds](/pubg-mobile-beginner-tips/?swcfpc=1), [Fortnite](/fortnite-beginner-tips/?swcfpc=1), and Apex Legends dominating the gaming market. These games are characterized by their unique features and gameplay mechanics, which offer players a thrilling and competitive experience.
+Battle Royale games have become increasingly popular in recent years, with titles such as [PlayerUnknown's Battlegrounds](/pubg-mobile-beginner-tips/), [Fortnite](/fortnite-beginner-tips/), and Apex Legends dominating the gaming market. These games are characterized by their unique features and gameplay mechanics, which offer players a thrilling and competitive experience.
 
 In this article, we will take a deep dive into the world of **Battle Royale games**, exploring their **essential features, gameplay mechanics, atmosphere, technical requirements, and pricing models.**
 
@@ -27,7 +27,7 @@ In addition to a large map, shrinking playable area, and a large number of playe
 
 One of these features is the ***concept of looting***. Players start with no weapons or equipment, and must scavenge the map for weapons, ammo, and supplies. This creates a sense of urgency and competition among players, as they compete to find the best loot before other players do.
 
-Another essential feature is the ***ability to build structures***. In games like [Fortnite](/pubg-vs-fortnite-comparison/?swcfpc=1), players can gather resources and use them to build walls, ramps, and other structures to protect themselves from enemy fire and gain an advantage in battles.
+Another essential feature is the ***ability to build structures***. In games like [Fortnite](/pubg-vs-fortnite-comparison/), players can gather resources and use them to build walls, ramps, and other structures to protect themselves from enemy fire and gain an advantage in battles.
 
 ![Maps in post](/images/2023/05/maps-in-post.png)
 

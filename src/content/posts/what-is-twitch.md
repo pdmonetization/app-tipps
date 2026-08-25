@@ -49,7 +49,7 @@ These features make Twitch an invaluable platform for content creators looking t
 
 Twitch is an incredibly versatile platform that can stream any game. Whether you prefer first-person shooters, role-playing games, or board games, Twitch can reach a vast audience with your content.
 
-Popular titles such as Call of Duty: Warzone, [Fortnite](/fortnite-beginner-tips/?swcfpc=1), [League of Legends](/league-of-legends-wild-rift-difference/?swcfpc=1), and World of Warcraft are all commonly streamed on the platform. Additionally, many streamers have been known to take up classic and indie titles, making Twitch an incredibly diverse streaming platform. In addition to playing games, many streamers across Twitch also broadcast live podcasts or host talk shows with their friends.
+Popular titles such as Call of Duty: Warzone, [Fortnite](/fortnite-beginner-tips/), [League of Legends](/league-of-legends-wild-rift-difference/), and World of Warcraft are all commonly streamed on the platform. Additionally, many streamers have been known to take up classic and indie titles, making Twitch an incredibly diverse streaming platform. In addition to playing games, many streamers across Twitch also broadcast live podcasts or host talk shows with their friends.
 
 Creative content, such as art streams and music broadcasts, are also popular on the platform, allowing streamers to connect with their viewers in various ways. Twitch is truly an amazing platform for content creators who want to share their creativity and passion with their audience.
 
