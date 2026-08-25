@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/generate-github-pages-redirects.mjs && node scripts/check-seo-build.mjs && node scripts/check-internal-links.mjs",
+    "build": "astro check && astro build && node scripts/generate-github-pages-redirects.mjs && node scripts/check-seo-build.mjs && node scripts/check-internal-links.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:seo": "node scripts/check-seo-build.mjs && node scripts/check-internal-links.mjs"
