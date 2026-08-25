@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/generate-github-pages-redirects.mjs",
+    "build": "astro build && node scripts/generate-github-pages-redirects.mjs && node scripts/check-seo-build.mjs",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "check:seo": "node scripts/check-seo-build.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
