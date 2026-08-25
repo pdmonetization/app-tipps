@@ -1,20 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import legacyRoutes from '../src/data/legacy-routes.json' with { type: 'json' };
 
 const root = process.cwd();
-const redirectsFile = path.join(root, 'public', '_redirects');
 const dist = path.join(root, 'dist');
 
-if (!fs.existsSync(redirectsFile) || !fs.existsSync(dist)) {
+if (!fs.existsSync(dist)) {
   process.exit(0);
 }
 
-const redirects = fs.readFileSync(redirectsFile, 'utf8')
-  .split(/\r?\n/)
-  .map((line) => line.trim())
-  .filter((line) => line && !line.startsWith('#'))
-  .map((line) => line.split(/\s+/))
-  .filter(([from, to, status]) => from?.startsWith('/') && to?.startsWith('/') && /^30[1278]$/.test(status ?? '301'));
+const redirects = Object.entries(legacyRoutes.redirects);
 
 const cleanPath = (value) => decodeURIComponent(value.split(/[?#]/, 1)[0]);
 
@@ -66,6 +61,7 @@ for (const [from, to] of redirects) {
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="app-tipps-route" content="legacy-redirect-fallback">
   <meta name="robots" content="noindex,follow">
   <meta http-equiv="refresh" content="0;url=${target}">
   <link rel="canonical" href="https://app-tipps.com${target}">
@@ -79,4 +75,4 @@ for (const [from, to] of redirects) {
   written += 1;
 }
 
-console.log(`Legacy redirect pages: ${written} generated, ${skippedMissingTarget} skipped because the destination no longer exists, ${skippedExistingPage} skipped because a real page already exists.`);
+console.log(`Legacy redirect fallbacks: ${written} generated, ${skippedMissingTarget} skipped because the destination no longer exists, ${skippedExistingPage} skipped because a real page already exists. Cloudflare Worker supplies the production 301 status.`);
