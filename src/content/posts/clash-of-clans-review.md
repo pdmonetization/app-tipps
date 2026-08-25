@@ -97,7 +97,7 @@ Overall, Clash of Clans provides a few good possibilities for spending your hard
 
 Clash of Clans was met with mostly favorable reviews from critics when first released. However, while Clash of Clans was a watershed event in mobile gaming, showcasing a breakthrough in mobile game design, its time has come and gone. Its features have often been upgraded throughout the years, although the actual content can become tedious after a time.
 
-You can do so for free if you haven't played the game yet. Regardless, we advise you to stick with [new games](/category/game-review/) more likely to have greater content or put you on a more even playing field with other players.
+You can do so for free if you haven't played the game yet. Regardless, we advise you to stick with [new games](/category/game-reviews/) more likely to have greater content or put you on a more even playing field with other players.
 
 **Download Clash of Clans for:**
 
