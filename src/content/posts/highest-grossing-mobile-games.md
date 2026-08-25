@@ -1,29 +1,78 @@
 ---
-title: "List of the 103 highest-grossing mobile games for all-time"
+title: "Highest-Grossing Mobile Games of All Time: 2026 Leaders"
 slug: "highest-grossing-mobile-games"
 publishDate: 2022-06-24T14:27:00Z
-updatedDate: 2022-11-23T09:59:27Z
+updatedDate: 2026-08-25T00:00:00Z
 author: "Andrew Wright"
 category: "News"
 categories: ["News"]
-tags: ["Android", "iOS"]
-description: "More than 100 mobile games have made over $100M in revenue. But, do you know which 30 of those actually brought in more than $1B in gross income?"
+tags: ["Android", "iOS", "Mobile Games", "Game Revenue"]
+relatedSlugs:
+  - "arena-of-valor-review"
+  - "candy-crush-saga-levels-explained"
+  - "pubg-mobile-beginner-tips"
+  - "everything-about-roblox"
+description: "Honor of Kings remains the top lifetime mobile game earner. See the latest 2026 monthly leaders, verified revenue milestones and our historical 103-game table."
 featuredImage: "/images/2022/06/103-highest-grossing-mobile-games-jpg.webp"
-featuredImageAlt: "List of the 103 highest-grossing mobile games for all-time"
+featuredImageAlt: "Highest-grossing mobile games ranked by worldwide revenue"
+seoTitle: "Highest-Grossing Mobile Games of All Time (2026)"
+canonicalUrl: ""
+noindex: false
 draft: false
 ---
 
-This is a list of the top-grossing mobile games. The mobile games on this list have brought in at least $100 million in total sales, up to June 2022. There are more than 30 mobile games among them that have made over $1 billion in revenue.
+> **Updated and fact-checked:** 25 August 2026. Mobile game revenue rankings are estimates and can change as publishers report new figures. Store coverage also differs between data providers.
 
-**Trivia Facts**
+## Quick answer
 
-- Tencent, a publisher, and owner of 12 games on the list, including three in the top 10, is the video game developer with the most titles.
-- Honor of Kings (2015), a multiplayer online battle arena (MOBA) game developed and published by Tencent with more than $13 billion in lifetime sales, is the highest-grossing mobile game since 2020. It is also known as Arena of Valor abroad.
-- Tencent subsidiary Supercell is also the source of five other games on the list.
-- As of October 2018, Mixi's Monster Strike (2013), a role-playing physics puzzle/strategy video game, had amassed over $7.2 billion in worldwide revenue, making it the highest-grossing mobile app of all time. Before then, Puzzle & Dragons (2012), a role-playing puzzle video game by GungHo Online Entertainment, had generated $7 billion in revenue before being overtaken by Monster Strike in October 2018.
-- Monster Strike was surpassed by Honor of Kings as the highest-grossing mobile game in 2020. It is now the second-best of the top-grossing mobile games.
+**Honor of Kings is the highest-grossing mobile game of all time.** Sensor Tower's January 2026 lifetime in-app purchase ranking placed Tencent's MOBA at number one and Candy Crush Saga at number two.
 
-## List of mobile games brought over $100M in gross revenue
+MONOPOLY GO! is the fastest-rising newcomer on the lifetime list. Sensor Tower says it passed **$6 billion in lifetime IAP revenue during 2025**, reached number 14 worldwide and got to that milestone faster than any previous mobile game.
+
+That does not mean the same game leads every month. In July 2026, the five highest-grossing mobile games worldwide were:
+
+| July 2026 rank | Game |
+| --- | --- |
+| 1 | Honor of Kings |
+| 2 | Pokémon GO |
+| 3 | Gossip Harbor |
+| 4 | Whiteout Survival |
+| 5 | Royal Match |
+
+Sensor Tower estimated that players spent **$6.6 billion** across mobile games on the App Store and Google Play in July 2026, up 7.7% from June. The ranking excludes third-party Android stores, which is especially important when comparing games with large audiences in China.
+
+## Lifetime revenue and monthly revenue are different rankings
+
+A lifetime list rewards games that have earned money over many years. A monthly chart captures what is selling now. Honor of Kings can lead both, but newer releases such as Gossip Harbor or Whiteout Survival can appear near the top of a monthly chart without yet matching the lifetime total of a decade-old hit.
+
+This distinction also explains why two credible revenue lists may disagree. Before comparing them, check four details:
+
+- **Gross or net revenue:** some estimates show player spending, while others subtract the app store's fee.
+- **IAP or total revenue:** advertising, publisher web shops and other direct payments may be excluded.
+- **Store coverage:** Chinese third-party Android stores are absent from many global datasets.
+- **Time period:** a current month, a calendar year and lifetime revenue answer different questions.
+
+Sensor Tower's methodology for its lifetime ranking covers estimated in-app purchases on iOS and Google Play. It does not include advertising, direct-to-consumer sales or other revenue sources. Treat every figure below as an estimate rather than audited publisher income.
+
+## How large is the mobile games market in 2026?
+
+The market is still growing, although more slowly than non-game apps. Sensor Tower's State of Mobile 2026 report estimates that mobile games generated almost **$82 billion in IAP revenue during 2025**, an increase of 1.3% year over year.
+
+Growth now depends less on raw installation numbers and more on keeping existing players engaged. The current leaders use frequent events, collaborations, passes, collectible content and limited-time offers to give players reasons to return and spend.
+
+## The biggest verified lifetime milestones
+
+- **Honor of Kings:** number one on Sensor Tower's all-time worldwide mobile IAP leaderboard in January 2026.
+- **Candy Crush Saga:** number two on the same all-time leaderboard.
+- **MONOPOLY GO!:** more than $6 billion in lifetime IAP revenue during 2025; number 14 all time and the fastest game to reach $6 billion.
+- **Royal Match:** the second-youngest title in Sensor Tower's all-time top 15, after MONOPOLY GO!.
+- **Pokémon GO:** still an all-time top-15 game and the number-two monthly earner in July 2026.
+
+## Historical list: 103 mobile games over $100 million
+
+The table below is our original June 2022 snapshot. It remains useful as a historical record, but it is **not a live 2026 ranking**. Revenue totals have continued to rise, several newer hits are missing, and some titles would now appear in a different order.
+
+### Mobile games reported above $100 million by June 2022
 
 | Game | Revenue | Initial release | Publisher(s) | Genre(s) |
 | --- | --- | --- | --- | --- |
@@ -130,3 +179,34 @@ This is a list of the top-grossing mobile games. The mobile games on this list h
 | *Fallout Shelter* | $100,000,000 | June 14, 2015 | [Bethesda Softworks](https://en.wikipedia.org/wiki/Bethesda_Softworks) | Simulation (CMS) |
 | *Mafia City* | $100,000,000 | July 25, 2017 | Yotta Games | RPG |
 | *Madden NFL Overdrive* | $100,000,000 | August 15, 2018 | [EA Sports](https://en.wikipedia.org/wiki/EA_Sports) ([Electronic Arts](https://en.wikipedia.org/wiki/Electronic_Arts)) | Sports (American football) |
+
+## Frequently asked questions
+
+### What is the highest-grossing mobile game ever?
+
+Honor of Kings is number one on Sensor Tower's January 2026 all-time worldwide mobile IAP leaderboard. Candy Crush Saga is number two.
+
+### Is MONOPOLY GO! the highest-grossing mobile game?
+
+Not over its entire lifetime. MONOPOLY GO! reached number 14 on Sensor Tower's all-time leaderboard after passing $6 billion in 2025. Its record is speed: no other mobile game reached that revenue milestone as quickly.
+
+### Which mobile game made the most money in July 2026?
+
+Honor of Kings led worldwide mobile game revenue in July 2026, followed by Pokémon GO, Gossip Harbor, Whiteout Survival and Royal Match.
+
+### Do these figures include advertising revenue?
+
+No. The Sensor Tower figures cited in the current sections estimate in-app purchases on the App Store and Google Play. They exclude advertising, direct publisher payments and third-party Android stores.
+
+## Sources checked
+
+- [Sensor Tower: MONOPOLY GO! reaches $6 billion in lifetime IAP revenue](https://sensortower.com/blog/monopoly-go-app-revenue-milestone)
+- [Sensor Tower: top mobile games by revenue in July 2026](https://sensortower.com/blog/top-10-worldwide-mobile-games-by-revenue-and-downloads-in-july-2026)
+- [Sensor Tower: State of Mobile 2026](https://sensortower.com/blog/state-of-mobile-2026)
+
+## Related App-Tipps guides
+
+- [Is Pokémon GO worth playing?](/is-pokemon-go-worth-playing/)
+- [PUBG Mobile beginner tips](/pubg-mobile-beginner-tips/)
+- [Candy Crush Saga levels explained](/candy-crush-saga-levels-explained/)
+- [Arena of Valor review](/arena-of-valor-review/)
