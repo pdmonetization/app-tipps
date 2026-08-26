@@ -6,7 +6,7 @@ updatedDate: 2023-01-26T15:41:43Z
 author: "Michael Wilson"
 category: "Game Guide"
 categories: ["Game Guide"]
-tags: ["Android", "iOS", "RPG"]
+tags: ["Marvel Strike Force", "Android", "iOS", "RPG"]
 description: "Dark Dimension is the name of a game mode in MSF where the player must contend with never-ending waves of foes."
 featuredImage: "/images/2022/07/marvel-dark-dimensions-banner.png"
 featuredImageAlt: "Tips & Tricks to 'Dark Dimension' in Marvel Strike Force"

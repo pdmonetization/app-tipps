@@ -1,0 +1,91 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { topicClusterForSlug } from '../lib/topic-clusters';
+
+interface Props {
+  currentSlug: string;
+  pool: CollectionEntry<'posts'>[];
+}
+
+const { currentSlug, pool } = Astro.props;
+const cluster = topicClusterForSlug(currentSlug);
+const postSlugs = new Set(pool.map((post) => post.data.slug));
+const missing = cluster?.members.filter(({ slug }) => !postSlugs.has(slug)) ?? [];
+
+if (missing.length > 0) {
+  throw new Error(
+    `Topic cluster ${cluster?.key} contains unavailable posts: ${missing.map(({ slug }) => slug).join(', ')}`,
+  );
+}
+---
+{cluster && (
+  <aside class="topic-cluster" data-topic-cluster={cluster.key} aria-labelledby={`${cluster.key}-guides`}>
+    <p class="topic-kicker">App-Tipps topic guide</p>
+    <h2 id={`${cluster.key}-guides`}>{cluster.name} guides</h2>
+    <p>{cluster.description}</p>
+    <a class="hub-link" href={`/guides/${cluster.key}/`}>Open the complete guide hub</a>
+    <ol>
+      {cluster.members.map(({ slug, label }, index) => (
+        <li class:list={{ current: slug === currentSlug }}>
+          <span class="step">{index + 1}</span>
+          {slug === currentSlug ? (
+            <span><strong>{label}</strong> <small>You are here</small></span>
+          ) : (
+            <a href={`/${slug}/`}>{label}</a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </aside>
+)}
+
+<style>
+  .topic-cluster {
+    margin: 34px 0 24px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--surface-alt);
+  }
+  .topic-kicker {
+    margin: 0 0 4px;
+    color: var(--accent-ink);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  h2 { margin: 0 0 8px; font-size: 22px; }
+  .topic-cluster > p:not(.topic-kicker) { margin: 0 0 10px; color: var(--ink-soft); }
+  .hub-link { display: inline-block; margin: 0 0 18px; font-size: 14px; font-weight: 800; }
+  ol { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  li { display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 10px; min-height: 34px; }
+  .step {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  li.current .step { border-color: var(--accent); background: var(--accent); color: white; }
+  a { font-weight: 700; }
+  small {
+    display: inline-block;
+    margin-left: 6px;
+    color: var(--ink-soft);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 520px) {
+    .topic-cluster { padding: 18px 16px; }
+    small { display: block; margin: 2px 0 0; }
+  }
+</style>

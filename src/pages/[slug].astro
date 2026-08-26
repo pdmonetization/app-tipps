@@ -4,6 +4,7 @@ import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import GamArticleInline from '../components/GamArticleInline.astro';
 import PostCard from '../components/PostCard.astro';
+import TopicCluster from '../components/TopicCluster.astro';
 import { allPosts, hasAffiliate, related } from '../lib/posts';
 import { CATEGORY_SLUGS, slugifyTag } from '../lib/taxonomy';
 import { authorUrl } from '../lib/authors';
@@ -120,6 +121,7 @@ const breadcrumb = breadcrumbSchema(url, [
         </picture>
       )}
       <div class="article-body"><Content /></div>
+      <TopicCluster currentSlug={d.slug} pool={pool} />
       <GamArticleInline />
       {d.tags.length > 0 && (
         <ul class="tags" aria-label="Tags">

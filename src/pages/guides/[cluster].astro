@@ -1,0 +1,111 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import { allPosts } from '../../lib/posts';
+import { allTopicClusters } from '../../lib/topic-clusters';
+import { breadcrumbSchema } from '../../lib/schema';
+import { CATEGORY_SLUGS } from '../../lib/taxonomy';
+import { SITE } from '../../consts';
+
+export const getStaticPaths = (async () => {
+  const posts = await allPosts();
+  return allTopicClusters().map((cluster) => ({
+    params: { cluster: cluster.key },
+    props: { cluster, posts },
+  }));
+}) satisfies GetStaticPaths;
+
+const { cluster, posts } = Astro.props;
+const postsBySlug = new Map(posts.map((post) => [post.data.slug, post]));
+const members = cluster.members.map((member) => ({
+  ...member,
+  post: postsBySlug.get(member.slug),
+}));
+const missing = members.filter(({ post }) => !post);
+if (missing.length) {
+  throw new Error(`Topic guide ${cluster.key} contains unavailable posts: ${missing.map(({ slug }) => slug).join(', ')}`);
+}
+
+const url = `${SITE.url}/guides/${cluster.key}/`;
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    url,
+    name: cluster.title,
+    description: cluster.description,
+    isPartOf: { '@id': `${SITE.url}/#website` },
+    mainEntity: { '@id': `${url}#list` },
+  },
+  {
+    '@type': 'ItemList',
+    '@id': `${url}#list`,
+    name: `${cluster.name} reading path`,
+    numberOfItems: members.length,
+    itemListElement: members.map(({ slug, label }, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: label,
+      url: `${SITE.url}/${slug}/`,
+    })),
+  },
+  breadcrumbSchema(url, [
+    { name: 'Home', url: `${SITE.url}/` },
+    { name: `${cluster.name} guides` },
+  ]),
+];
+---
+<Base title={cluster.title} description={cluster.description} canonical={url} schema={schema}>
+  <div class="wrap topic-page" data-topic-cluster-hub={cluster.key}>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {cluster.name} guides</nav>
+
+    <header class="topic-head">
+      <p class="eyebrow">App-Tipps guide collection</p>
+      <h1>{cluster.title}</h1>
+      <p class="standfirst">{cluster.description}</p>
+      <p class="collection-count"><strong>{members.length}</strong> articles, arranged as a practical reading path</p>
+    </header>
+
+    <ol class="reading-path">
+      {members.map(({ slug, label, post }, index) => post && (
+        <li>
+          <span class="sequence" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <div>
+            <p class="article-meta">
+              <a href={`/category/${CATEGORY_SLUGS[post.data.category] ?? 'news'}/`}>{post.data.category}</a>
+              <span>&middot;</span>
+              <time datetime={post.data.publishDate.toISOString()}>
+                {post.data.publishDate.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}
+              </time>
+            </p>
+            <h2><a href={`/${slug}/`}>{label}</a></h2>
+            <p>{post.data.description}</p>
+            <a class="read-link" href={`/${slug}/`}>Read article <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Base>
+
+<style>
+  .topic-page { max-width: 900px; }
+  .topic-head { max-width: 760px; padding: 34px 0 26px; border-bottom: 3px solid var(--ink); }
+  .topic-head h1 { margin: 8px 0 14px; font-size: clamp(32px, 5vw, 48px); line-height: 1.08; letter-spacing: -.03em; }
+  .standfirst { margin: 0; color: var(--ink-soft); font-size: 19px; line-height: 1.55; }
+  .collection-count { margin: 18px 0 0; font-size: 14px; }
+  .collection-count strong { margin-right: 4px; font-size: 20px; }
+  .reading-path { margin: 0 0 54px; padding: 0; list-style: none; }
+  .reading-path li { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 22px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .sequence { color: var(--accent-ink); font-size: 14px; font-weight: 800; letter-spacing: .08em; }
+  .article-meta { display: flex; gap: 8px; margin: 0 0 7px; color: var(--ink-soft); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .article-meta a { color: inherit; }
+  .reading-path h2 { margin: 0 0 8px; font-size: clamp(22px, 3vw, 29px); line-height: 1.2; letter-spacing: -.018em; }
+  .reading-path h2 a { color: var(--ink); text-decoration: none; }
+  .reading-path h2 a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 4px; }
+  .reading-path li div > p:not(.article-meta) { max-width: 700px; margin: 0 0 10px; color: var(--ink-soft); }
+  .read-link { font-size: 14px; font-weight: 800; }
+  @media (max-width: 560px) {
+    .reading-path li { grid-template-columns: 34px minmax(0, 1fr); gap: 12px; }
+  }
+</style>

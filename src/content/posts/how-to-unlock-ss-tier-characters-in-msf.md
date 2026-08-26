@@ -6,7 +6,7 @@ updatedDate: 2022-09-08T14:36:42Z
 author: "Michael Wilson"
 category: "Game Guide"
 categories: ["Game Guide"]
-tags: ["Android", "iOS", "RPG"]
+tags: ["Marvel Strike Force", "Android", "iOS", "RPG"]
 description: "SS-Tier characters in MSF are considered the most powerful you can play with. In this guide, you can find out how to unlock 7 of them."
 featuredImage: "/images/2022/07/msf-ss-tier-characters-jpg.webp"
 featuredImageAlt: "How to unlock SS-Tier characters in Marvel Strike Force?"

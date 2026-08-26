@@ -1,0 +1,29 @@
+{
+  "marvel-strike-force": {
+    "name": "Marvel Strike Force",
+    "title": "Marvel Strike Force Guides: Blitz & More",
+    "description": "Use this Marvel Strike Force guide hub to find our beginner FAQ, Blitz strategy, character unlock overview, game review and Dark Dimension walkthrough.",
+    "members": [
+      {
+        "slug": "marvel-strike-force-review",
+        "label": "Game review and overview"
+      },
+      {
+        "slug": "msf-starting-goals-and-faq",
+        "label": "Beginner goals and FAQs"
+      },
+      {
+        "slug": "msf-blitz-mode-guide",
+        "label": "Blitz mode guide"
+      },
+      {
+        "slug": "how-to-unlock-ss-tier-characters-in-msf",
+        "label": "Character unlock guide"
+      },
+      {
+        "slug": "msf-dark-dimension-guide",
+        "label": "Dark Dimension guide"
+      }
+    ]
+  }
+}
