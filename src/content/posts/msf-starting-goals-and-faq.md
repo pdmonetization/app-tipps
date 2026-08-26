@@ -6,7 +6,7 @@ updatedDate: 2023-01-26T15:33:33Z
 author: "Michael Wilson"
 category: "Game Guide"
 categories: ["Game Guide"]
-tags: ["Android", "iOS", "RPG"]
+tags: ["Marvel Strike Force", "Android", "iOS", "RPG"]
 description: "If you are a newcomer to Marvel Strike Force, check out our starting guide for best start in the game in 2022."
 featuredImage: "/images/2022/07/marvel-Starting-Goals-banner-1.png"
 featuredImageAlt: "Starting Goals and FAQs for a Beginner Player in MSF (in 2022)"

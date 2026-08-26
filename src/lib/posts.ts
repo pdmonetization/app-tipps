@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
 import legacyRoutes from '../data/legacy-routes.json';
 import retiredPostSlugs from '../data/retired-posts.json';
+import { topicClusterForSlug } from './topic-clusters';
 
 /*
  * Articles intentionally withdrawn from publication.
@@ -55,11 +56,13 @@ export function related(post: any, pool: any[], n = 3) {
     'productivity apps',
   ]);
   const tags = new Set(post.data.tags.map((tag: string) => tag.toLowerCase()));
+  const topicCluster = topicClusterForSlug(post.data.slug)?.key;
   return pool
     .filter((p) => p.id !== post.id)
     .map((p) => ({
       p,
       score:
+        (topicCluster && topicClusterForSlug(p.data.slug)?.key === topicCluster ? 12 : 0) +
         (p.data.category === post.data.category ? 1 : 0) +
         p.data.tags.reduce((score: number, tag: string) => {
           const normalized = tag.toLowerCase();

@@ -6,7 +6,7 @@ updatedDate: 2022-09-08T14:37:12Z
 author: "Michael Wilson"
 category: "Game Guide"
 categories: ["Game Guide"]
-tags: ["Android", "iOS", "RPG"]
+tags: ["Marvel Strike Force", "Android", "iOS", "RPG"]
 description: "MSF's Blitz game mode represents an entertaining \"little\" tournament ladder. Check out our blitz mode guide to make sure you own the game."
 featuredImage: "/images/2022/07/msf-blitz-mode-guide-jpg.webp"
 featuredImageAlt: "Guide to 'Blitz mode' in Marvel Strike Force"

@@ -6,7 +6,7 @@ updatedDate: 2023-01-26T15:06:49Z
 author: "Amelia Thomas"
 category: "Game Review"
 categories: ["Game Review"]
-tags: ["Android", "iOS", "RPG"]
+tags: ["Marvel Strike Force", "Android", "iOS", "RPG"]
 description: "Marvel Strike Force is the perfect game if you love the Marvel Universe and want to keep yourself entertained in your spare time."
 featuredImage: "/images/2022/07/marvel-strike-force-a-fun-game-banner.png"
 featuredImageAlt: "Marvel Strike Force: A Fun Game If You Don't Take It Too Serious"
