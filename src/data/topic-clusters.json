@@ -1,8 +1,8 @@
 {
   "marvel-strike-force": {
     "name": "Marvel Strike Force",
-    "title": "Marvel Strike Force Guides: Blitz & More",
-    "description": "Use this Marvel Strike Force guide hub to find our beginner FAQ, Blitz strategy, character unlock overview, game review and Dark Dimension walkthrough.",
+    "title": "Marvel Strike Force Guides: Dark Dimension & More",
+    "description": "Use this Marvel Strike Force guide hub to plan Dark Dimension IX, compare teams, learn the basics and find our Blitz and character guides.",
     "members": [
       {
         "slug": "marvel-strike-force-review",
@@ -23,6 +23,14 @@
       {
         "slug": "msf-dark-dimension-guide",
         "label": "Dark Dimension guide"
+      },
+      {
+        "slug": "msf-dark-dimension-9-guide",
+        "label": "Dark Dimension IX requirements"
+      },
+      {
+        "slug": "msf-dark-dimension-9-teams",
+        "label": "Dark Dimension IX teams"
       }
     ]
   }
