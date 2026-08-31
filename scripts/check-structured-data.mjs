@@ -31,7 +31,7 @@ function pagePath(file) {
 
 function frontmatterField(source, name) {
   const value = source.match(new RegExp(`^${name}:\\s*(.+)$`, 'm'))?.[1]?.trim();
-  if (!value) return undefined;
+  // Sveltia CMS serializes an untouched optional number as `null` whenever an\n  // editor saves a post. Treat YAML's empty/null spellings as absent so a\n  // harmless admin edit cannot make a non-review post look rated.\n  if (!value || /^(?:null|~|''|\"\")$/i.test(value)) return undefined;
   return value.replace(/^(["'])(.*)\1$/, '$2');
 }
 
