@@ -1,10 +1,10 @@
 ---
-title: "Palworld Online FAQ: Release, Price and Platforms"
+title: 'Palworld Online FAQ: Release, Price and Platforms'
 slug: palworld-online-faq
 description: This Palworld Online FAQ answers what is confirmed about release timing, price, pre-registration, Android, iOS, multiplayer, crossplay and offline play.
 publishDate: 2026-08-31
 updatedDate: 2026-08-31
-author: "Michael Wilson"
+author: Andrew Wright
 category: News
 categories:
   - News
@@ -14,16 +14,18 @@ tags:
   - Android
   - iOS
   - MMORPG
+featuredImage: /images/2026/08/palworld-online-faq.webp
+featuredImageAlt: Smartphone showing original fantasy creatures beside a blank calendar, magnifying glass and charging cable
+rating: null
+correctionNote: ''
+seoTitle: 'Palworld Online FAQ: Release, Price & Platforms'
+canonicalUrl: ''
+noindex: false
+draft: false
 relatedSlugs:
   - palworld-online-release-date
   - palworld-online-vs-palworld-mobile
   - palworld-online-vs-palworld
-featuredImage: /images/2026/08/palworld-online-faq.webp
-featuredImageAlt: Smartphone showing original fantasy creatures beside a blank calendar, magnifying glass and charging cable
-seoTitle: "Palworld Online FAQ: Release, Price & Platforms"
-canonicalUrl: ''
-noindex: false
-draft: false
 ---
 
 This **Palworld Online FAQ** covers what Garena has confirmed—and what remains unknown—about the upcoming mobile MMORPG. The short version is that it is an officially licensed 2026 game for mobile, but it does not yet have an exact release date, public store listing, confirmed price or published device requirements.
@@ -221,4 +223,3 @@ Until those arrive, Palworld Online is promising but not reviewable. We will upd
 - [Garena: official Palworld Online announcement](https://www.garena.sg/news/7UPUTA)
 - [Palworld Mobile: official separate project website](https://palworldmobile.com/en)
 - [Pocketpair: official company website](https://www.pocketpair.jp/)
-
