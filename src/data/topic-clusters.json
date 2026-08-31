@@ -33,5 +33,28 @@
         "label": "Dark Dimension IX teams"
       }
     ]
+  },
+  "palworld-online": {
+    "name": "Palworld Online",
+    "title": "Palworld Online: Release, Platforms & Comparisons",
+    "description": "Follow confirmed Palworld Online release information, understand how Garena's mobile MMO differs from Palworld and Palworld Mobile, and track the questions still awaiting official answers.",
+    "members": [
+      {
+        "slug": "palworld-online-release-date",
+        "label": "Release date and confirmed features"
+      },
+      {
+        "slug": "palworld-online-vs-palworld-mobile",
+        "label": "Palworld Online vs Palworld Mobile"
+      },
+      {
+        "slug": "palworld-online-vs-palworld",
+        "label": "Palworld Online vs the original game"
+      },
+      {
+        "slug": "palworld-online-faq",
+        "label": "Release, price and platform FAQ"
+      }
+    ]
   }
 }
