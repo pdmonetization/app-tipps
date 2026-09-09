@@ -56,5 +56,28 @@
         "label": "Release, price and platform FAQ"
       }
     ]
+  },
+  "dave-the-diver-mobile": {
+    "name": "Dave the Diver Mobile",
+    "title": "Dave the Diver Mobile Guides: Release, Differences & Tips",
+    "description": "Prepare for Dave the Diver on Android and iOS with confirmed release information, platform comparisons, beginner advice and a complete guide to the mobile port.",
+    "members": [
+      {
+        "slug": "dave-the-diver-mobile-guide",
+        "label": "Complete mobile guide"
+      },
+      {
+        "slug": "dave-the-diver-mobile-release-date",
+        "label": "Release date, price and download"
+      },
+      {
+        "slug": "dave-the-diver-mobile-vs-pc-console",
+        "label": "Mobile vs PC and console"
+      },
+      {
+        "slug": "dave-the-diver-mobile-beginner-guide",
+        "label": "Beginner route and first-week tips"
+      }
+    ]
   }
 }
