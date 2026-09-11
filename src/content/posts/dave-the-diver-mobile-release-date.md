@@ -17,6 +17,8 @@ relatedSlugs:
   - dave-the-diver-mobile-guide
   - dave-the-diver-mobile-vs-pc-console
   - dave-the-diver-mobile-beginner-guide
+  - dave-the-diver-best-weapons-and-upgrades
+  - dave-the-diver-best-staff-and-restaurant-setup
 featuredImage: /images/2026/09/dave-the-diver-mobile-release-date.webp
 featuredImageAlt: Smartphone showing an original underwater diving scene beside a calendar and tropical dive boat
 seoTitle: "Dave the Diver Mobile Release Date, Price & Download"

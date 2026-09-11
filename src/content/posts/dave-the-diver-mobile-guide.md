@@ -18,6 +18,8 @@ relatedSlugs:
   - dave-the-diver-mobile-release-date
   - dave-the-diver-mobile-vs-pc-console
   - dave-the-diver-mobile-beginner-guide
+  - dave-the-diver-best-weapons-and-upgrades
+  - dave-the-diver-best-staff-and-restaurant-setup
 featuredImage: /images/2026/09/dave-the-diver-mobile-guide.webp
 featuredImageAlt: Original diver moving between a tropical blue hole and a warmly lit sushi restaurant on a smartphone
 seoTitle: "Dave the Diver Mobile Guide: What You Need to Know"
