@@ -18,6 +18,8 @@ relatedSlugs:
   - dave-the-diver-mobile-guide
   - dave-the-diver-mobile-release-date
   - dave-the-diver-mobile-vs-pc-console
+  - dave-the-diver-best-weapons-and-upgrades
+  - dave-the-diver-best-staff-and-restaurant-setup
 featuredImage: /images/2026/09/dave-the-diver-mobile-beginners-guide.webp
 featuredImageAlt: Original beginner diver checking oxygen and equipment before entering a deep tropical blue hole
 seoTitle: "Dave the Diver Mobile Beginner Guide: First Week Tips"
@@ -70,6 +72,8 @@ When the bag becomes heavy:
 - upgrade the Cargo Box if weight is ending most dives before oxygen does.
 
 Efficient inventory is more important than maximum inventory. Returning with the right materials creates progress; returning slowly with random items creates clutter.
+
+When the basic loop feels comfortable, use our [best weapons and upgrades guide](/dave-the-diver-best-weapons-and-upgrades/) and [best staff and restaurant setup](/dave-the-diver-best-staff-and-restaurant-setup/) to decide where the next materials and restaurant income should go.
 
 ## Upgrade the current bottleneck
 

@@ -18,6 +18,8 @@ relatedSlugs:
   - dave-the-diver-mobile-guide
   - dave-the-diver-mobile-release-date
   - dave-the-diver-mobile-beginner-guide
+  - dave-the-diver-best-weapons-and-upgrades
+  - dave-the-diver-best-staff-and-restaurant-setup
 featuredImage: /images/2026/09/dave-the-diver-mobile-vs-pc-console.webp
 featuredImageAlt: Original underwater adventure displayed across a smartphone handheld console and desktop monitor
 seoTitle: "Dave the Diver Mobile vs PC and Console: Differences"
