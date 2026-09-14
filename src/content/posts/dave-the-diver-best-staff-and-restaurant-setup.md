@@ -3,7 +3,7 @@ title: "Dave the Diver Best Staff and Restaurant Setup"
 slug: dave-the-diver-best-staff-and-restaurant-setup
 description: Build the Dave the Diver best staff and restaurant setup with strong cooks, automated service, smart training and efficient dispatch choices.
 publishDate: 2026-09-11
-updatedDate: 2026-09-11
+updatedDate: 2026-09-14
 author: "Alexander Davis"
 category: Game Guide
 categories:
@@ -27,11 +27,13 @@ noindex: false
 draft: false
 ---
 
+**Guide scope:** The gameplay advice below concerns the established PC/console game. We have not tested it in the global Android or iOS release. The mobile store's description of a full port does not verify identical balance, unlocks or controls.
+
 The Dave the Diver best staff and restaurant setup is not simply the five people with the highest combined numbers. Bancho Sushi needs fast cooking, reliable serving and coverage for jobs such as drinks, cleaning and wasabi. Staff left in the waiting room can also unlock recipes or collect seasonings through dispatch.
 
 A strong setup assigns each person by role. Use cooking specialists in the kitchen, serving specialists in the dining area and high-procure workers for dispatch. Train the active team enough to unlock its useful skills before spending heavily on employees who have no immediate job.
 
-The official [Google Play listing](https://play.google.com/store/apps/details?id=com.mintrocket.drmobile) confirms that restaurant management is included in the complete mobile port. The core staffing principles therefore carry across Android, iPhone, iPad, PC and console, even if the touch interface changes how quickly Dave performs manual tasks.
+The official [Google Play listing](https://play.google.com/store/apps/details?id=com.mintrocket.drmobile) confirms that restaurant management is included in the complete mobile port. That confirms the restaurant system, but does not establish identical staff statistics or skills on mobile.
 
 ## Dave the Diver best staff and restaurant setup
 
@@ -95,6 +97,21 @@ The goal is not merely moving plates quickly. A balanced pair should cover as ma
 Cohh, Billy and Drae are useful alternatives depending on the exact skill coverage needed. For example, a fast pair that cannot handle one recurring job may still require Dave to cross the full restaurant repeatedly. A slightly different combination can produce smoother service by removing that journey.
 
 On mobile, automation may be particularly valuable because fewer frantic touch movements make a busy service easier to manage. That is a practical advantage of staff skills, not a claim that restaurant mechanics have changed in the port.
+
+## El Nino and Raptor: the training levels that matter
+
+The community staff records for [El Nino](https://davethediver.net/en/staff/el-nino/) and [Raptor](https://davethediver.net/en/staff/raptor/) explain why this pair is useful:
+
+| Employee | Level 3 skill | Level 7 skill |
+| --- | --- | --- |
+| El Nino | Drink Serving Master | Cleaning Master |
+| Raptor | Wasabi Refill | Cocktail Serving |
+
+Together, their level-seven skills cover ordinary drinks, cleaning, wasabi and cocktails. Hiring both employees does not immediately provide that coverage: the relevant training levels must be reached.
+
+For example, if both are level three, Dave still needs to cover cleaning and cocktails when those tasks are available. If Raptor is level seven but El Nino is still level three, cleaning remains the gap. This gives training a specific purpose instead of treating each extra level as equally urgent.
+
+These skill assignments come from community reference data for the established game. Confirm the skill cards in your mobile version before spending on the assumption that the port matches.
 
 ## What should Dave do during service?
 
