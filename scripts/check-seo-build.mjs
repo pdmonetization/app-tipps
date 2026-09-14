@@ -180,3 +180,17 @@ console.log(
   `${responsiveArticleHeroes} responsive article heroes; ` +
   `${enhancedArticleImages} enhanced inline images; ${wrappedArticleTables} responsive tables.`,
 );
+
+// Launch-related setup guides must be discoverable and indexable at publication.
+for (const slug of ['new-iphone-not-enough-icloud-storage', 'transfer-authenticator-new-iphone']) {
+  const url = 'https://app-tipps.com/' + slug + '/';
+  if (!entries.some((entry) => entry.url === url)) {
+    throw new Error('New iPhone guide missing from sitemap: ' + url);
+  }
+  const html = readFileSync(join(dist, slug, 'index.html'), 'utf8');
+  if (!html.includes('rel="canonical" href="' + url + '"') ||
+      !html.includes('content="index, follow,')) {
+    throw new Error('New iPhone guide canonical/indexability check failed: ' + url);
+  }
+}
+console.log('New iPhone guides: sitemap inclusion and canonical/indexability checks passed.');

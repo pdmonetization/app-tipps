@@ -189,3 +189,8 @@ For everyone else, QR sharing fills the gap.
 The QR method is not quite as seamless because it needs an internet connection and briefly stores the encrypted file on Google’s servers. But it still removes the need to install another app simply to send an iPhone user a file.
 
 For years, sharing files between Android and iPhone was one of those small annoyances users simply accepted. Quick Share and AirDrop finally working together makes switching between the two ecosystems considerably less painful.
+
+
+## Moving to a new iPhone?
+
+Sharing individual files is different from transferring your whole setup. See our [options when iCloud storage is full](/new-iphone-not-enough-icloud-storage/) and [authenticator transfer checklist](/transfer-authenticator-new-iphone/) before handing in your old phone.
