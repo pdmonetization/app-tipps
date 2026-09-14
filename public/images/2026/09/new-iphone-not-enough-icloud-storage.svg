@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Three iPhone transfer options: direct transfer, temporary iCloud storage and computer backup">
+<rect width="1200" height="630" fill="#10262c"/>
+<rect x="60" y="62" width="42" height="6" rx="3" fill="#65dfb7"/>
+<g font-family="DejaVu Sans, sans-serif">
+<text x="60" y="136" fill="#ffffff" font-size="43" font-weight="700">iCloud full? Choose your transfer.</text>
+<text x="60" y="184" fill="#b5cdd1" font-size="23">Three routes for moving to a new iPhone</text>
+<rect x="60" y="253" width="346" height="226" rx="16" fill="#1d3a42"/>
+<text x="82" y="303" fill="#65dfb7" font-size="17" font-weight="700">BOTH PHONES</text>
+<text x="82" y="365" fill="#ffffff" font-size="25" font-weight="700">Direct transfer</text>
+<text x="82" y="416" fill="#c3d9dc" font-size="17">Keep devices together</text>
+<rect x="427" y="253" width="346" height="226" rx="16" fill="#1d3a42"/>
+<text x="449" y="303" fill="#65dfb7" font-size="17" font-weight="700">CLOUD BACKUP</text>
+<text x="449" y="365" fill="#ffffff" font-size="25" font-weight="700">Temporary storage</text>
+<text x="449" y="416" fill="#c3d9dc" font-size="17">Check the 21-day window</text>
+<rect x="794" y="253" width="346" height="226" rx="16" fill="#1d3a42"/>
+<text x="816" y="303" fill="#65dfb7" font-size="17" font-weight="700">COMPUTER</text>
+<text x="816" y="365" fill="#ffffff" font-size="25" font-weight="700">Restore a backup</text>
+<text x="816" y="416" fill="#c3d9dc" font-size="17">Check date and password</text>
+<text x="60" y="573" fill="#b5cdd1" font-size="20">APP-TIPPS  /  IPHONE SETUP GUIDES</text>
+</g></svg>
