@@ -60,11 +60,11 @@
   "dave-the-diver-mobile": {
     "name": "Dave the Diver Mobile",
     "title": "Dave the Diver Mobile Guides: Release, Differences & Tips",
-    "description": "Prepare for Dave the Diver on Android and iOS with confirmed release information, platform comparisons, beginner advice and a complete guide to the mobile port.",
+    "description": "Find official mobile release details, an introduction to the diving and restaurant loop, and focused gameplay guides. Mobile testing limits are stated in each article.",
     "members": [
       {
         "slug": "dave-the-diver-mobile-guide",
-        "label": "Complete mobile guide"
+        "label": "How diving and sushi connect"
       },
       {
         "slug": "dave-the-diver-mobile-release-date",

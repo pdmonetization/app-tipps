@@ -3,7 +3,7 @@ title: "Dave the Diver Mobile Release Date, Price & Download"
 slug: dave-the-diver-mobile-release-date
 description: The Dave the Diver mobile release date is September 17, 2026. Check the price, Android and iOS links, compatibility and launch details.
 publishDate: 2026-09-09
-updatedDate: 2026-09-09
+updatedDate: 2026-09-14
 author: "Olivia Williams"
 category: News
 categories:
@@ -26,6 +26,8 @@ canonicalUrl: ''
 noindex: false
 draft: false
 ---
+
+**Source check:** This is a pre-release availability report based on the official store listings, not a hands-on review. Prices and compatibility below refer to the stated storefront and check date.
 
 The Dave the Diver mobile release date is **September 17, 2026** for Android, iPhone and iPad. The official store listings are already available for wishlisting or pre-ordering before the global launch.
 

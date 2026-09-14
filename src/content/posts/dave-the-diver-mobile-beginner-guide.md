@@ -3,7 +3,7 @@ title: "Dave the Diver Mobile Beginner Guide: First Week Tips"
 slug: dave-the-diver-mobile-beginner-guide
 description: Use this Dave the Diver mobile beginner guide to manage oxygen, cargo, upgrades, fish quality and Bancho Sushi without wasting early resources.
 publishDate: 2026-09-09
-updatedDate: 2026-09-09
+updatedDate: 2026-09-14
 author: "Michael Wilson"
 category: Game Guide
 categories:
@@ -28,9 +28,11 @@ noindex: false
 draft: false
 ---
 
+**Guide scope:** The gameplay advice below concerns the established PC/console game. We have not tested it in the global Android or iOS release. The mobile store's description of a full port does not verify identical balance, unlocks or controls.
+
 The safest opening in Dave the Diver is built on small successful dives, not heroic attempts to reach the bottom immediately. This Dave the Diver mobile beginner guide gives the first week a clear order: follow the story, improve the limiting piece of equipment, bring useful fish back alive and keep Bancho Sushi's menu under control.
 
-The Android and iOS edition is officially described as a full port on the [Google Play listing](https://play.google.com/store/apps/details?id=com.mintrocket.drmobile), so the core progression principles from the original game apply. Mobile controls and performance may change how comfortable a dive feels, but they do not change the relationship between oxygen, cargo, ingredients and restaurant income.
+The Android and iOS edition is officially described as a full port on the [Google Play listing](https://play.google.com/store/apps/details?id=com.mintrocket.drmobile), but the listing does not verify every progression detail in this guide. Mobile controls and performance may change how comfortable a dive feels, but they do not change the relationship between oxygen, cargo, ingredients and restaurant income.
 
 If you are still waiting to install it, check the [Dave the Diver mobile release date and download guide](/dave-the-diver-mobile-release-date/). The global release is scheduled for September 17, 2026.
 
@@ -159,7 +161,7 @@ Read the role and skills before investing. A server who can handle a recurring s
 
 Do not train every recruit evenly. Choose the people who solve the present service weakness and train toward meaningful skill unlocks. Dispatch can later turn unused staff into a source of ingredients, giving specialised employees value outside the active restaurant lineup.
 
-The detailed staff ranking belongs in a later guide because mobile launch balance should be checked before fixed recommendations are published.
+For the established roster, our [staff guide](/dave-the-diver-best-staff-and-restaurant-setup/) explains specific service skills and training levels. Mobile balance still needs to be checked.
 
 ## Avoid these early mistakes
 
@@ -186,7 +188,7 @@ For the first mobile session, keep the plan deliberately modest:
 7. Observe whether serving, kitchen speed or ingredient supply causes the first restaurant problem.
 8. Spend the resulting income on the upgrade that addresses the next dive.
 
-This route also tests the mobile port properly. A few minutes on the boat cannot reveal whether touch controls remain comfortable during combat or whether the phone heats during a complete dive and restaurant cycle.
+Once the mobile build is available, this route provides a useful first check. A few minutes on the boat cannot reveal whether touch controls remain comfortable during combat or whether the phone heats during a complete dive and restaurant cycle.
 
 ## Should mobile players use a controller?
 

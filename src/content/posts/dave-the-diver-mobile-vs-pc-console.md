@@ -3,7 +3,7 @@ title: "Dave the Diver Mobile vs PC and Console: Differences"
 slug: dave-the-diver-mobile-vs-pc-console
 description: Compare Dave the Diver mobile vs PC and console for content, controls, price, saves, performance and the advantages of playing on a phone.
 publishDate: 2026-09-09
-updatedDate: 2026-09-09
+updatedDate: 2026-09-14
 author: "Daniel Clark"
 category: App Comparison
 categories:
@@ -27,6 +27,8 @@ canonicalUrl: ''
 noindex: false
 draft: false
 ---
+
+**Comparison scope:** This is a pre-release comparison of published information. We have not tested the global Android or iOS build. Controller behaviour, save transfer, performance and DLC packaging require separate verification.
 
 The central difference in Dave the Diver mobile vs PC and console is the device, not the campaign. MINTROCKET's official [Google Play listing](https://play.google.com/store/apps/details?id=com.mintrocket.drmobile) describes the Android and iOS edition as a **full port of the original PC game**, preserving the daytime diving, nighttime restaurant management and story progression.
 

@@ -3,7 +3,7 @@ title: "Dave the Diver Best Weapons and Upgrades Guide"
 slug: dave-the-diver-best-weapons-and-upgrades
 description: Find the Dave the Diver best weapons and upgrades for bosses, live capture and early progression without wasting money or rare materials.
 publishDate: 2026-09-11
-updatedDate: 2026-09-11
+updatedDate: 2026-09-14
 author: "Sophia Garcia"
 category: Game Guide
 categories:
@@ -27,11 +27,13 @@ noindex: false
 draft: false
 ---
 
+**Guide scope:** The gameplay advice below concerns the established PC/console game. We have not tested it in the global Android or iOS release. The mobile store's description of a full port does not verify identical balance, unlocks or controls.
+
 The Dave the Diver best weapons and upgrades depend on what the next dive needs to accomplish. A powerful rifle can make a boss safer, but it can also ruin the fish quality needed by Bancho Sushi. A net gun or tranquilizer produces better ingredients, yet may be the wrong choice when the story sends Dave against a dangerous target.
 
 The most efficient approach is to build two tool paths: one dependable damage weapon and one live-capture option. Improve Dave's permanent diving equipment alongside them, buying the upgrade that removes the current bottleneck instead of purchasing every available level in order.
 
-These recommendations apply to the core game included in the full Android and iOS port described on the official [Google Play listing](https://play.google.com/store/apps/details?id=com.mintrocket.drmobile). New players should also read our [Dave the Diver mobile beginner guide](/dave-the-diver-mobile-beginner-guide/) before spending their first restaurant profits.
+The official [Google Play listing](https://play.google.com/store/apps/details?id=com.mintrocket.drmobile) confirms a full port, but does not document weapon statistics or upgrade recipes. New players should also read our [Dave the Diver mobile beginner guide](/dave-the-diver-mobile-beginner-guide/) before spending their first restaurant profits.
 
 ## Dave the Diver best weapons and upgrades at a glance
 
@@ -85,6 +87,22 @@ For efficient farming:
 5. Spend rare upgrade materials after the route proves repeatable.
 
 This ties weapon investment directly to restaurant income instead of collecting upgrades for completion alone.
+
+## Steel Net Gun upgrade: materials and cost
+
+For a concrete upgrade target, the [NiaMeowDB Steel Net Gun record](https://meowdb.com/db/dave-the-diver/equipment/steel-net-gun) lists this recipe in its June 23, 2026 Windows data snapshot:
+
+| Requirement | Amount |
+| --- | --- |
+| Previous weapon | Large Net Gun |
+| Gold | 3,400 |
+| Steel Wire | 1 |
+| Pelican Eel Skin | 3 |
+| Topaz | 20 |
+
+The database uses the labels "Pelican Eel Leather" and "Ore Topaz" for the last two materials. Its recorded weapon has zero damage, six ammunition and a range value of five. These are PC reference values, not measurements from the mobile release.
+
+Use the table as a shopping checklist before committing to this branch. A player missing the previous weapon needs to progress through the net-gun branch first; collecting only the final materials is not enough. Check the recipe shown in Duff's shop in your version before spending.
 
 ## Best option for large live fish: tranquilizers
 
