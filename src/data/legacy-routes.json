@@ -794,7 +794,14 @@
     "/zoomcar-ipv-2/": "/zoomcar-app-review/",
     "/zoomcar-ipv-3/": "/zoomcar-app-review/",
     "/zoomcar-ipv-4/": "/zoomcar-app-review/",
-    "/zoomcar-ipv/": "/zoomcar-app-review/"
+    "/zoomcar-ipv/": "/zoomcar-app-review/",
+    "/8-ball-pool/": "/tips-to-win-8-ball-pool/",
+    "/babbel/": "/babbel-app-review/",
+    "/dungeon-hunter-5/": "/dungeon-hunter-5-starting-guide/",
+    "/aliexpress-shop-smarter/": "/aliexpress-shop-smarter-review/",
+    "/cookie-jam-play/": "/cookie-jam-tricks-and-cheats/",
+    "/fishdom/": "/fishdom-tricks-guide/",
+    "/freeprints-app/": "/freeprints-app-review/"
   },
   "gone": [
     "/100-logic-games-mosaik/",
