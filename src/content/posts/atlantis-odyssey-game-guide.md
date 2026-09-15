@@ -13,8 +13,6 @@ featuredImageAlt: "Atlantis Odyssey Mobile Game Walkthrough"
 draft: false
 ---
 
-**[marstheme\_review post\_id="11780"]**
-
 Are you a fan of mobile gaming? Have you ever wanted to explore the depths of an ancient lost city beneath the sea? If so, you'll want to check out the Atlanteans Odyssey, an epic action-adventure game in Atlantis.
 
 You'll join a crew of brave adventurers as they search for clues and artifacts amidst treacherous waters and mysterious creatures. Follow along with this walkthrough guide to get the most from your journey into the world's fabled sunken kingdom!
