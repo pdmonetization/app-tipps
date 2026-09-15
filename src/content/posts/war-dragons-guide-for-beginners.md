@@ -1,50 +1,87 @@
 ---
-title: "War Dragons: Guide for Beginners"
+title: "War Dragons Beginner Guide: Classes and First Attacks"
 slug: "war-dragons-guide-for-beginners"
 publishDate: 2022-05-19T06:38:32Z
-updatedDate: 2024-06-27T08:28:59Z
+updatedDate: 2026-09-15T00:00:00Z
 author: "Sophia Garcia"
 category: "Game Guide"
 categories: ["Game Guide"]
 tags: ["Android", "iOS", "Strategy Games"]
-description: "War Dragons gives us an idea of what it would be like to release the flying lizard's giants in poor ground-bound are intended to scurry under their shadows."
+description: "Learn the four War Dragons classes, how to plan an attack and how to choose upgrades without relying on an outdated dragon tier list."
 featuredImage: "/images/2023/06/banner-new-10.png"
 featuredImageAlt: "War Dragons: Guide for Beginners"
-seoTitle: "War Dragons"
+seoTitle: "War Dragons Beginner Guide: Classes and First Attacks"
 draft: false
 ---
 
-War Dragons by Pocket Gems gives us an idea of what it would be like to release the flying lizard's giants in poor ground-bound are intended to scurry under their shadows. You breed dragons, breed them to be perfect machines, and attack other players' bases. The game looks impressive and successfully combines genres to produce experiences that do not necessarily have to be profound but it's good.
+War Dragons combines dragon collecting and breeding with attacks on other players' island defenses. For a beginner, the first useful skill is learning how your dragon attacks and what its spells can actually do. A stronger roster helps, but it cannot replace choosing targets and using abilities deliberately.
 
-The rearing of dragons is an integral part of War Dragons. No Wyrmlings or minor in the wild world of War Dragons.
+This guide focuses on those first decisions. Dragon-specific numbers and seasonal recommendations can change; check the current in-game description before committing resources to a particular build.
 
-Having worked through the campaign for rapid reproduction, you launch attacks on other players' Islands as part of the tutorial. These islands are protected by archers, cannons, and other defenses. You get a dragon eye view of the action as you rain down fire, lightning, and all kinds of special attacks are achieved. Suppose you demolish the defense of your opponent. In that case, you are rewarded with food for your dragons, experience points, and other goodies.
+## The four dragon classes
 
-Of course, as you attack, so you should defend. Other dragons' warriors, especially the remains, will come for you. If you happen to play when they are knocking, you can personally supervise your cannon and archers. Otherwise, it is automatically activated.
+Pocket Gems lists **Hunter, Warrior, Sorcerer and Invoker** as the game's four classes. Our earlier guide covered only three and omitted Invokers. The following overview corrects that omission.
 
-![War dragons ipv 1](/images/2023/01/war-dragons-ipv-1.jpg)
+| Class | Basic attack | What to learn first |
+| --- | --- | --- |
+| Hunter | Rapid tapped fireballs | Picking individual targets instead of spreading attacks indiscriminately |
+| Warrior | Continuous flamethrower | Keeping damage on useful targets while managing defensive abilities |
+| Sorcerer | Swipe to lock onto up to three towers | Choosing a group of targets and budgeting for powerful spells |
+| Invoker | A four-shot sequence with an empowered fourth shot | Reading what that particular dragon's empowered shot does |
 
-## Beginner **tips and tricks to *War Dragons***
+These attack styles come from the [official class guide](https://pocketgems-support.helpshift.com/hc/en/3-war-dragons/faq/955-what-are-the-dragon-classes/). A class describes a starting play style; it does not guarantee that every dragon in it has the same spells or is suitable for the same base.
 
-1. **Warrior dragons are your tanks**
+## Choose a dragon you can control
 
-Dragons War gives you control of the dragon army to decimate the enemy fortresses. There are three main types of war dragons: warrior, hunter, and sorcerer. Each has its strengths, weaknesses, and unique spells. Of the three classes, warriors are the most durable. So when you come across a challenging island with a lot of offensive skills, consider sending in your warrior's dragons first.
+Warriors have substantial health, which makes them a reasonable starting point for practicing your aim and defensive timing. Hunters suit more deliberate targeting. Sorcerers reward understanding their spells and planning how to spend rage.
 
-Due to their large amount of health, warriors can take a lot of damage and build up rage. When the dragon accumulates enough rage, it can use various spells. Because rage can be transferred between two dragons, a popular strategy is to build it with a warrior dragon, then send a sorcerer dragon to utilize that build-up with the use of magic.
+That does not make Warrior the automatic answer to every difficult attack. Compare the actual dragons available to you: their level, abilities and your familiarity with their controls matter more than choosing a class by name alone.
 
-2. **Sorcerer dragons are your Spell Masters**
+For your first practice attacks, keep the dragon selection consistent. Changing dragons after every loss makes it harder to tell whether your improvement came from better control or a different ability set.
 
-Sorcerer dragons are glass cannons of war Dragons. They can carry large amounts of damage with spells, but they do not have a ton of health. The sorcerer may be your best bet when you need to make some tough rounds quickly. Wizards usually have area effect spells. For example, if your enemy was crazy enough to put a ray of lightning tours on the island, you May want to send a sorcerer to remove all before they can harm you.
+## Plan the attack before spending rage
 
-3. **Spell it out**
+Read each equipped spell's description before flying. Identify which ability deals damage, which helps you survive, and which depends on a particular condition. The [official game reference](https://www.wardragons.com/game-info) also provides dragon and ability information.
 
-The use of a spell effectively states the difference between being a dragon hero and a Dragon zero. Therefore, before sending your dragon into any base, you should have a plan of attack on what spells to use and when.
+Give every spell a job. For example, decide which defensive ability you want available when you reach the section that defeated you previously. Spending rage simply because an ability is ready can leave you without the option you need later.
 
-**Talking about spells, here is what you need to know to master your use of spells:**
+After a failed attack, ask three questions:
 
-- You maximum the duration of your defensive spell by Stoneskin and invincibility just before the shot;
-- The Vampire Touch spells can last for health and rage building, and give it to your dragon;
-- The healing mark spell allows you to position the medical packs for the next attacker carefully;
-- The fate of self-destruction can destroy the entire island at the last minute;
-- The cure poison spell cures and blocks any poison for the next seconds;
-- Elemental spell Mayhem is the perfect counter to the base full of lightning and storm towers.
+1. Which tower or section stopped the dragon?
+2. Did you use your most useful ability before reaching it?
+3. Would changing the target order help, or do you need a different dragon?
+
+This creates a specific adjustment for the next attempt. Repeating the same inputs with no explanation for the loss teaches much less.
+
+![War Dragons gameplay](/images/2023/01/war-dragons-ipv-1.jpg)
+
+## Understand the Invoker's fourth shot
+
+Invokers deserve their own explanation because their attack rhythm is different. Their first three shots lead into an empowered fourth shot, and its effect depends on the dragon. It can provide damage or another combat advantage.
+
+Before using an unfamiliar Invoker, read its empowered-shot effect and consider where you want that effect to land. Treating every tap as interchangeable misses the point of the class. Pocket Gems' [Invoker introduction](https://www.wardragons.com/blog/474crAwghf4tdbgT5WTpI/announcing-the-fourth-dragon-class:-invoker) explains the design in more detail.
+
+## Give upgrades a clear purpose
+
+Before spending resources, name the problem you want the upgrade to solve. Are you struggling to survive a particular attack section, learning a new dragon, or trying to strengthen your own defenses?
+
+A useful beginner habit is to focus on a manageable roster you understand. Compare an upgrade against your current goal rather than assuming that every available purchase or newly unlocked dragon is an immediate improvement.
+
+Use the same approach when evaluating advice from other players. Ask which dragon level, base and game version the recommendation assumes. A suggestion built around a developed account may not solve the problem on a new one.
+
+## Your first-session checklist
+
+- Complete the tutorial and learn the controls of the dragons it makes available.
+- Read each dragon's abilities before choosing an attack.
+- Practice target selection with a consistent dragon.
+- Keep a useful defensive spell in mind when planning rage spending.
+- Review one specific mistake after a failed attack.
+- Check current requirements before following a breeding or upgrade recommendation.
+
+The aim is to finish the session understanding why an attack succeeded or failed. That gives you a better foundation for choosing dragons and upgrades than following a fixed shopping list without knowing what it is meant to accomplish.
+
+## Sources
+
+- [Pocket Gems: dragon classes](https://pocketgems-support.helpshift.com/hc/en/3-war-dragons/faq/955-what-are-the-dragon-classes/)
+- [War Dragons: dragons, buildings and abilities](https://www.wardragons.com/game-info)
+- [War Dragons: introducing the Invoker class](https://www.wardragons.com/blog/474crAwghf4tdbgT5WTpI/announcing-the-fourth-dragon-class:-invoker)
