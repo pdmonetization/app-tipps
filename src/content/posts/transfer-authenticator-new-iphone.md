@@ -1,8 +1,9 @@
 ---
-title: "Move Authenticator to a New iPhone Without Losing Access"
+title: Move Authenticator to a New iPhone Without Losing Access
 slug: transfer-authenticator-new-iphone
-description: "Transfer Google and Microsoft Authenticator to a new iPhone. Learn what syncs, what needs sign-in again and what to test before trading in."
+description: Transfer Google and Microsoft Authenticator to a new iPhone. Learn what syncs, what needs sign-in again and what to test before trading in.
 publishDate: 2026-09-14
+updatedDate: ''
 author: App-Tipps Editorial
 category: App Tips
 categories:
@@ -11,13 +12,17 @@ tags:
   - iPhone
   - Account Security
   - Authenticator
+featuredImage: /images/2026/09/transfer-authenticator-new-iphone.svg
+featuredImageAlt: 'Authenticator migration checklist: Google sync or export, Microsoft restore and verification, then test access'
+rating: null
+correctionNote: ''
+seoTitle: ''
+canonicalUrl: ''
+noindex: false
+draft: false
 relatedSlugs:
   - new-iphone-not-enough-icloud-storage
   - quick-share-android-iphone-airdrop-guide
-featuredImage: /images/2026/09/transfer-authenticator-new-iphone.svg
-featuredImageAlt: "Authenticator migration checklist: Google sync or export, Microsoft restore and verification, then test access"
-noindex: false
-draft: false
 ---
 
 **Check your authenticator separately before erasing or trading in your old phone.** A restored account name is not always a working sign-in method.
@@ -40,7 +45,7 @@ These routes come from [Google's transfer instructions](https://support.google.c
 
 If the old app saves codes to a Google Account, sign into that same account inside Authenticator on the new iPhone. Check the selected profile if entries are missing.
 
-For codes kept without account sync:
+For <a rel="sponsored" href="https://kinsta.com/wordpress-hosting/migration/?kaid=EKCQYUYKKROE">Kinsta</a> [codes](https://kinsta.com/wordpress-hosting/migration/?kaid=EKCQYUYKKROE) kept without account sync:
 
 1. On the old device, open Authenticator's menu.
 2. Choose **Transfer accounts → Export accounts**, unlock the device and select the entries.
@@ -86,4 +91,4 @@ If the old phone is already gone and recovery fails, use the service's backup co
 
 For the rest of the move, see [new-iPhone transfer options when iCloud is full](/new-iphone-not-enough-icloud-storage/).
 
-*Based on official Google and Microsoft documentation checked on September 14, 2026. Menu wording can vary by app version. No new-iPhone hardware testing is claimed.*
+_Based on official Google and Microsoft documentation checked on September 14, 2026. Menu wording can vary by app version. No new-iPhone hardware testing is claimed._
