@@ -87,5 +87,36 @@
         "label": "Best staff and restaurant setup"
       }
     ]
+  },
+  "gemini-notebook": {
+    "name": "Gemini Notebook",
+    "title": "Gemini Notebook Guides: Sources, Study Tools and Audio",
+    "description": "Learn to set up Gemini Notebook, create flashcards and Audio Overviews, compare notebooks in Gemini and troubleshoot source imports on mobile and web.",
+    "members": [
+      {
+        "slug": "gemini-notebook-app-review",
+        "label": "App review and overview"
+      },
+      {
+        "slug": "gemini-notebook-mobile-first-notebook",
+        "label": "Start with one question"
+      },
+      {
+        "slug": "gemini-notebook-flashcards-quizzes",
+        "label": "Practice before rereading"
+      },
+      {
+        "slug": "gemini-notebook-audio-overviews-offline",
+        "label": "Prepare before you travel"
+      },
+      {
+        "slug": "gemini-notebook-vs-gemini-notebooks",
+        "label": "Choose by the task"
+      },
+      {
+        "slug": "gemini-notebook-source-import-problems",
+        "label": "Diagnose the source first"
+      }
+    ]
   }
 }
