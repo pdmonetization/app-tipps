@@ -130,3 +130,11 @@ Use the phone app for capture, questions and listening. Use a larger screen for 
 
 - [Grammarly app review](/grammarly-app-review/)
 - [How Duolingo makes learning a language fun](/how-duolingo-app-makes-learning-a-new-language-fun-and-easy/)
+
+## Practical Gemini Notebook guides
+
+- [Gemini Notebook on iPhone and Android: Your First Notebook](/gemini-notebook-mobile-first-notebook/)
+- [Turn PDFs and Notes into Gemini Notebook Flashcards and Quizzes](/gemini-notebook-flashcards-quizzes/)
+- [Gemini Notebook Audio Overviews: Create, Download and Listen Offline](/gemini-notebook-audio-overviews-offline/)
+- [Gemini Notebook vs Notebooks in Gemini: Which Should You Use?](/gemini-notebook-vs-gemini-notebooks/)
+- [Gemini Notebook Cannot Import a Source? A Practical Checklist](/gemini-notebook-source-import-problems/)
