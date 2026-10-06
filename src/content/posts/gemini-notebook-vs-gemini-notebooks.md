@@ -9,8 +9,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["Gemini Notebook", "NotebookLM", "AI Apps", "Productivity"]
 relatedSlugs: ["gemini-notebook-app-review", "gemini-notebook-mobile-first-notebook", "gemini-notebook-flashcards-quizzes", "gemini-notebook-audio-overviews-offline", "gemini-notebook-source-import-problems"]
-featuredImage: "/images/2026/10/gemini-notebook-vs-gemini-notebooks.webp"
-featuredImageAlt: "Original editorial diagram: choose by the task, with steps Check your sources, Use Gemini tools, Verify availability"
+featuredImage: "/images/2026/10/gemini-notebook-vs-gemini-notebooks-v2.webp"
+featuredImageAlt: "Illustration of source documents on a smartphone beside an assistant workspace on a laptop"
 seoTitle: "Gemini Notebook vs Notebooks in Gemini: Differences"
 canonicalUrl: ""
 noindex: false

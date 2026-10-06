@@ -9,8 +9,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["Gemini Notebook", "NotebookLM", "AI Apps", "Productivity"]
 relatedSlugs: ["gemini-notebook-app-review", "gemini-notebook-flashcards-quizzes", "gemini-notebook-audio-overviews-offline", "gemini-notebook-vs-gemini-notebooks", "gemini-notebook-source-import-problems"]
-featuredImage: "/images/2026/10/gemini-notebook-mobile-first-notebook.webp"
-featuredImageAlt: "Original editorial diagram: start with one question, with steps Choose a topic, Add two sources, Check one answer"
+featuredImage: "/images/2026/10/gemini-notebook-mobile-first-notebook-v2.webp"
+featuredImageAlt: "Illustration of two smartphones beside source documents and a notebook, representing mobile notebook setup"
 seoTitle: "Gemini Notebook Mobile: Set Up Your First Notebook"
 canonicalUrl: ""
 noindex: false
