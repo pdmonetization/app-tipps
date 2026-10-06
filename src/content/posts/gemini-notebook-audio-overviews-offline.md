@@ -9,7 +9,7 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["Gemini Notebook", "NotebookLM", "AI Apps", "Productivity"]
 relatedSlugs: ["gemini-notebook-app-review", "gemini-notebook-mobile-first-notebook", "gemini-notebook-flashcards-quizzes", "gemini-notebook-vs-gemini-notebooks", "gemini-notebook-source-import-problems"]
-featuredImage: "/images/2026/10/gemini-notebook-audio-overviews-offline.svg"
+featuredImage: "/images/2026/10/gemini-notebook-audio-overviews-offline.webp"
 featuredImageAlt: "Original editorial diagram: prepare before you travel, with steps Choose the focus, Generate audio, Download and verify"
 seoTitle: "Gemini Notebook Audio Overviews: Offline Listening"
 canonicalUrl: ""

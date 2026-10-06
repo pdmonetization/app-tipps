@@ -9,7 +9,7 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["Gemini Notebook", "NotebookLM", "AI Apps", "Productivity"]
 relatedSlugs: ["gemini-notebook-app-review", "gemini-notebook-mobile-first-notebook", "gemini-notebook-flashcards-quizzes", "gemini-notebook-audio-overviews-offline", "gemini-notebook-vs-gemini-notebooks"]
-featuredImage: "/images/2026/10/gemini-notebook-source-import-problems.svg"
+featuredImage: "/images/2026/10/gemini-notebook-source-import-problems.webp"
 featuredImageAlt: "Original editorial diagram: diagnose the source first, with steps Identify the failure, Test a small source, Choose the next fix"
 seoTitle: "Gemini Notebook Source Import Problems: Fixes"
 canonicalUrl: ""

@@ -9,7 +9,7 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["Gemini Notebook", "NotebookLM", "AI Apps", "Productivity"]
 relatedSlugs: ["gemini-notebook-app-review", "gemini-notebook-mobile-first-notebook", "gemini-notebook-audio-overviews-offline", "gemini-notebook-vs-gemini-notebooks", "gemini-notebook-source-import-problems"]
-featuredImage: "/images/2026/10/gemini-notebook-flashcards-quizzes.svg"
+featuredImage: "/images/2026/10/gemini-notebook-flashcards-quizzes.webp"
 featuredImageAlt: "Original editorial diagram: practice before rereading, with steps Select a chapter, Recall the answer, Check the evidence"
 seoTitle: "Gemini Notebook Flashcards and Quizzes: Study Guide"
 canonicalUrl: ""

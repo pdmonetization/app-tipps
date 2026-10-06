@@ -2,15 +2,15 @@
 title: "Gemini Notebook App Review: Is Google's Research Tool Worth Using?"
 slug: "gemini-notebook-app-review"
 publishDate: 2026-08-19T00:00:00Z
-updatedDate: 2026-08-19T00:00:00Z
+updatedDate: 2026-10-06T00:00:00Z
 author: "Olivia Williams"
 category: "App Review"
 categories: ["App Review"]
 tags: ["Gemini Notebook", "NotebookLM", "Android", "iOS", "AI Apps", "Productivity"]
 relatedSlugs:
-  - "the-new-way-to-edit-your-photos-on-the-chatgpt-app"
-  - "unlock-your-inner-artist-with-imagine-ai-art-generator"
-  - "grammarly-app-review"
+  - "gemini-notebook-mobile-first-notebook"
+  - "gemini-notebook-flashcards-quizzes"
+  - "gemini-notebook-audio-overviews-offline"
 description: "Our Gemini Notebook app review covers sources, citations, Audio Overviews, offline listening, limitations and who should use Google's renamed NotebookLM."
 featuredImage: "/images/2026/08/gemini-notebook-app-review.webp"
 featuredImageAlt: "A smartphone research notebook app beside documents and headphones"
