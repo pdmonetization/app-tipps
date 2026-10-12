@@ -118,5 +118,36 @@
         "label": "Diagnose the source first"
       }
     ]
+  },
+  "capcut": {
+    "name": "CapCut",
+    "title": "CapCut Mobile Guides: Captions, Export and Framing",
+    "description": "Solve CapCut mobile editing problems with caption, export, paid-feature, template and vertical-video guides, plus our existing app review.",
+    "members": [
+      {
+        "slug": "revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app",
+        "label": "App review and costs"
+      },
+      {
+        "slug": "capcut-auto-captions-mobile",
+        "label": "Auto captions"
+      },
+      {
+        "slug": "capcut-export-failed-mobile",
+        "label": "Export failures"
+      },
+      {
+        "slug": "capcut-pay-before-export",
+        "label": "Paid export prompts"
+      },
+      {
+        "slug": "capcut-templates-not-showing",
+        "label": "Missing templates"
+      },
+      {
+        "slug": "capcut-vertical-video-without-cropping-subject",
+        "label": "Vertical framing"
+      }
+    ]
   }
 }
