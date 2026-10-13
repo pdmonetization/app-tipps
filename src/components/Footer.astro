@@ -1,5 +1,6 @@
 ---
 import { SITE, PUBLISHER, FOOTER_LINKS, NAV } from '../consts';
+import ConsentPreferences from './ConsentPreferences.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="site-foot">
@@ -15,7 +16,9 @@ const year = new Date().getFullYear();
       </div>
       <div>
         <h2>About this site</h2>
-        <ul>{FOOTER_LINKS.map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+        <ul>{FOOTER_LINKS.map((n) => <li><a href={n.href}>{n.label}</a></li>)}
+          <ConsentPreferences />
+        </ul>
       </div>
       <div>
         <h2>Follow</h2>
