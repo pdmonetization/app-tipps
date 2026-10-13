@@ -8,8 +8,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["CapCut", "Video Editing", "Android", "iOS"]
 description: "Generate and correct CapCut captions on iPhone or Android, improve timing and readability, and check paid-feature access before editing a full video."
-featuredImage: "/images/2026/10/capcut-auto-captions-mobile.webp"
-featuredImageAlt: "Original editorial diagram illustrating auto captions in a mobile video editing workflow"
+featuredImage: "/images/2026/10/capcut-auto-captions-mobile-v2.webp"
+featuredImageAlt: "Editorial illustration of hands correcting subtitles on a smartphone beside a cafe window"
 seoTitle: "CapCut Auto Captions on Mobile: Edit and Style Subtitles"
 relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-export-failed-mobile", "capcut-pay-before-export", "capcut-templates-not-showing", "capcut-vertical-video-without-cropping-subject"]
 canonicalUrl: ""
