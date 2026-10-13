@@ -8,8 +8,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["CapCut", "Video Editing", "Android", "iOS"]
 description: "Diagnose CapCut export failures on iPhone and Android, check storage and project complexity, and isolate errors without risking your only saved draft."
-featuredImage: "/images/2026/10/capcut-export-failed-mobile.webp"
-featuredImageAlt: "Original editorial diagram illustrating export failures in a mobile video editing workflow"
+featuredImage: "/images/2026/10/capcut-export-failed-mobile-v2.webp"
+featuredImageAlt: "Editorial illustration of a smartphone with an incomplete video export beside an external drive at a creator's desk"
 seoTitle: "CapCut Won’t Export? Mobile Storage and Settings Fixes"
 relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-auto-captions-mobile", "capcut-pay-before-export", "capcut-templates-not-showing", "capcut-vertical-video-without-cropping-subject"]
 canonicalUrl: ""

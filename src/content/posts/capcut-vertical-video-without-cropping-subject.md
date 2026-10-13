@@ -8,8 +8,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["CapCut", "Video Editing", "Android", "iOS"]
 description: "Convert landscape footage to a vertical CapCut video, choose fit or crop deliberately, preserve important subjects and check captions before export."
-featuredImage: "/images/2026/10/capcut-vertical-video-without-cropping-subject.webp"
-featuredImageAlt: "Original editorial diagram illustrating vertical framing in a mobile video editing workflow"
+featuredImage: "/images/2026/10/capcut-vertical-video-without-cropping-subject-v2.webp"
+featuredImageAlt: "Editorial illustration of a vertically mounted smartphone filming a potter and clay bowl in a studio"
 seoTitle: "CapCut Vertical Video: Keep Your Subject in Frame"
 relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-auto-captions-mobile", "capcut-export-failed-mobile", "capcut-pay-before-export", "capcut-templates-not-showing"]
 canonicalUrl: ""

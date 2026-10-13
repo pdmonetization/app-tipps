@@ -8,8 +8,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["CapCut", "Video Editing", "Android", "iOS"]
 description: "Troubleshoot missing CapCut templates or empty search results, distinguish platform differences, and follow current app controls when official guides disagree."
-featuredImage: "/images/2026/10/capcut-templates-not-showing.webp"
-featuredImageAlt: "Original editorial diagram illustrating missing templates in a mobile video editing workflow"
+featuredImage: "/images/2026/10/capcut-templates-not-showing-v2.webp"
+featuredImageAlt: "Editorial illustration of a smartphone video template gallery above printed travel photographs"
 seoTitle: "CapCut Templates Not Showing: Mobile and Desktop Checks"
 relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-auto-captions-mobile", "capcut-export-failed-mobile", "capcut-pay-before-export", "capcut-vertical-video-without-cropping-subject"]
 canonicalUrl: ""

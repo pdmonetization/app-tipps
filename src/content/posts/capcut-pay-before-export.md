@@ -8,8 +8,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["CapCut", "Video Editing", "Android", "iOS"]
 description: "Find the paid effects, assets or settings behind a CapCut export prompt, inspect the cover and account, and compare alternatives before subscribing."
-featuredImage: "/images/2026/10/capcut-pay-before-export.webp"
-featuredImageAlt: "Original editorial diagram illustrating paid export prompts in a mobile video editing workflow"
+featuredImage: "/images/2026/10/capcut-pay-before-export-v2.webp"
+featuredImageAlt: "Editorial illustration of a smartphone video editor with a locked feature beside an unbranded payment card"
 seoTitle: "CapCut Asks You to Pay Before Exporting: What to Check"
 relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-auto-captions-mobile", "capcut-export-failed-mobile", "capcut-templates-not-showing", "capcut-vertical-video-without-cropping-subject"]
 canonicalUrl: ""
