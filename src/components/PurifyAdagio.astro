@@ -44,7 +44,7 @@
 <script is:inline>
 (function(){
   'use strict';
-  const LOADER='https://purify-prebid.pages.dev/dist/purify.js?v=1.0.0', VENDOR=617;
+  const LOADER='https://purify-prebid.pages.dev/dist/purify.js?v=1.0.1', VENDOR=617;
   const slots=[], seen=new Set(), debug=new URLSearchParams(location.search).get('purify_debug')==='1';
   let launched=false, registered=false, resolved=false, attempts=0;
   let consentState='Waiting for Google Funding Choices / TCF consent state';
