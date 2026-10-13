@@ -98,12 +98,22 @@
       '<div>Consent: '+esc(consentState)+'</div>'+
       '<div>Selected bid ≠ billed impression; no refresh.</div>'+
       '<button type="button" id="purify-privacy-settings" style="margin:8px 0;cursor:pointer">Review privacy choices</button>'+
+      '<div id="purify-privacy-result" role="status" aria-live="polite"></div>'+
       (slots.length?'<table><tr><th>Slot</th><th>Status</th><th>Bid CPM</th></tr>'+
       slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>':'<div>No auctions started.</div>');
     const review=box.querySelector('#purify-privacy-settings');
-    review.disabled=typeof window.googlefc?.showRevocationMessage!=='function';
-    review.title=review.disabled?'Funding Choices privacy control has not loaded':'Open Google Funding Choices consent dialog';
-    review.onclick=()=>window.googlefc?.showRevocationMessage?.();
+    // Never disable the entrypoint merely because Funding Choices loaded late.
+    // The footer owns the documented queued CMP operation and reports failure.
+    review.onclick=()=>{
+      const output=document.getElementById('purify-privacy-result');
+      if(typeof window.appTippsOpenPrivacyChoices==='function'){
+        window.appTippsOpenPrivacyChoices(message=>{
+          if(output)output.textContent=message;
+        });
+      }else if(output){
+        output.textContent='Privacy control is unavailable on this page; please use the privacy link in the footer.';
+      }
+    };
   }
   function statuses(){
     for(const x of slots){
