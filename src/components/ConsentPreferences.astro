@@ -1,47 +1,99 @@
 ---
-// Google Funding Choices handles the actual consent message and stored preferences.
-// This component provides a real, user-initiated entrypoint to reconsider a choice.
+/*
+ * Consent is collected exclusively by the website's Google Funding Choices CMP.
+ * This control never modifies TCF data or grants permission on a visitor's behalf.
+ */
 ---
 <li>
-  <button id="app-tipps-privacy-choices" type="button" disabled hidden
+  <button id="app-tipps-privacy-choices" type="button"
     aria-label="Review privacy and cookie choices">
     Privacy and cookie settings
   </button>
-  <span id="app-tipps-privacy-choices-status" role="status" aria-live="polite" class="sr-only"></span>
+  <span id="app-tipps-privacy-choices-status" role="status" aria-live="polite"></span>
 </li>
 <style>
-  button {background:none;border:0;padding:0;color:#cdd5e2;text-align:left;cursor:pointer;font:inherit;font-size:14.5px;text-decoration:underline}
-  button:hover {color:white}
-  button:disabled{cursor:default;opacity:.55}
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  button { background:none;border:0;padding:0;color:#cdd5e2;text-align:left;cursor:pointer;font:inherit;font-size:14.5px;text-decoration:underline }
+  button:hover,button:focus-visible { color:white }
+  #app-tipps-privacy-choices-status:not(:empty) { display:block;max-width:26ch;font-size:12px;line-height:1.45;color:#ffd28e;margin-top:6px }
 </style>
 <script is:inline>
-(function(){
-  const btn=document.getElementById('app-tipps-privacy-choices');
-  const status=document.getElementById('app-tipps-privacy-choices-status');
-  if(!btn || !status) return;
-  const fc=window.googlefc=window.googlefc||{};
-  fc.callbackQueue=fc.callbackQueue||[];
-  function ready(){
-    if(typeof window.googlefc?.showRevocationMessage !== 'function') return;
-    // Funding Choices' revocation API is for European-regulations choices.
-    if(typeof window.__tcfapi !== 'function') return;
-    window.__tcfapi('addEventListener',2,function(tc,ok){
-      if(!ok||!tc||typeof tc.gdprApplies !== 'boolean')return;
-      btn.hidden = tc.gdprApplies===false;
-      btn.disabled = tc.gdprApplies===false;
-    });
-  }
-  fc.callbackQueue.push({CONSENT_API_READY:ready});
-  // The message script sometimes becomes ready before this component executes.
-  if(typeof fc.showRevocationMessage==='function')ready();
-  btn.addEventListener('click',function(){
-    if(typeof window.googlefc?.showRevocationMessage === 'function'){
-      status.textContent='';
-      window.googlefc.showRevocationMessage();
-    }else{
-      status.textContent='Privacy settings are temporarily unavailable. Please try reloading the page.';
+(function () {
+  'use strict';
+  const button = document.getElementById('app-tipps-privacy-choices');
+  const status = document.getElementById('app-tipps-privacy-choices-status');
+  if (!button || !status) return;
+
+  let waiting = false;
+
+  // This function is also called by Purify's owner-only diagnostics panel.
+  // Google documents that message operations must go through callbackQueue,
+  // not a direct call to googlefc.showRevocationMessage().
+  window.appTippsOpenPrivacyChoices = function (report) {
+    const notify = typeof report === 'function' ? report : function () {};
+    const showError = (message) => {
+      status.textContent = message;
+      notify(message);
+    };
+
+    const fc = window.googlefc;
+    if (!fc || !fc.callbackQueue || typeof fc.callbackQueue.push !== 'function') {
+      showError('Google consent settings are not available on this page. Please check the published CMP message.');
+      return false;
     }
+
+    const invoke = () => {
+      if (typeof fc.showRevocationMessage !== 'function') return false;
+      try {
+        // Google Ad Manager's documented supported invocation.
+        fc.callbackQueue.push(fc.showRevocationMessage);
+        status.textContent = '';
+        notify('');
+        return true;
+      } catch (_error) {
+        showError('Unable to open Google consent settings. Check CMP configuration or browser blocking.');
+        return false;
+      }
+    };
+
+    if (invoke()) return true;
+    if (waiting) {
+      showError('Waiting for Google consent settings to become available.');
+      return false;
+    }
+
+    waiting = true;
+    showError('Waiting for Google consent settings to load…');
+    let settled = false;
+    const timeout = setTimeout(function () {
+      if (settled) return;
+      settled = true;
+      waiting = false;
+      showError('Google consent settings did not load. Confirm that a European regulations message is published for this site.');
+    }, 4000);
+
+    try {
+      fc.callbackQueue.push({
+        CONSENT_API_READY: function () {
+          if (settled) return;
+          settled = true;
+          waiting = false;
+          clearTimeout(timeout);
+          if (!invoke()) {
+            showError('Google consent API is present, but the revocation dialog is unavailable. Check your Funding Choices message.');
+          }
+        }
+      });
+    } catch (_error) {
+      clearTimeout(timeout);
+      settled = true;
+      waiting = false;
+      showError('Google consent settings are unavailable. Please check the Funding Choices configuration.');
+    }
+    return false;
+  };
+
+  button.addEventListener('click', function () {
+    window.appTippsOpenPrivacyChoices();
   });
 })();
 </script>
