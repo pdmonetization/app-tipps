@@ -1,0 +1,120 @@
+---
+/* Manual opt-in browser test ONLY. Renders on one named article, and does
+   not load Purify unless ?purify_adagio_test=1 AND the button is clicked.
+   The Purify-hosted site configuration is initially disabled. */
+---
+<aside id="purify-adagio-test" class="purify-adagio-test" hidden aria-label="Purify Adagio controlled test">
+  <h2>Purify Digital — Adagio integration test</h2>
+  <p class="purify-adagio-note">Private manual test panel. No Purify bidding occurs until you explicitly start the test below. The normal in-article GAM placement remains separate.</p>
+  <p id="purify-consent-status" role="status">Checking consent system…</p>
+  <button type="button" id="purify-test-start" disabled>Start one Adagio test auction</button>
+  <p id="purify-auction-status" role="status">Not started.</p>
+  <div class="purify-placement-label">Advertisement — 300 × 250 test placement</div>
+  <div class="purify-adagio-slot" data-purify-slot="banner_bottom"></div>
+</aside>
+<style>
+  .purify-adagio-test[hidden] { display:none !important; }
+  .purify-adagio-test { border:2px dashed #527aa4; border-radius:8px; background:#f3f8fc; padding:20px; margin:24px auto; max-width:700px; color:#163453; box-sizing:border-box; }
+  .purify-adagio-test h2 {font-size:20px; margin:0 0 12px}
+  .purify-adagio-note {font-size:14px}
+  .purify-adagio-test button {padding:10px 16px; background:#164878;color:white;border:0;border-radius:6px;cursor:pointer}
+  .purify-adagio-test button:disabled {opacity:.55;cursor:default}
+  .purify-adagio-slot {width:300px;min-height:250px;max-width:100%;background:#fff;border:1px dashed #acc1d6;box-sizing:border-box;overflow:hidden}
+  .purify-placement-label {font-size:12px;margin:12px 0 5px}
+</style>
+<script is:inline>
+(function() {
+  'use strict';
+  if (new URLSearchParams(location.search).get('purify_adagio_test') !== '1') return;
+  if (location.hostname !== 'app-tipps.com' && location.hostname !== 'www.app-tipps.com') return;
+
+  const panel = document.getElementById('purify-adagio-test');
+  const consentStatus = document.getElementById('purify-consent-status');
+  const auctionStatus = document.getElementById('purify-auction-status');
+  const start = document.getElementById('purify-test-start');
+  const slot = panel?.querySelector('[data-purify-slot="banner_bottom"]');
+  if (!panel || !slot || !start) return;
+
+  panel.hidden = false;
+  let registered = false;
+  let completedConsent = false;
+  let consentAllowed = false;
+  let alreadyStarted = false;
+
+  function reportConsent(data, success) {
+    if (!success || !data || !['tcloaded','useractioncomplete'].includes(data.eventStatus)) return;
+    completedConsent = true;
+    if (data.gdprApplies === false) {
+      consentAllowed = true;
+      consentStatus.textContent = 'CMP confirms GDPR does not apply. Other applicable privacy requirements still apply.';
+    } else if (data.gdprApplies === true) {
+      // Deliberately conservative for the first pilot: no storage or
+      // personal-data bid request until TCF purpose 1 and vendor 617 consent.
+      const purpose1 = data.purpose?.consents?.[1] === true;
+      const vendor617 = data.vendor?.consents?.[617] === true;
+      const hasTc = typeof data.tcString === 'string' && data.tcString.length > 0;
+      consentAllowed = hasTc && purpose1 && vendor617;
+      consentStatus.textContent = consentAllowed
+        ? 'TCF consent available, including Adagio vendor 617 and Purpose 1.'
+        : 'TCF consent is missing for Adagio vendor 617 or Purpose 1. No test request will be sent.';
+    } else {
+      consentAllowed = false;
+      consentStatus.textContent = 'CMP has not determined whether GDPR applies.';
+    }
+    start.disabled = alreadyStarted || !consentAllowed;
+  }
+
+  function attachConsent() {
+    if (registered || typeof window.__tcfapi !== 'function') return false;
+    try {
+      window.__tcfapi('addEventListener', 2, reportConsent);
+      registered = true;
+      consentStatus.textContent = 'Waiting for a final TCF consent decision…';
+      return true;
+    } catch (err) {
+      consentStatus.textContent = 'Unable to read CMP: ' + String(err?.message || err);
+      return false;
+    }
+  }
+  attachConsent();
+  let count = 0;
+  const timer = setInterval(function() {
+    if (registered || ++count >= 80) {
+      clearInterval(timer);
+      if (!registered) consentStatus.textContent = 'No working IAB TCF CMP API detected. Live testing is blocked.';
+      return;
+    }
+    attachConsent();
+  }, 250);
+
+  function observe() {
+    const current = slot.dataset.purifyStatus;
+    const wrapper = window.__PURIFY_DIGITAL_WRAPPER__;
+    if (current) auctionStatus.textContent = 'Purify slot status: ' + current +
+      (wrapper?.timedOut ? ' (auction timed out)' : '');
+    if (['render-succeeded','render-error','render-timeout','no-bid','integration-error','library-error','slot-too-small','blocked-no-cmp'].includes(current)) return true;
+    return false;
+  }
+  start.addEventListener('click', function() {
+    if (alreadyStarted || !completedConsent || !consentAllowed) return;
+    alreadyStarted = true;
+    start.disabled = true;
+    auctionStatus.textContent = 'Loading Purify Prebid…';
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://purify-prebid.pages.dev/dist/purify.js';
+    script.dataset.purifySite = 'apptipps';
+    script.onerror = function() {
+      auctionStatus.textContent = 'Failed to load hosted Purify wrapper.';
+    };
+    document.head.appendChild(script);
+    const interval = setInterval(function() {
+      if (observe()) clearInterval(interval);
+    }, 300);
+    setTimeout(function() {
+      clearInterval(interval);
+      if (!observe()) auctionStatus.textContent = 'No auction result. Purify App-Tipps may still be disabled, or its script failed to initialize.';
+    }, 12000);
+  }, {once:true});
+}());
+</script>
