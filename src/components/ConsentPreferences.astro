@@ -35,9 +35,12 @@
       notify(message);
     };
 
-    const fc = window.googlefc;
-    if (!fc || !fc.callbackQueue || typeof fc.callbackQueue.push !== 'function') {
-      showError('Google consent settings are not available on this page. Please check the published CMP message.');
+    // Google recommends predefining the callback queue so the request can
+    // wait for Funding Choices even when it has not loaded at click time.
+    const fc = window.googlefc = window.googlefc || {};
+    fc.callbackQueue = fc.callbackQueue || [];
+    if (typeof fc.callbackQueue.push !== 'function') {
+      showError('Google consent settings are unavailable. Please check the published CMP message.');
       return false;
     }
 
