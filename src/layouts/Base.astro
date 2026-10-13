@@ -2,6 +2,7 @@
 import { SITE, PUBLISHER, INTEGRATIONS } from '../consts';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PurifyAdagio from '../components/PurifyAdagio.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -209,6 +210,7 @@ const graph = {
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <Header />
+  <PurifyAdagio />
   <main id="main"><slot /></main>
   <Footer />
 </body>

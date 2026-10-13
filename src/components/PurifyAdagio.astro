@@ -1,0 +1,140 @@
+---
+/* Public, multi-slot client-side Purify/Adagio integration. */
+---
+<div id="purify-top-mount" aria-label="Top advertisement"></div>
+<div id="purify-sticky-mount" aria-label="Sticky advertisement"></div>
+<style is:global>
+  .article { position:relative; }
+  .purify-ad { box-sizing:border-box; margin:28px auto; text-align:center; max-width:100%; }
+  .purify-ad-label { font-size:10px; line-height:1.5; text-transform:uppercase;letter-spacing:.06em;color:#7a8493;margin-bottom:6px; }
+  .purify-slot { margin:0 auto; max-width:100%; }
+  .purify-ad[data-purify-result="no-bid"], .purify-ad[data-purify-result="slot-too-small"],
+  .purify-ad[data-purify-result="render-error"], .purify-ad[data-purify-result="render-timeout"],
+  .purify-ad[data-purify-result="library-error"] {display:none!important}
+  .purify-top { margin:16px auto 26px; min-height:105px; }
+  .purify-top .purify-slot {width:728px;min-height:90px;}
+  .purify-article .purify-slot {width:300px;min-height:250px;}
+  .purify-rail {position:absolute;top:360px;width:300px;min-height:600px;z-index:2;margin:0}
+  .purify-rail-left {left:-322px}
+  .purify-rail-right {right:-322px}
+  .purify-rail .purify-slot {width:300px;min-height:600px}
+  .purify-sticky {position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:1000;
+    margin:0;background:white;border:1px solid #d8dde5;border-bottom:0;box-shadow:0 -2px 12px #0002;
+    padding:5px 28px 3px;max-width:100vw;visibility:hidden}
+  .purify-sticky[data-purify-result="render-succeeded"] {visibility:visible}
+  .purify-sticky .purify-slot {width:728px;min-height:90px;max-width:100%}
+  .purify-close {position:absolute;top:4px;right:4px;border:0;background:#f2f4f7;color:#1b2637;
+    font-size:18px;line-height:24px;width:24px;height:24px;cursor:pointer;border-radius:4px}
+  #purify-diagnostics {position:fixed;right:12px;bottom:12px;max-width:420px;max-height:55vh;overflow:auto;
+    font:12px/1.5 ui-monospace,Consolas,monospace;background:#111d2b;color:#e2ecf7;
+    padding:12px;border-radius:8px;box-shadow:0 4px 30px #0005;z-index:2000}
+  #purify-diagnostics table {border-collapse:collapse;width:100%}
+  #purify-diagnostics td,#purify-diagnostics th {padding:3px 6px;border-bottom:1px solid #52606b}
+  @media(max-width:1439px){.purify-rail {display:none!important}}
+  @media(max-width:760px){
+    .purify-top .purify-slot{width:320px;min-height:100px;max-width:100vw}
+    .purify-top{margin:10px auto 15px}
+    .purify-sticky .purify-slot{width:320px;min-height:50px}
+    .purify-sticky{padding:0;width:320px;max-width:100vw;border:0}
+    .purify-sticky .purify-close{top:-26px;right:0}
+    .purify-article{position:relative;left:50%;transform:translateX(-50%);width:300px;max-width:calc(100vw - 8px)}
+    .purify-article .purify-slot{width:300px;max-width:100%}
+  }
+</style>
+<script is:inline>
+(function(){
+  'use strict';
+  const LOADER='https://purify-prebid.pages.dev/dist/purify.js?v=1.0.0', VENDOR=617;
+  const slots=[], seen=new Set(), debug=new URLSearchParams(location.search).get('purify_debug')==='1';
+  let launched=false, registered=false, resolved=false, attempts=0;
+  function log(message){if(debug)console.info('[Purify public]',message)}
+  function create(name,area,mount,width,css=''){
+    if(!mount||seen.has(area))return;
+    seen.add(area);
+    const shell=document.createElement('aside');shell.className='purify-ad '+css;
+    shell.dataset.purifyArea=area;shell.setAttribute('aria-label','Advertisement');
+    const label=document.createElement('div');label.className='purify-ad-label';label.textContent='Advertisement';
+    const slot=document.createElement('div');slot.className='purify-slot';slot.id='purify-app-tipps-'+area;
+    slot.dataset.purifySlot=name;slot.style.width=width+'px';
+    shell.append(label,slot);mount.append(shell);slots.push({name:area,slot,shell});
+    return shell;
+  }
+  function articleMiddle(body,n,area){
+    const p=[...body.children].filter(el=>el.tagName==='P');
+    if(p.length<n)return;
+    const mark=document.createElement('div');p[n-1].after(mark);
+    create('banner_middle',area,mark,300,'purify-article');
+  }
+  function setup(){
+    const mobile=matchMedia('(max-width:760px)').matches;
+    create('banner_top','top',document.getElementById('purify-top-mount'),mobile?320:728,'purify-top');
+    const article=document.querySelector('article.article'),body=article?.querySelector('.article-body');
+    if(body){
+      if(matchMedia('(min-width:1440px)').matches){
+        create('banner_left','left',article,300,'purify-rail purify-rail-left');
+        create('banner_right','right',article,300,'purify-rail purify-rail-right');
+      }
+      articleMiddle(body,3,'middle-1');
+      articleMiddle(body,7,'middle-2');
+      create('banner_bottom','bottom',body,300,'purify-article');
+    }
+    if(sessionStorage.getItem('purify_sticky_closed')!=='1'){
+      const sticky=create('banner_sticky_bottom','sticky',document.getElementById('purify-sticky-mount'),mobile?320:728,'purify-sticky');
+      if(sticky){
+        const close=document.createElement('button');close.type='button';close.className='purify-close';
+        close.textContent='×';close.setAttribute('aria-label','Close advertisement');
+        close.onclick=()=>{sticky.remove();sessionStorage.setItem('purify_sticky_closed','1')};
+        sticky.append(close);
+      }
+    }
+  }
+  function diagnostics(){
+    if(!debug)return;
+    let box=document.getElementById('purify-diagnostics');
+    if(!box){box=document.createElement('section');box.id='purify-diagnostics';document.body.append(box)}
+    const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    box.innerHTML='<strong>Purify Adagio — Live positions</strong><div>Selected bid ≠ billed impression; no refresh.</div><table><tr><th>Slot</th><th>Status</th><th>Bid CPM</th></tr>'+
+      slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>';
+  }
+  function statuses(){
+    for(const x of slots){
+      const s=x.slot.dataset.purifyStatus;
+      if(s&&!['pending','auction-started','render-attempted'].includes(s))x.shell.dataset.purifyResult=s;
+    }
+    diagnostics();
+  }
+  function start(){
+    if(launched||!resolved)return;
+    launched=true;setup();if(!slots.length)return;
+    const observer=new MutationObserver(statuses);
+    for(const x of slots)observer.observe(x.slot,{attributes:true,attributeFilter:['data-purify-status','data-purify-bid-cpm']});
+    if(debug){window.PURIFY_DEBUG=true;diagnostics()}
+    const s=document.createElement('script');s.src=LOADER;s.async=true;s.dataset.purifySite='app-tipps';
+    s.onerror=()=>{log('Prebid loader failed');for(const x of slots)x.shell.remove()};
+    document.head.append(s);
+    log('Started live Adagio auction for '+slots.length+' placements');
+  }
+  function onConsent(tc,ok){
+    if(!ok||!tc)return;
+    if(tc.gdprApplies!==false&&!['tcloaded','useractioncomplete'].includes(tc.eventStatus))return;
+    const eligible=tc.gdprApplies===false ||
+      Boolean(tc.tcString&&tc.purpose?.consents?.[1]===true&&tc.vendor?.consents?.[VENDOR]===true);
+    if(!eligible){
+      if(launched){slots.forEach(x=>x.shell.remove());log('Consent withdrawn — placements removed')}
+      else log('Consent not eligible: no bid request');
+      return;
+    }
+    resolved=true;start();
+  }
+  function awaitCMP(){
+    if(launched||registered)return;
+    if(typeof window.__tcfapi==='function'){
+      registered=true;
+      try{window.__tcfapi('addEventListener',2,onConsent)}catch(error){log(error.message)}
+    }else if(++attempts<100)setTimeout(awaitCMP,100);
+    else log('CMP unavailable: no ad auction');
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',awaitCMP,{once:true});
+  else awaitCMP();
+})();
+</script>
