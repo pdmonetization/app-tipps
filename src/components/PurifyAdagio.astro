@@ -47,6 +47,7 @@
   const LOADER='https://purify-prebid.pages.dev/dist/purify.js?v=1.0.0', VENDOR=617;
   const slots=[], seen=new Set(), debug=new URLSearchParams(location.search).get('purify_debug')==='1';
   let launched=false, registered=false, resolved=false, attempts=0;
+  let consentState='Waiting for Google Funding Choices / TCF consent state';
   function log(message){if(debug)console.info('[Purify public]',message)}
   function create(name,area,mount,width,css=''){
     if(!mount||seen.has(area))return;
@@ -93,8 +94,16 @@
     let box=document.getElementById('purify-diagnostics');
     if(!box){box=document.createElement('section');box.id='purify-diagnostics';document.body.append(box)}
     const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    box.innerHTML='<strong>Purify Adagio — Live positions</strong><div>Selected bid ≠ billed impression; no refresh.</div><table><tr><th>Slot</th><th>Status</th><th>Bid CPM</th></tr>'+
-      slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>';
+    box.innerHTML='<strong>Purify Adagio — Live positions</strong>'+
+      '<div>Consent: '+esc(consentState)+'</div>'+
+      '<div>Selected bid ≠ billed impression; no refresh.</div>'+
+      '<button type="button" id="purify-privacy-settings" style="margin:8px 0;cursor:pointer">Review privacy choices</button>'+
+      (slots.length?'<table><tr><th>Slot</th><th>Status</th><th>Bid CPM</th></tr>'+
+      slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>':'<div>No auctions started.</div>');
+    const review=box.querySelector('#purify-privacy-settings');
+    review.disabled=typeof window.googlefc?.showRevocationMessage!=='function';
+    review.title=review.disabled?'Funding Choices privacy control has not loaded':'Open Google Funding Choices consent dialog';
+    review.onclick=()=>window.googlefc?.showRevocationMessage?.();
   }
   function statuses(){
     for(const x of slots){
@@ -114,26 +123,43 @@
     document.head.append(s);
     log('Started live Adagio auction for '+slots.length+' placements');
   }
+  function setConsentState(value){
+    consentState=value;
+    if(debug)diagnostics();
+    log(value);
+  }
   function onConsent(tc,ok){
-    if(!ok||!tc)return;
-    if(tc.gdprApplies!==false&&!['tcloaded','useractioncomplete'].includes(tc.eventStatus))return;
+    if(!ok||!tc){setConsentState('TCF response unavailable; no auction');return}
+    if(tc.gdprApplies!==false&&!['tcloaded','useractioncomplete'].includes(tc.eventStatus)){
+      setConsentState('Waiting for completed TCF choice ('+String(tc.eventStatus||'unknown')+')');
+      return;
+    }
     const eligible=tc.gdprApplies===false ||
       Boolean(tc.tcString&&tc.purpose?.consents?.[1]===true&&tc.vendor?.consents?.[VENDOR]===true);
     if(!eligible){
+      const reasons=[];
+      if(!tc.tcString)reasons.push('missing TC string');
+      if(tc.purpose?.consents?.[1]!==true)reasons.push('Purpose 1 not consented');
+      if(tc.vendor?.consents?.[VENDOR]!==true)reasons.push('Adagio/Onfocus vendor 617 not consented or not in CMP vendor list');
+      setConsentState('Blocked: '+reasons.join('; '));
       if(launched){slots.forEach(x=>x.shell.remove());log('Consent withdrawn — placements removed')}
-      else log('Consent not eligible: no bid request');
       return;
     }
+    setConsentState(tc.gdprApplies===false?'CMP confirms GDPR does not apply; other applicable opt-outs must still be respected':'Purpose 1 and Adagio 617 consent confirmed');
     resolved=true;start();
   }
   function awaitCMP(){
     if(launched||registered)return;
     if(typeof window.__tcfapi==='function'){
       registered=true;
-      try{window.__tcfapi('addEventListener',2,onConsent)}catch(error){log(error.message)}
+      setConsentState('CMP found; awaiting final TCF decision');
+      try{window.__tcfapi('addEventListener',2,onConsent)}catch(error){
+        setConsentState('TCF listener error: '+String(error.message));
+      }
     }else if(++attempts<100)setTimeout(awaitCMP,100);
-    else log('CMP unavailable: no ad auction');
+    else setConsentState('CMP unavailable after 10 seconds; no auction');
   }
+  if(debug){window.PURIFY_DEBUG=true;diagnostics()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',awaitCMP,{once:true});
   else awaitCMP();
 })();
