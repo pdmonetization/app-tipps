@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import GamArticleInline from '../components/GamArticleInline.astro';
+import PurifyAdagioPilot from '../components/PurifyAdagioPilot.astro';
 import PostCard from '../components/PostCard.astro';
 import TopicCluster from '../components/TopicCluster.astro';
 import { allPosts, hasAffiliate, related } from '../lib/posts';
@@ -123,6 +124,7 @@ const breadcrumb = breadcrumbSchema(url, [
       <div class="article-body"><Content /></div>
       <TopicCluster currentSlug={d.slug} pool={pool} />
       <GamArticleInline />
+      {d.slug === 'capcut-auto-captions-mobile' && <PurifyAdagioPilot />}
       {d.tags.length > 0 && (
         <ul class="tags" aria-label="Tags">
           {d.tags.map((t) => <li><a href={`/tag/${slugifyTag(t)}/`}>{t}</a></li>)}
