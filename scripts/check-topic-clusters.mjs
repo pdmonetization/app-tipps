@@ -43,8 +43,8 @@ for (const [key, cluster] of Object.entries(topicClusters)) {
   if (!cluster.name || !cluster.title || !cluster.description) {
     errors.push(`${key}: cluster needs a name, search title and description`);
   }
-  if (members.length < 4) {
-    errors.push(`${key}: cluster needs at least four pages to guarantee three relevant connections per page`);
+  if (members.length < 3) {
+    errors.push(`${key}: cluster needs at least three articles plus its hub to guarantee three relevant connections per page`);
   }
 
   const memberSlugs = members.map(({ slug }) => slug);
@@ -112,7 +112,10 @@ for (const [key, cluster] of Object.entries(topicClusters)) {
     if (missingLinks.length) {
       errors.push(`${member.slug}: topic-guide block is missing ${missingLinks.join(', ')}`);
     }
-    if (outgoing.size < 3) {
+    // The validated hub is a relevant destination too: three articles each link
+    // to two siblings plus the hub, and receive the same three connections.
+    const relevantOutgoing = new Set(blockLinks.filter((slug) => memberSet.has(slug) || slug === hubSlug));
+    if (relevantOutgoing.size < 3) {
       errors.push(`${member.slug}: needs at least three relevant outgoing cluster links`);
     }
     for (const target of outgoing) incoming.get(target)?.add(member.slug);

@@ -3,7 +3,7 @@ title: New iPhone, Not Enough iCloud Storage? Your Transfer Options
 slug: new-iphone-not-enough-icloud-storage
 description: 'Move to a new iPhone when iCloud is full: compare temporary backup storage, direct transfer and computer backups, including the 21-day deadline.'
 publishDate: 2026-09-14
-updatedDate: ''
+updatedDate: '2026-10-19'
 author: Michael Wilson
 category: App Tips
 categories:
@@ -69,6 +69,10 @@ Apple explains that [iCloud Backup covers information not already syncing to iCl
 That distinction matters when checking the new phone. An app icon appearing does not tell you that its content has finished arriving. Inspect the things you would actually miss: recent photos, a recent conversation and documents you need offline.
 
 Do not delete synced photos on the old phone as a way to “tidy up” the migration. Treat cleanup and transferring as separate jobs.
+
+## After transfer, check local space for large games
+
+Temporary iCloud backup space does not enlarge the new phone's physical storage. Before downloading a large game, check **Settings → General → iPhone Storage** using [Apple's storage instructions](https://support.apple.com/en-us/108429). For a current example, our [No Man's Sky iPhone compatibility and storage guide](/no-mans-sky-iphone-compatibility/) separates the advertised download size, available local space and operating-system requirements.
 
 ## Check access before trading in
 
