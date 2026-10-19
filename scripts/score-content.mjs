@@ -10,7 +10,10 @@ const source = readFileSync(file, 'utf8');
 const [, frontmatter = '', body = ''] = source.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/) ?? [];
 if (!frontmatter) throw new Error(`${file}: missing YAML frontmatter`);
 
-const field = (name) => frontmatter.match(new RegExp(`^${name}:\\s*["']?([^"'\\r\\n]*)`, 'm'))?.[1]?.trim() ?? '';
+const field = (name) => {
+  const value = frontmatter.match(new RegExp(`^${name}:\\s*([^\\r\\n]*)`, 'm'))?.[1]?.trim() ?? '';
+  return value.replace(/^(["'])(.*)\1$/, '$2');
+};
 const list = (name) => {
   const block = frontmatter.match(new RegExp(`^${name}:\\s*\\n((?:  - .*\\n?)+)`, 'm'))?.[1] ?? '';
   return [...block.matchAll(/^  -\s+(.+)$/gm)].map((match) => match[1].trim());
@@ -18,6 +21,7 @@ const list = (name) => {
 const normalize = (value) => value
   .normalize('NFKD')
   .replace(/\p{M}/gu, '')
+  .replace(/(?<=\p{L})['’ʼ](?=\p{L})/gu, '')
   .toLowerCase()
   .replace(/[^a-z0-9]+/g, ' ')
   .trim();

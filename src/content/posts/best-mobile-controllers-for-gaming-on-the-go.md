@@ -2,7 +2,7 @@
 title: "The Best Mobile Controllers For Gaming On The Go"
 slug: "best-mobile-controllers-for-gaming-on-the-go"
 publishDate: 2023-04-10T08:48:25Z
-updatedDate: 2023-04-04T12:26:48Z
+updatedDate: 2026-10-19T00:00:00Z
 author: "Andrew Wright"
 category: "News"
 categories: ["News"]
@@ -18,6 +18,8 @@ Do you like playing video games while on the go? Well, we've got good news! Mobi
 We'll look at the top-rated mobile games controllers to give you an idea of what's out there and provide our expert recommendations based on different types of mobile gamers. Whether you're looking for something simple and easy-to-use or want an advanced controller featuring all sorts of bells and whistles, this guide will help you decide which one is right for you.
 
 ## **Mobile Controllers For Gaming On The Go**
+
+For a current game-specific example, Hello Games has announced controller support for its upcoming iPhone and iPad port. Our [No Man's Sky launch guide](/no-mans-sky-ios-release-date/) covers timing and the free opening section, while [mobile versus PC and console](/no-mans-sky-mobile-vs-pc-console/) separates input support from multiplayer, save transfer and other platform features. General controller compatibility is not a guarantee about every button in a particular game; use the released build to check an accessory you already own before buying another one.
 
 Mobile controllers for gaming are a device that can be used to enhance the experience of playing games on your smartphone or tablet. The controllers usually attach to the device in some way, either wirelessly or through a physical connection, and often have features like triggers, analog sticks, vibration motors, and other inputs designed specifically for gaming.
 

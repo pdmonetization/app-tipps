@@ -119,6 +119,25 @@
       }
     ]
   },
+  "no-mans-sky-mobile": {
+    "name": "No Man's Sky Mobile",
+    "title": "No Man's Sky on iPhone and iPad: Launch and Buying Guides",
+    "description": "Check the October 2026 launch, free trial and price, resolve iPhone and iPad compatibility questions, and compare mobile features with PC and console before buying.",
+    "members": [
+      {
+        "slug": "no-mans-sky-ios-release-date",
+        "label": "Release date, free trial and price"
+      },
+      {
+        "slug": "no-mans-sky-iphone-compatibility",
+        "label": "Device compatibility and storage"
+      },
+      {
+        "slug": "no-mans-sky-mobile-vs-pc-console",
+        "label": "Mobile versus PC and console"
+      }
+    ]
+  },
   "capcut": {
     "name": "CapCut",
     "title": "CapCut Mobile Guides: Captions, Export and Framing",
