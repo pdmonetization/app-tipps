@@ -8,6 +8,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["CapCut", "Auto Captions", "Subtitles", "Android", "iPhone"]
 description: "Diagnose CapCut captions that don't generate, transcribe the wrong language or lose sync on mobile, without deleting an unfinished edit."
+featuredImage: "/images/2026/10/capcut-auto-captions-mobile-v2.webp"
+featuredImageAlt: "Editorial image of a person editing smartphone video subtitles; conceptual illustration, not a CapCut screenshot"
 seoTitle: "CapCut Auto Captions Not Working? Mobile Fixes"
 relatedSlugs: ["capcut-auto-captions-mobile", "capcut-export-failed-mobile", "capcut-projects-disappeared-mobile", "capcut-pay-before-export", "capcut-vertical-video-without-cropping-subject"]
 canonicalUrl: ""
