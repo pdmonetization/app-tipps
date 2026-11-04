@@ -58,7 +58,7 @@ export const INTEGRATIONS = {
     enabled: true,
     slotIds: {
       banner_top: '',
-      banner_middle: '',
+      banner_middle: '4859922810',
       banner_bottom: '',
       banner_left: '',
       banner_right: '',
