@@ -11,7 +11,7 @@ description: "Diagnose CapCut export failures on iPhone and Android, check stora
 featuredImage: "/images/2026/10/capcut-export-failed-mobile-v2.webp"
 featuredImageAlt: "Editorial illustration of a smartphone with an incomplete video export beside an external drive at a creator's desk"
 seoTitle: "CapCut Won’t Export? Mobile Storage and Settings Fixes"
-relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-auto-captions-mobile", "capcut-pay-before-export", "capcut-templates-not-showing", "capcut-vertical-video-without-cropping-subject"]
+relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-auto-captions-mobile", "capcut-pay-before-export", "capcut-templates-not-showing", "capcut-vertical-video-without-cropping-subject", "capcut-projects-disappeared-mobile"]
 canonicalUrl: ""
 noindex: false
 draft: false
@@ -67,3 +67,7 @@ Before uninstalling or reinstalling, verify that projects and original media are
 Open a successful export in the phone's normal video player. Check duration, sound, captions and the final frame. Keep the project until you know the deliverable is correct.
 
 If the issue persists, report the OS, app version, settings, error text and whether a small plain clip exports. Share a non-sensitive example if support requests one. Our [caption guide](/capcut-auto-captions-mobile/) and [vertical framing guide](/capcut-vertical-video-without-cropping-subject/) cover the next checks after rendering succeeds.
+
+## Missing project rather than failed export?
+
+If the video edit disappeared from your Projects list altogether, do not reinstall the app to troubleshoot export. First follow our [CapCut missing-project checklist](/capcut-projects-disappeared-mobile/) to distinguish local drafts from cloud Space and avoid deleting unsynced work.
