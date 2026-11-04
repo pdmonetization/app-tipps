@@ -8,6 +8,8 @@ category: "App Tips"
 categories: ["App Tips"]
 tags: ["CapCut", "Lost Drafts", "Video Editing", "Android", "iPhone"]
 description: "Can't find a CapCut project on iPhone or Android? Check the account, local drafts and cloud Space without deleting data or reinstalling the editor."
+featuredImage: "/images/2026/10/capcut-export-failed-mobile-v2.webp"
+featuredImageAlt: "Editorial image of a mobile video editing workspace with a smartphone and external storage device; conceptual illustration, not a CapCut screenshot"
 seoTitle: "CapCut Projects Disappeared? Safe Draft Recovery Checks"
 relatedSlugs: ["capcut-export-failed-mobile", "capcut-templates-not-showing", "capcut-auto-captions-mobile", "capcut-auto-captions-not-working-mobile", "revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app"]
 canonicalUrl: ""
