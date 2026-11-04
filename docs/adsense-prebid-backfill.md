@@ -26,9 +26,12 @@ A single numeric unit ID can serve both middle positions. Consider separate
 AdSense units for reporting by placement. Start with a 300×250 middle unit
 before enabling other positions.
 
-**All slot IDs are intentionally blank in the initial release.** No AdSense
-fallback requests can occur until the real ID(s) are supplied. Never invent
-IDs, substitute the publisher ID, or copy a GAM line-item/slot ID.
+**Active first test (4 November 2026):** AdSense display unit `4859922810`
+for `banner_middle` (both in-article placements). User supplied the full
+AdSense code showing this numeric ID under the configured publisher ID
+`ca-pub-4456135303100816`. Other sizes are intentionally blank, so no
+fallback request occurs for top, bottom, or sidebars. Do not copy a GAM
+line-item/slot ID into these fields.
 
 `INTEGRATIONS.enableAds` controls independent `AdSlot.astro` positions and
 does not need to be enabled for this backfill.
@@ -58,9 +61,9 @@ sticky placement.
 
 - `npm run build` includes `worker/test/adsense-fallback.test.mjs`.
 - Visit an article with `?purify_debug=1`.
-- With no actual slot IDs, confirm Purify no-bid slots remain unfilled and no
-  fallback requests occur.
-- After configuring a valid slot ID, confirm the diagnostic table shows
+- With only `banner_middle` configured, confirm top, bottom and rail no-bids
+  remain unfilled and only middle positions may request AdSense.
+- With the supplied middle unit ID, confirm the diagnostic table shows
   `adsense-requested` only for eligible no-bid placements.
 - In browser DevTools inspect the `<ins class="adsbygoogle">` element with
   the matching numeric `data-ad-slot`; verify just one Google ad request.
