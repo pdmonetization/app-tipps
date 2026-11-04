@@ -70,3 +70,6 @@ Check the live price, permissions and account terms on your own device before su
 - [Why Does CapCut Ask You to Pay Before Exporting?](/capcut-pay-before-export/)
 - [CapCut Templates Not Showing: Mobile and Desktop Differences](/capcut-templates-not-showing/)
 - [How to Make a Vertical Video in CapCut Without Cutting Off Your Subject](/capcut-vertical-video-without-cropping-subject/)
+
+
+For specific fixes, see our [missing CapCut projects and drafts guide](/capcut-projects-disappeared-mobile/) and [auto-caption troubleshooting steps](/capcut-auto-captions-not-working-mobile/). These distinguish data-loss risks from caption-generation errors.
