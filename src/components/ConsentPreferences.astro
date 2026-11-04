@@ -1,12 +1,11 @@
 ---
 /*
- * Consent is collected exclusively by the website's Google Funding Choices CMP.
- * This control never modifies TCF data or grants permission on a visitor's behalf.
+ * InMobi Choice is the only CMP. Do not set consent state from the footer:
+ * reopen the provider's UI so the visitor can change or withdraw preferences.
  */
 ---
 <li>
-  <button id="app-tipps-privacy-choices" type="button"
-    aria-label="Review privacy and cookie choices">
+  <button id="app-tipps-privacy-choices" type="button" aria-label="Review privacy and cookie choices">
     Privacy and cookie settings
   </button>
   <span id="app-tipps-privacy-choices-status" role="status" aria-live="polite"></span>
@@ -14,7 +13,7 @@
 <style>
   button { background:none;border:0;padding:0;color:#cdd5e2;text-align:left;cursor:pointer;font:inherit;font-size:14.5px;text-decoration:underline }
   button:hover,button:focus-visible { color:white }
-  #app-tipps-privacy-choices-status:not(:empty) { display:block;max-width:26ch;font-size:12px;line-height:1.45;color:#ffd28e;margin-top:6px }
+  #app-tipps-privacy-choices-status:not(:empty) { display:block;max-width:30ch;font-size:12px;line-height:1.45;color:#ffd28e;margin-top:6px }
 </style>
 <script is:inline>
 (function () {
@@ -24,77 +23,46 @@
   if (!button || !status) return;
 
   let waiting = false;
-
-  // This function is also called by Purify's owner-only diagnostics panel.
-  // Google documents that message operations must go through callbackQueue,
-  // not a direct call to googlefc.showRevocationMessage().
+  // Also used by the Purify owner-only diagnostics panel.
   window.appTippsOpenPrivacyChoices = function (report) {
     const notify = typeof report === 'function' ? report : function () {};
-    const showError = (message) => {
-      status.textContent = message;
-      notify(message);
-    };
-
-    // Google recommends predefining the callback queue so the request can
-    // wait for Funding Choices even when it has not loaded at click time.
-    const fc = window.googlefc = window.googlefc || {};
-    fc.callbackQueue = fc.callbackQueue || [];
-    if (typeof fc.callbackQueue.push !== 'function') {
-      showError('Google consent settings are unavailable. Please check the published CMP message.');
-      return false;
-    }
-
-    const invoke = () => {
-      if (typeof fc.showRevocationMessage !== 'function') return false;
-      try {
-        // Google Ad Manager's documented supported invocation.
-        fc.callbackQueue.push(fc.showRevocationMessage);
-        status.textContent = '';
-        notify('');
-        return true;
-      } catch (_error) {
-        showError('Unable to open Google consent settings. Check CMP configuration or browser blocking.');
-        return false;
-      }
-    };
-
-    if (invoke()) return true;
-    if (waiting) {
-      showError('Waiting for Google consent settings to become available.');
-      return false;
-    }
-
+    const message = (value) => { status.textContent = value; notify(value); };
+    if (waiting) return false;
     waiting = true;
-    showError('Waiting for Google consent settings to load…');
-    let settled = false;
-    const timeout = setTimeout(function () {
-      if (settled) return;
-      settled = true;
-      waiting = false;
-      showError('Google consent settings did not load. Confirm that a European regulations message is published for this site.');
-    }, 4000);
+    let attempts = 0;
+    message('Opening privacy choices…');
 
-    try {
-      fc.callbackQueue.push({
-        CONSENT_API_READY: function () {
-          if (settled) return;
-          settled = true;
-          waiting = false;
-          clearTimeout(timeout);
-          if (!invoke()) {
-            showError('Google consent API is present, but the revocation dialog is unavailable. Check your Funding Choices message.');
+    const fail = () => {
+      waiting = false;
+      message('InMobi consent settings did not load. Check the site property and browser blocking.');
+    };
+    const retry = () => {
+      if (++attempts > 50) return fail();
+      window.setTimeout(open, 100);
+    };
+    const open = () => {
+      if (typeof window.__tcfapi !== 'function') return retry();
+      try {
+        window.__tcfapi('ping', 2, function (data) {
+          if (!data || data.cmpStatus === 'stub' || data.cmpStatus === 'loading' || data.cmpLoaded === false) {
+            return retry();
           }
-        }
-      });
-    } catch (_error) {
-      clearTimeout(timeout);
-      settled = true;
-      waiting = false;
-      showError('Google consent settings are unavailable. Please check the Funding Choices configuration.');
-    }
-    return false;
+          try {
+            // InMobi publishes separate GDPR (TCF) and US privacy dialogs.
+            if (data.gdprApplies === false && typeof window.__uspapi === 'function') {
+              window.__uspapi('displayUspUi');
+            } else {
+              window.__tcfapi('displayConsentUi', 2, function () {});
+            }
+            waiting = false;
+            message('');
+          } catch (_error) { fail(); }
+        });
+      } catch (_error) { fail(); }
+    };
+    open();
+    return true;
   };
-
   button.addEventListener('click', function () {
     window.appTippsOpenPrivacyChoices();
   });

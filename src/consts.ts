@@ -41,10 +41,9 @@ export const INTEGRATIONS = {
   adManagerNetworkCode: '23368375120',
   ga4MeasurementId: 'G-ZY7TVP75K4',
   searchConsoleToken: '',   // google-site-verification content value
-  /* Google Privacy & messaging (Funding Choices) is a Google-certified CMP
-     under the TCF requirement for EEA/UK/CH. Loading it needs only the
-     AdSense publisher ID above — set enableConsent to true once AdSense
-     is approved and the message is published in the AdSense UI. */
+  /* InMobi Choice V3 is the single CMP (TCF 2.3, GPP and Google Basic Consent).
+     InMobi must have an active app-tipps.com property with Google Basic Consent
+     configured; the account-issued tag is in components/InMobiConsent.astro. */
   enableConsent: true,
   /* AdSense slots render as nothing until this is true. The dedicated GAM
      article slot is enabled independently by its article layout prop. */

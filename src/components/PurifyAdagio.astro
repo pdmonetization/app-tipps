@@ -47,7 +47,7 @@
   const LOADER='https://purify-prebid.pages.dev/dist/purify.js?v=1.0.1', VENDOR=617;
   const slots=[], seen=new Set(), debug=new URLSearchParams(location.search).get('purify_debug')==='1';
   let launched=false, registered=false, resolved=false, attempts=0;
-  let consentState='Waiting for Google Funding Choices / TCF consent state';
+  let consentState='Waiting for InMobi Choice / TCF consent state';
   function log(message){if(debug)console.info('[Purify public]',message)}
   function create(name,area,mount,width,css=''){
     if(!mount||seen.has(area))return;
@@ -102,7 +102,7 @@
       (slots.length?'<table><tr><th>Slot</th><th>Status</th><th>Bid CPM</th></tr>'+
       slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>':'<div>No auctions started.</div>');
     const review=box.querySelector('#purify-privacy-settings');
-    // Never disable the entrypoint merely because Funding Choices loaded late.
+    // Never disable the entrypoint merely because InMobi loaded late.
     // The footer owns the documented queued CMP operation and reports failure.
     review.onclick=()=>{
       const output=document.getElementById('purify-privacy-result');

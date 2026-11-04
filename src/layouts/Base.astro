@@ -2,6 +2,7 @@
 import { SITE, PUBLISHER, INTEGRATIONS } from '../consts';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import InMobiConsent from '../components/InMobiConsent.astro';
 import PurifyAdagio from '../components/PurifyAdagio.astro';
 import '../styles/global.css';
 
@@ -74,6 +75,25 @@ const graph = {
 <!doctype html>
 <html lang={SITE.lang}>
 <head>
+  {INTEGRATIONS.enableConsent && (
+    <>
+      {/* Default-denied Consent Mode v2 must precede every Google tag and the CMP SDK. */}
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+          wait_for_update: 500
+        });
+        window.gtag('set', 'ads_data_redaction', true);
+        window['gtag_enable_tcf_support'] = true;
+      </script>
+      <InMobiConsent />
+    </>
+  )}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{fullTitle}</title>
@@ -106,14 +126,6 @@ const graph = {
   <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
 
   <script is:inline type="application/ld+json" set:html={JSON.stringify(graph)} />
-
-  {/* Google Privacy & messaging — a Google-certified CMP under the TCF
-      requirement for the EEA, UK and Switzerland. Enable TCF support before
-      either the CMP or Google tag loads so consent choices reach gtag.js. */}
-  {INTEGRATIONS.enableConsent &&
-    <script is:inline>window['gtag_enable_tcf_support'] = true;</script>}
-  {INTEGRATIONS.enableConsent && INTEGRATIONS.adsensePublisherId &&
-    <script is:inline async src={`https://fundingchoicesmessages.google.com/i/${INTEGRATIONS.adsensePublisherId.replace('ca-pub-','pub-')}?ers=1`}></script>}
 
   {enableArticleInlineAd && INTEGRATIONS.adManagerNetworkCode && (
     <>
@@ -153,56 +165,19 @@ const graph = {
       <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${INTEGRATIONS.ga4MeasurementId}`}></script>
       <script is:inline define:vars={{ id: INTEGRATIONS.ga4MeasurementId, consentEnabled: INTEGRATIONS.enableConsent }}>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-
-        const consentRegions = [
-          'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
-          'IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO',
-          'SK','SI','ES','SE','GB','CH'
-        ];
-
-        // Preserve Analytics measurement where the European consent message
-        // does not apply, while denying storage until consent in covered regions.
-        gtag('consent', 'default', {
-          analytics_storage: 'granted',
-          ad_storage: 'denied',
-          ad_user_data: 'denied',
-          ad_personalization: 'denied'
-        });
-        gtag('consent', 'default', {
-          region: consentRegions,
-          analytics_storage: 'denied',
-          ad_storage: 'denied',
-          ad_user_data: 'denied',
-          ad_personalization: 'denied',
-          wait_for_update: 2000
-        });
-
-        gtag('js', new Date());
-        gtag('config', id, { anonymize_ip: true });
-
-        // Funding Choices exposes the visitor's saved TCF decision through
-        // __tcfapi. Translate Purpose 1 into Analytics storage consent.
-        if (consentEnabled) {
-          let tcfAttempts = 0;
-          const connectConsent = () => {
-            if (typeof window.__tcfapi !== 'function') {
-              if (++tcfAttempts < 50) setTimeout(connectConsent, 100);
-              return;
-            }
-            window.__tcfapi('addEventListener', 2, (tcData, success) => {
-              if (!success || !tcData || !tcData.purpose) return;
-              if (tcData.eventStatus !== 'tcloaded' &&
-                  tcData.eventStatus !== 'useractioncomplete') return;
-
-              const analyticsGranted = tcData.purpose.consents?.[1] === true;
-              gtag('consent', 'update', {
-                analytics_storage: analyticsGranted ? 'granted' : 'denied'
-              });
-            });
-          };
-          connectConsent();
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        // InMobi handles subsequent Google Consent Mode v2 updates. Do not infer
+        // Google Analytics permission from TCF Purpose 1 (device storage).
+        if (!consentEnabled) {
+          window.gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied'
+          });
         }
+        window.gtag('js', new Date());
+        window.gtag('config', id, { anonymize_ip: true });
       </script>
     </>
   )}
