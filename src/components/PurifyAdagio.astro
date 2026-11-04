@@ -196,6 +196,9 @@ import { INTEGRATIONS } from '../consts';
     const eligible=tc.gdprApplies===false ||
       Boolean(tc.tcString&&tc.purpose?.consents?.[1]===true&&tc.vendor?.consents?.[VENDOR]===true);
     if(!eligible){
+      // Prevent an in-flight Prebid no-bid callback from starting AdSense
+      // after a user withdraws consent.
+      resolved=false;
       const reasons=[];
       if(!tc.tcString)reasons.push('missing TC string');
       if(tc.purpose?.consents?.[1]!==true)reasons.push('Purpose 1 not consented');
