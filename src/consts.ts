@@ -45,9 +45,25 @@ export const INTEGRATIONS = {
      InMobi must have an active app-tipps.com property with Google Basic Consent
      configured; the account-issued tag is in components/InMobiConsent.astro. */
   enableConsent: true,
-  /* AdSense slots render as nothing until this is true. The dedicated GAM
-     article slot is enabled independently by its article layout prop. */
+  /* Standalone AdSense slots are separate from Purify's no-fill backfill. */
   enableAds: false,
+  /* Site-side AdSense backfill after a final Prebid no-bid, never after a
+     creative has been attempted. Use genuine numeric data-ad-slot values from
+     Ads > By ad unit > Display ads in this AdSense account. Blank = disabled
+     for that shape; no invalid Google ad requests are sent. The 300x250
+     unit can be reused by both in-article placements. A sticky/anchor ad is
+     deliberately NOT part of this fallback (Google handles its own anchors).
+     The account-level AdSense loader remains in Base.astro. */
+  adsenseFallback: {
+    enabled: true,
+    slotIds: {
+      banner_top: '',
+      banner_middle: '',
+      banner_bottom: '',
+      banner_left: '',
+      banner_right: '',
+    },
+  },
 };
 
 export const NAV = [
