@@ -11,7 +11,7 @@ description: "Generate and correct CapCut captions on iPhone or Android, improve
 featuredImage: "/images/2026/10/capcut-auto-captions-mobile-v2.webp"
 featuredImageAlt: "Editorial illustration of hands correcting subtitles on a smartphone beside a cafe window"
 seoTitle: "CapCut Auto Captions on Mobile: Edit and Style Subtitles"
-relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-export-failed-mobile", "capcut-pay-before-export", "capcut-templates-not-showing", "capcut-vertical-video-without-cropping-subject"]
+relatedSlugs: ["revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app", "capcut-export-failed-mobile", "capcut-pay-before-export", "capcut-templates-not-showing", "capcut-vertical-video-without-cropping-subject", "capcut-auto-captions-not-working-mobile"]
 canonicalUrl: ""
 noindex: false
 draft: false
@@ -67,3 +67,7 @@ Choose the video shape first. Changing to portrait after positioning captions ca
 Watch the exported file outside CapCut. Check the first caption, a dense sentence and the ending. Confirm that text, sound and timing survived export. Captions visible in the editor are not a separate subtitle file: exporting an SRT or other timed-text file is a different feature and may have different platform restrictions.
 
 If rendering fails, use our [export troubleshooting guide](/capcut-export-failed-mobile/). For broader features and costs, see the [CapCut review](/revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app/).
+
+## When caption generation itself does not work
+
+If the transcript stays empty, appears in the wrong language or fails to process, use our [CapCut auto-captions troubleshooting guide](/capcut-auto-captions-not-working-mobile/). It separates missing audio, network processing and recognition errors instead of asking you to change every setting at once.
