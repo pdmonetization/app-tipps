@@ -140,8 +140,8 @@
   },
   "capcut": {
     "name": "CapCut",
-    "title": "CapCut Mobile Guides: Captions, Export and Framing",
-    "description": "Solve CapCut mobile editing problems with caption, export, paid-feature, template and vertical-video guides, plus our existing app review.",
+    "title": "CapCut Mobile Guides: Drafts, Captions, Export and Framing",
+    "description": "Diagnose lost drafts, broken or inaccurate subtitles, export failures, paid-feature prompts and template and framing issues on iPhone and Android.",
     "members": [
       {
         "slug": "revolutionize-your-video-editing-unleash-your-creativity-with-capcut-app",
@@ -166,6 +166,14 @@
       {
         "slug": "capcut-vertical-video-without-cropping-subject",
         "label": "Vertical framing"
+      },
+      {
+        "slug": "capcut-projects-disappeared-mobile",
+        "label": "Missing projects and drafts"
+      },
+      {
+        "slug": "capcut-auto-captions-not-working-mobile",
+        "label": "Auto captions not working"
       }
     ]
   }
