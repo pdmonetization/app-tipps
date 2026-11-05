@@ -108,9 +108,9 @@ test('Google fallback is independent of Adagio vendor 617 after a completed TCF 
   assert.ok(a!==-1 && b>a);
   const constructConsent=new Function(
     'window','slots','setup','statuses','setConsentState','start','VENDOR','initialLaunched',
-    'let googleReady=false, resolved=false, launched=initialLaunched;\\n'+
+    'let googleReady=false, resolved=false, launched=initialLaunched;\n'+
     source.slice(a,b)+
-    '\\nreturn {onConsent, getState:()=>({googleReady,resolved,launched})};'
+    '\nreturn {onConsent, getState:()=>({googleReady,resolved,launched})};'
   );
   const callLog=[];
   const slots=[{adsenseStarted:false,slot:{dataset:{}},shell:{remove(){callLog.push('removed')}}}];
@@ -136,9 +136,9 @@ test('a Google request must never be made from CMP stub/loading or GPC opt-out',
   const b=source.indexOf('  function awaitCMP(){',a);
   const constructConsent=new Function(
     'window','slots','setup','statuses','setConsentState','start','VENDOR','initialLaunched',
-    'let googleReady=false, resolved=false, launched=initialLaunched;\\n'+
+    'let googleReady=false, resolved=false, launched=initialLaunched;\n'+
     source.slice(a,b)+
-    '\\nreturn {onConsent, getState:()=>({googleReady,resolved})};'
+    '\nreturn {onConsent, getState:()=>({googleReady,resolved})};'
   );
   for(const sample of [
     {gdprApplies:true,eventStatus:'cmpuishown',tcString:''},
@@ -165,8 +165,8 @@ test('Google consent readiness is separate from Adagio bidder readiness', () => 
   const b=source.indexOf('  function awaitCMP(){',a);
   const constructConsent=new Function('window','slots','setup','statuses',
     'setConsentState','start','VENDOR','initialLaunched',
-    'let googleReady=false, resolved=false, launched=initialLaunched;\\n'+
-    source.slice(a,b)+'\\nreturn {onConsent,getState:()=>({googleReady,resolved})};'
+    'let googleReady=false, resolved=false, launched=initialLaunched;\n'+
+    source.slice(a,b)+'\nreturn {onConsent,getState:()=>({googleReady,resolved})};'
   );
   const calls=[];
   const probe=constructConsent({navigator:{}},[],()=>calls.push('setup'),
