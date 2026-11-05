@@ -57,9 +57,9 @@ export const INTEGRATIONS = {
   adsenseFallback: {
     enabled: true,
     slotIds: {
-      banner_top: '',
+      banner_top: '4859922810',
       banner_middle: '4859922810',
-      banner_bottom: '',
+      banner_bottom: '4859922810',
       banner_left: '',
       banner_right: '',
     },

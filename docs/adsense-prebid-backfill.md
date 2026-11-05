@@ -26,50 +26,63 @@ A single numeric unit ID can serve both middle positions. Consider separate
 AdSense units for reporting by placement. Start with a 300×250 middle unit
 before enabling other positions.
 
-**Active first test (4 November 2026):** AdSense display unit `4859922810`
-for `banner_middle` (both in-article placements). User supplied the full
-AdSense code showing this numeric ID under the configured publisher ID
-`ca-pub-4456135303100816`. Other sizes are intentionally blank, so no
-fallback request occurs for top, bottom, or sidebars. Do not copy a GAM
-line-item/slot ID into these fields.
+**Active unit (5 November 2026):** AdSense display unit `4859922810`
+is configured for `banner_top` (all pages including homepage),
+`banner_middle` (both in-article positions), and `banner_bottom` (articles).
+The user supplied this unit under publisher ID `ca-pub-4456135303100816`.
+Sidebars and sticky remain disabled. Multiple placements share the same
+responsive unit ID for this test; use separate IDs later for reporting.
 
 `INTEGRATIONS.enableAds` controls independent `AdSlot.astro` positions and
 does not need to be enabled for this backfill.
 
 ## Exactly when a fallback is requested
 
-A Google ad request is queued *once per placement* only when:
+A Google ad request is queued *once per placement*, and only after the
+InMobi CMP returns a **final TCF choice** (`tcloaded` or
+`useractioncomplete` with a TC string, or explicit `gdprApplies=false`).
+The site also refuses to request ads when Global Privacy Control is on.
 
-1. The Purify wrapper has started following a valid consent decision.
-2. The wrapper reports `no-bid`, `library-error` or `integration-error`
-   **before any creative is attempted**.
-3. A numeric `data-ad-slot` for that placement is configured.
-4. The slot fits on the screen and has no existing creative iframe.
+- **Adagio consent eligible:** run the Prebid auction; use AdSense only
+  when the wrapper returns `no-bid`, `library-error`, or a pre-render
+  `integration-error`.
+- **Adagio not eligible (vendor 617 not consented):** skip Prebid entirely,
+  but allow Google to evaluate a separately requested display unit based
+  on the TCF and Google consent signals. Google decides if personalized,
+  non-personalized, or limited ads are eligible for that visitor.
+- **CMP unresolved:** no Google or Prebid ad request, because this is a
+  manual ad implementation and the CMP has not finished loading.
+- **Creative render attempted:** no second provider is requested to avoid
+  competing impressions. Existing AdSense ads are never replaced/hidden.
 
-A creative render failure or unconfirmed timeout deliberately does **not**
-start AdSense. Purify's render-hardening guidance notes that an impression
-may already have been counted after a render attempt. The site never refreshes,
-hides or replaces an active AdSense unit; consent withdrawal prevents new
-Purify requests while Google receives the updated consent signals.
+InMobi must have **app-tipps.com** registered as a property, with Google
+(registered IAB vendor 755) disclosed and Google Basic Consent configured.
+Without a working CMP, Google demand can be blocked regardless of the
+ad-unit ID. Limited ads may require an explicit setting in AdSense under
+Brand Safety > Blocking controls > Ad serving, and fill is never assured.
 
-The existing manually placed GAM article inline ad remains independent.
-A manually controlled sticky AdSense fallback is intentionally excluded.
-If Auto Ads / AdSense anchors are used, review their overlap with the Purify
-sticky placement.
+The manually placed GAM article inline unit is independent. Sticky
+AdSense fallback remains intentionally disabled to avoid conflicts with
+Google Auto Ads/anchor behavior.
 
 ## Tests and rollout
 
-- `npm run build` includes `worker/test/adsense-fallback.test.mjs`.
-- Visit an article with `?purify_debug=1`.
-- With only `banner_middle` configured, confirm top, bottom and rail no-bids
-  remain unfilled and only middle positions may request AdSense.
-- With the supplied middle unit ID, confirm the diagnostic table shows
-  `adsense-requested` only for eligible no-bid placements.
-- In browser DevTools inspect the `<ins class="adsbygoogle">` element with
-  the matching numeric `data-ad-slot`; verify just one Google ad request.
-- Accept/reject/revoke consent in a fresh session with InMobi active and
-  confirm Google Consent Mode v2/TFC-GPP integration is correct.
-- Check AdSense policy compliance and actual fill on mobile and desktop.
-- Monitor AdSense reports; a request does not guarantee an impression or RPM.
+- `npm run build` runs `worker/test/adsense-fallback.test.mjs`,
+  including separate Google/Adagio consent eligibility tests.
+- Open the homepage or an article with `?purify_debug=1`.
+- Check that the diagnostic panel shows `adsense-requested` only for
+  top/middle/bottom after a final TCF choice and Prebid no-bid; the panel
+  distinguishes `adsense-filled` and `adsense-unfilled` once Google
+  reports its result.
+- Test accept/reject and consent changes in a fresh session with InMobi.
+- Confirm no duplicate ad request and no Google request after a Prebid
+  render attempt.
+- Verify the actual InMobi consent states, Google Consent Mode updates,
+  ad-unit coverage, AdSense account/site status, and AdSense reports.
+- If the CMP never supplies a final state, the panel must indicate it is
+  waiting for consent; do not override consent to force display.
 
 Google reference: https://support.google.com/adsense/answer/9183363
+
+Google limited ads: https://support.google.com/adsense/answer/14210870
+Google TCF troubleshooting: https://support.google.com/adsense/answer/9999955

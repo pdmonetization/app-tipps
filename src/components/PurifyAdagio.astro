@@ -11,7 +11,7 @@ import { INTEGRATIONS } from '../consts';
   .purify-slot { margin:0 auto; max-width:100%; }
   .purify-ad[data-purify-result="no-bid"], .purify-ad[data-purify-result="slot-too-small"],
   .purify-ad[data-purify-result="render-error"], .purify-ad[data-purify-result="render-timeout"],
-  .purify-ad[data-purify-result="library-error"] {display:none!important}
+  .purify-ad[data-purify-result="library-error"], .purify-ad[data-purify-result="no-prebid-consent"] {display:none!important}
   .purify-top { margin:16px auto 26px; min-height:105px; }
   .purify-top .purify-slot {width:728px;min-height:90px;}
   .purify-article .purify-slot {width:300px;min-height:250px;}
@@ -49,10 +49,10 @@ import { INTEGRATIONS } from '../consts';
   // These statuses occur before any Prebid creative has started rendering.
   // A render-error or timeout may already represent a billable impression:
   // never send AdSense as a second provider after a render attempt.
-  const NO_FILL = new Set(['no-bid', 'library-error', 'integration-error']);
+  const NO_FILL = new Set(['no-bid', 'library-error', 'integration-error', 'no-prebid-consent']);
   const PENDING = new Set(['pending', 'auction-started', 'render-attempted']);
   const slots=[], seen=new Set(), debug=new URLSearchParams(location.search).get('purify_debug')==='1';
-  let launched=false, registered=false, resolved=false, attempts=0;
+  let launched=false, registered=false, resolved=false, googleReady=false, attempts=0;
   let consentState='Waiting for InMobi Choice / TCF consent state';
   function log(message){if(debug)console.info('[Purify public]',message)}
   function create(name,area,mount,width,css='',adsenseHeight=0){
@@ -73,7 +73,7 @@ import { INTEGRATIONS } from '../consts';
     const mark=document.createElement('div');p[n-1].after(mark);
     create('banner_middle',area,mark,300,'purify-article',250);
   }
-  function setup(){
+  function setup(includeSticky=true){
     const mobile=matchMedia('(max-width:760px)').matches;
     create('banner_top','top',document.getElementById('purify-top-mount'),mobile?320:728,'purify-top',mobile?100:90);
     const article=document.querySelector('article.article'),body=article?.querySelector('.article-body');
@@ -86,7 +86,7 @@ import { INTEGRATIONS } from '../consts';
       articleMiddle(body,7,'middle-2');
       create('banner_bottom','bottom',body,300,'purify-article',250);
     }
-    if(sessionStorage.getItem('purify_sticky_closed')!=='1'){
+    if(includeSticky && sessionStorage.getItem('purify_sticky_closed')!=='1'){
       const sticky=create('banner_sticky_bottom','sticky',document.getElementById('purify-sticky-mount'),mobile?320:728,'purify-sticky');
       if(sticky){
         const close=document.createElement('button');close.type='button';close.className='purify-close';
@@ -107,7 +107,7 @@ import { INTEGRATIONS } from '../consts';
       '<button type="button" id="purify-privacy-settings" style="margin:8px 0;cursor:pointer">Review privacy choices</button>'+
       '<div id="purify-privacy-result" role="status" aria-live="polite"></div>'+
       (slots.length?'<table><tr><th>Slot</th><th>Status</th><th>Bid CPM</th></tr>'+
-      slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.adsenseStarted?'adsense-requested':x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>':'<div>No auctions started.</div>');
+      slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.adsenseStarted?(x.shell.dataset.purifyResult||'adsense-requested'):x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>':'<div>No auctions started.</div>');
     const review=box.querySelector('#purify-privacy-settings');
     // Never disable the entrypoint merely because InMobi loaded late.
     // The footer owns the documented queued CMP operation and reports failure.
@@ -123,7 +123,8 @@ import { INTEGRATIONS } from '../consts';
     };
   }
   function requestAdsenseFallback(x, reason){
-    if(!NO_FILL.has(reason) || x.adsenseStarted || !resolved || !adsenseFallback?.enabled || !x.height)return false;
+    if(!NO_FILL.has(reason) || x.adsenseStarted || !googleReady || !adsenseFallback?.enabled || !x.height)return false;
+    if(window.navigator?.globalPrivacyControl === true)return false;
     const unit=adsenseFallback.slotIds?.[x.purifyName];
     // A publisher ID alone is not an ad unit. Never make an AdSense request
     // without a real, account-issued numeric data-ad-slot value.
@@ -144,6 +145,19 @@ import { INTEGRATIONS } from '../consts';
     x.adsenseStarted=true;
     x.shell.dataset.purifyResult='adsense-requested';
     x.slot.replaceChildren(ins);
+    // Distinguish an actual Google fill from a request that returned no ad.
+    // This does not reload, refresh, hide or replace an AdSense creative.
+    if(typeof MutationObserver==='function'){
+      const observer=new MutationObserver(()=>{
+        const result=ins.getAttribute('data-ad-status');
+        if(result==='filled'||result==='unfilled'){
+          x.shell.dataset.purifyResult='adsense-'+result;
+          observer.disconnect();
+          diagnostics();
+        }
+      });
+      observer.observe(ins,{attributes:true,attributeFilter:['data-ad-status']});
+    }
     try{
       (window.adsbygoogle=window.adsbygoogle||[]).push({});
       log('AdSense fallback requested',{area:x.name,prebidStatus:reason});
@@ -167,7 +181,9 @@ import { INTEGRATIONS } from '../consts';
     diagnostics();
   }
   function start(){
-    if(launched||!resolved)return;
+    // If a Google ad was already requested because no Prebid bidder was
+    // consent-eligible, do not start a competing auction on the same view.
+    if(launched||!resolved||slots.some(x=>x.adsenseStarted))return;
     launched=true;setup();if(!slots.length)return;
     const observer=new MutationObserver(statuses);
     for(const x of slots)observer.observe(x.slot,{attributes:true,attributeFilter:['data-purify-status','data-purify-bid-cpm']});
@@ -188,32 +204,56 @@ import { INTEGRATIONS } from '../consts';
     log(value);
   }
   function onConsent(tc,ok){
-    if(!ok||!tc){setConsentState('TCF response unavailable; no auction');return}
-    if(tc.gdprApplies!==false&&!['tcloaded','useractioncomplete'].includes(tc.eventStatus)){
+    if(!ok||!tc){setConsentState('TCF response unavailable; no ad request');return}
+    // A manual AdSense request must wait for InMobi to finish processing TCF
+    // choices, not merely for its stub to become available. Google handles
+    // personalized/nonpersonalized/limited ad eligibility from the TC string.
+    const complete=tc.gdprApplies===false ||
+      (tc.gdprApplies===true && Boolean(tc.tcString) &&
+       ['tcloaded','useractioncomplete'].includes(tc.eventStatus));
+    if(!complete){
       setConsentState('Waiting for completed TCF choice ('+String(tc.eventStatus||'unknown')+')');
       return;
     }
-    const eligible=tc.gdprApplies===false ||
-      Boolean(tc.tcString&&tc.purpose?.consents?.[1]===true&&tc.vendor?.consents?.[VENDOR]===true);
-    if(!eligible){
-      // Prevent an in-flight Prebid no-bid callback from starting AdSense
-      // after a user withdraws consent.
+    if(window.navigator?.globalPrivacyControl===true){
+      googleReady=false;
       resolved=false;
-      const reasons=[];
-      if(!tc.tcString)reasons.push('missing TC string');
-      if(tc.purpose?.consents?.[1]!==true)reasons.push('Purpose 1 not consented');
-      if(tc.vendor?.consents?.[VENDOR]!==true)reasons.push('Adagio/Onfocus vendor 617 not consented or not in CMP vendor list');
-      setConsentState('Blocked: '+reasons.join('; '));
-      if(launched){
-        // Existing AdSense requests must not be hidden or replaced mid-view.
-        // The updated CMP/Google Consent Mode signals apply to future requests.
-        slots.forEach(x=>{if(!x.adsenseStarted)x.shell.remove()});
-        log('Consent withdrawn — no further Purify or AdSense requests');
-      }
+      setConsentState('GPC privacy opt-out: no new ad requests');
       return;
     }
-    setConsentState(tc.gdprApplies===false?'CMP confirms GDPR does not apply; other applicable opt-outs must still be respected':'Purpose 1 and Adagio 617 consent confirmed');
-    resolved=true;start();
+
+    const adagioEligible=tc.gdprApplies===false ||
+      Boolean(tc.purpose?.consents?.[1]===true&&tc.vendor?.consents?.[VENDOR]===true);
+
+    if(!adagioEligible){
+      // Adagio consent (vendor 617) is independent of Google demand. The
+      // publisher must not suppress AdSense merely because Adagio cannot bid.
+      // InMobi provides the finalized TCF/GPP signal to Google, which decides
+      // whether personalized, non-personalized or limited ads are permissible.
+      resolved=false;
+      googleReady=!launched;
+      if(launched){
+        // A previously started auction may already contain billable ads:
+        // never start a second provider on these placements mid-view.
+        slots.forEach(x=>{if(!x.adsenseStarted)x.shell.remove()});
+        setConsentState('Adagio permission withdrawn: no new ads this view');
+        return;
+      }
+      setup(false);
+      for(const x of slots){
+        if(!x.adsenseStarted&&!x.slot.dataset.purifyStatus){
+          x.slot.dataset.purifyStatus='no-prebid-consent';
+        }
+      }
+      statuses();
+      setConsentState('Adagio not authorized; Google fallback eligible where configured');
+      return;
+    }
+
+    googleReady=true;
+    resolved=true;
+    setConsentState(tc.gdprApplies===false?'CMP confirms GDPR does not apply; other applicable opt-outs must still be respected':'Adagio vendor 617 consent confirmed');
+    start();
   }
   function awaitCMP(){
     if(launched||registered)return;

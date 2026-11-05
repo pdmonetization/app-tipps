@@ -12,12 +12,12 @@ assert.ok(from !== -1 && to > from, 'fallback implementation must exist');
 
 // Exercise the actual browser helper's code without booting the rest of Purify.
 const construct = new Function(
-  'NO_FILL', 'adsenseFallback', 'adsenseClient', 'resolved',
+  'NO_FILL', 'adsenseFallback', 'adsenseClient', 'googleReady',
   'document', 'window', 'log', 'warnFallback',
   source.slice(from, to) + '\nreturn requestAdsenseFallback;'
 );
 function fixture({ unit = '1234567890', client = 'ca-pub-4456135303100816', enabled = true,
-                   resolved = true, width = 300, slotWidth = 300, height = 250, iframe = false } = {}) {
+                   googleReady = true, width = 300, slotWidth = 300, height = 250, iframe = false } = {}) {
   const calls = [];
   const shell = { dataset: {} };
   const node = {
@@ -37,8 +37,8 @@ function fixture({ unit = '1234567890', client = 'ca-pub-4456135303100816', enab
   }};
   const win = { adsbygoogle: { push(value) { calls.push(['adsense', value]); } } };
   const callback = construct(
-    new Set(['no-bid', 'library-error', 'integration-error']),
-    { enabled, slotIds: { banner_middle: unit } }, client, resolved,
+    new Set(['no-bid', 'library-error', 'integration-error', 'no-prebid-consent']),
+    { enabled, slotIds: { banner_middle: unit } }, client, googleReady,
     doc, win, () => {}, error => { throw error; }
   );
   return { callback, x, calls };
@@ -66,7 +66,7 @@ test('missing or invalid ad unit identifiers never cause AdSense requests', () =
     assert.equal(callback(x, 'no-bid'), false, String(unit));
     assert.equal(calls.length, 0);
   }
-  for (const config of [{enabled:false},{resolved:false}]) {
+  for (const config of [{enabled:false},{googleReady:false}]) {
     const {callback,x,calls} = fixture(config);
     assert.equal(callback(x, 'no-bid'), false);
     assert.equal(calls.length, 0);
@@ -100,4 +100,86 @@ test('never request a Google ad in a too-narrow slot or sticky overlay', () => {
   const sticky = fixture({ height:0 });
   assert.equal(sticky.callback(sticky.x, 'no-bid'), false);
   assert.equal(sticky.calls.length, 0);
+});
+
+test('Google fallback is independent of Adagio vendor 617 after a completed TCF decision', () => {
+  const a=source.indexOf('  function onConsent(tc,ok){');
+  const b=source.indexOf('  function awaitCMP(){',a);
+  assert.ok(a!==-1 && b>a);
+  const constructConsent=new Function(
+    'window','slots','setup','statuses','setConsentState','start','VENDOR','initialLaunched',
+    'let googleReady=false, resolved=false, launched=initialLaunched;\n'+
+    source.slice(a,b)+
+    '\nreturn {onConsent, getState:()=>({googleReady,resolved,launched})};'
+  );
+  const callLog=[];
+  const slots=[{adsenseStarted:false,slot:{dataset:{}},shell:{remove(){callLog.push('removed')}}}];
+  const probe=constructConsent(
+    {navigator:{globalPrivacyControl:false}},slots,
+    allowSticky=>callLog.push(['setup',allowSticky]),
+    ()=>callLog.push('fallback-check'),
+    s=>callLog.push(['state',s]),
+    ()=>callLog.push('prebid'),617,false
+  );
+  probe.onConsent({
+    gdprApplies:true,eventStatus:'tcloaded',tcString:'TCstring',
+    purpose:{consents:{1:true}},vendor:{consents:{755:true,617:false}}
+  },true);
+  assert.deepEqual(probe.getState(),{googleReady:true,resolved:false,launched:false});
+  assert.equal(slots[0].slot.dataset.purifyStatus,'no-prebid-consent');
+  assert.ok(callLog.includes('fallback-check'));
+  assert.ok(!callLog.includes('prebid'));
+});
+
+test('a Google request must never be made from CMP stub/loading or GPC opt-out', () => {
+  const a=source.indexOf('  function onConsent(tc,ok){');
+  const b=source.indexOf('  function awaitCMP(){',a);
+  const constructConsent=new Function(
+    'window','slots','setup','statuses','setConsentState','start','VENDOR','initialLaunched',
+    'let googleReady=false, resolved=false, launched=initialLaunched;\n'+
+    source.slice(a,b)+
+    '\nreturn {onConsent, getState:()=>({googleReady,resolved})};'
+  );
+  for(const sample of [
+    {gdprApplies:true,eventStatus:'cmpuishown',tcString:''},
+    {gdprApplies:true,eventStatus:'tcloaded',tcString:''}
+  ]) {
+    let requests=0;
+    const probe=constructConsent({navigator:{}},[],()=>requests++,()=>requests++,()=>{},()=>requests++,617,false);
+    probe.onConsent(sample,true);
+    assert.equal(requests,0);
+    assert.equal(probe.getState().googleReady,false);
+  }
+  const probe=constructConsent(
+    {navigator:{globalPrivacyControl:true}},[],()=>{throw Error('should not setup')},
+    ()=>{throw Error('should not start fallback')},()=>{},()=>{throw Error('should not bid')},617,false
+  );
+  probe.onConsent({gdprApplies:false,eventStatus:'tcloaded'},true);
+  assert.equal(probe.getState().googleReady,false);
+});
+
+test('Google consent readiness is separate from Adagio bidder readiness', () => {
+  // A granted Adagio consent starts Prebid, which then offers AdSense only
+  // after an explicit no-bid. Independent requests never compete with bids.
+  const a=source.indexOf('  function onConsent(tc,ok){');
+  const b=source.indexOf('  function awaitCMP(){',a);
+  const constructConsent=new Function('window','slots','setup','statuses',
+    'setConsentState','start','VENDOR','initialLaunched',
+    'let googleReady=false, resolved=false, launched=initialLaunched;\n'+
+    source.slice(a,b)+'\nreturn {onConsent,getState:()=>({googleReady,resolved})};'
+  );
+  const calls=[];
+  const probe=constructConsent({navigator:{}},[],()=>calls.push('setup'),
+    ()=>calls.push('fallback'),()=>{},()=>calls.push('prebid'),617,false);
+  probe.onConsent({gdprApplies:true,eventStatus:'useractioncomplete',tcString:'TCstring',
+    purpose:{consents:{1:true}},vendor:{consents:{617:true,755:true}}},true);
+  assert.deepEqual(probe.getState(),{googleReady:true,resolved:true});
+  assert.deepEqual(calls,['prebid']);
+});
+
+test('standalone fallback supports homepage top and article bottom configuration', () => {
+  const config=fs.readFileSync(path.join(root,'src/consts.ts'),'utf8');
+  for(const key of ['banner_top','banner_middle','banner_bottom']){
+    assert.ok(config.includes(key+": '4859922810'"),key);
+  }
 });
