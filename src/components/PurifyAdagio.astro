@@ -107,7 +107,7 @@ import { INTEGRATIONS } from '../consts';
       '<button type="button" id="purify-privacy-settings" style="margin:8px 0;cursor:pointer">Review privacy choices</button>'+
       '<div id="purify-privacy-result" role="status" aria-live="polite"></div>'+
       (slots.length?'<table><tr><th>Slot</th><th>Status</th><th>Bid CPM</th></tr>'+
-      slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.adsenseStarted?'adsense-requested':x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>':'<div>No auctions started.</div>');
+      slots.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+esc(x.adsenseStarted?(x.shell.dataset.purifyResult||'adsense-requested'):x.slot.dataset.purifyStatus||'loading')+'</td><td>'+esc(x.slot.dataset.purifyBidCpm||'—')+'</td></tr>').join('')+'</table>':'<div>No auctions started.</div>');
     const review=box.querySelector('#purify-privacy-settings');
     // Never disable the entrypoint merely because InMobi loaded late.
     // The footer owns the documented queued CMP operation and reports failure.
@@ -145,6 +145,19 @@ import { INTEGRATIONS } from '../consts';
     x.adsenseStarted=true;
     x.shell.dataset.purifyResult='adsense-requested';
     x.slot.replaceChildren(ins);
+    // Distinguish an actual Google fill from a request that returned no ad.
+    // This does not reload, refresh, hide or replace an AdSense creative.
+    if(typeof MutationObserver==='function'){
+      const observer=new MutationObserver(()=>{
+        const result=ins.getAttribute('data-ad-status');
+        if(result==='filled'||result==='unfilled'){
+          x.shell.dataset.purifyResult='adsense-'+result;
+          observer.disconnect();
+          diagnostics();
+        }
+      });
+      observer.observe(ins,{attributes:true,attributeFilter:['data-ad-status']});
+    }
     try{
       (window.adsbygoogle=window.adsbygoogle||[]).push({});
       log('AdSense fallback requested',{area:x.name,prebidStatus:reason});
@@ -233,7 +246,7 @@ import { INTEGRATIONS } from '../consts';
         }
       }
       statuses();
-      setConsentState('Adagio not authorized; Google fallback requested where configured');
+      setConsentState('Adagio not authorized; Google fallback eligible where configured');
       return;
     }
 
